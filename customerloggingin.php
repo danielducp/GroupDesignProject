@@ -37,7 +37,7 @@ else
 
     if($user === false){
 
-      header("location:customerlogin.php?msg=usernamefailed");
+      header("location:homepage.php?msg=usernamefailed");
     } else{
   
         
@@ -69,7 +69,7 @@ else {
     {
    
 
-      header("location:customerlogin.php?msg=passwordfailed");
+      header("location:homepage.php?msg=passwordfailed");
         
 
     }

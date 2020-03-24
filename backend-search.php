@@ -22,9 +22,9 @@ try{
         $stmt->execute();
         if($stmt->rowCount() > 0){
             while($row = $stmt->fetch()){
-                echo "<p>" . $row["ProductName"] . "</p>";
+ 
 
-               echo "<a href=' productInformation.php?ProductCode=".$row['ProductCode']."'>More Information</a>";
+               echo "<a href=' productInformation.php?ProductCode=".$row['ProductCode']."'><p>$row[ProductName]</p></a>";
 
             }
         } else{
