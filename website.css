@@ -91,11 +91,17 @@ height:400px;
  
 }
 
+#basket-button
+{
+  width: 150px;
+  height: 150px;
+  }
 
 
 #logout-button
 {
-  width: 200px;
+  width: 150px;
+  height: 150px;
   position: absolute; right: 0;}
 
 #search-box

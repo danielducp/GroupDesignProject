@@ -33,15 +33,15 @@
 </head>
 <body>
 <div class="container">
-    <div class="row">
+    <div class="row" style="background-color:Purple">
         <div class="col-lg">
-<img src="g4uimageprototype.png" alt="G4ULogo"  id="g4ulogo"></img>
+<img src="G4ULogoRed.png" alt="G4ULogo"  id="g4ulogo"></img>
 </div>
 
 <div class="col-lg">
     
     <div class="topnav" >  
-    <div class="search-box" style="align:left; width:200px ">
+    <div class="search-box" style="align:left; padding-top:100px ;width:200px; ">
         <input type="text" autocomplete="on" placeholder="Search product..." />
         <div class="result"></div>
 </div>
@@ -54,7 +54,7 @@
 </div>
         <div class ="col-lg">
             <button id="basket-button" class="btn btn-warning">Basket</button>	
-            <button id="logout-button"    class="btn btn-danger"><a href="logout.php" style="color:white; height:150px;">Log Out!</a></button>	
+            <button id="logout-button"    class="btn btn-danger"><a href="logout.php" style="color:white;">Log Out!</a></button>	
       
         </div>
     </div>
