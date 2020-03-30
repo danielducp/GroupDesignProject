@@ -89,6 +89,8 @@
 <button style="background-color: orange" onclick="window.location.href = 'productlist.php';"> View products</button>
 </div>
 
+<button style="background-color: red" onclick="window.location.href = 'customerpurchase.php';"> Simulate all products being purcahsed by customers</button>
+
 
 
 
