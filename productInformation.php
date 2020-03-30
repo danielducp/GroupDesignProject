@@ -1,3 +1,30 @@
+<?php
+function load_supplier()
+{
+  $result='';
+  require 'config.php';
+  $ProductCode=$_GET['ProductCode'];
+
+  $sqlMake=$pdo->prepare('SELECT * FROM suppliedproducts  WHERE ProductCode = :ProductCode');
+  $sqlMake->execute(['ProductCode' => $ProductCode]);
+
+  $result=$sqlMake-> fetchAll();
+  return $result;
+}
+?>
+
+<form action="SupplierInformation.php" method="post"> 
+<?php session_start(); 
+if (isset($_POST['SupplierName'])) {
+  $_SESSION['SupplierName'] = $_POST['SupplierName'];
+}
+$SupplierName = isset($_SESSION['SupplierName']) ? $_SESSION['SupplierName'] : "";
+
+
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -38,6 +65,7 @@
         </div>
     </div>
   </div>
+
   <?php
   
   require ("config.php");
@@ -113,14 +141,31 @@ while($row = $sqlQuery->fetch())
 
 
     ?>
-    <div class="carinfo">    
+    <div class="carinfo">  
+
+
+
+<select class="forms" name ="SupplierName" style="width:200px" id="SupplierName" searchable="Search here">
+<option value="" selected="true" disabled="disabled"> Select Supplier </Option>
+ 
+ <?php 
+require ("config.php");
+	 $result=load_supplier();
+            foreach ($result as $SupplierName): ?>
+       <?php echo ' <option value="'. $SupplierName["SupplierName"].'">'. $SupplierName["SupplierName"].'</option>'; ?>
+    <?php endforeach; ?>
+</select>
+<button>Submit</Button>
       <?php
 
 
 
 
 echo "<align = center>Supplier Name: ".$row['SupplierName']."<br>";
+echo "<align = center>Delivery Time: ".$row['DeliveryTime']."<br>";
+echo "<align = center>Total Cost: ".$row['TotalCost']."<br>";
 
+echo " <div class=btn btn-primary onclick=location.href='basket.php?SuppliedProductsID=".$row['SuppliedProductsID']."'>Buy the product</div>";
 
 
 
@@ -141,7 +186,7 @@ echo "<TR>";
 <?php 
 // Sedot Code
 //mulai session 
-session_start();
+
 
     //Jika user belum login maka buat sebuah session yang isinya adalah url yang lagi dibukanya, 
     $_SESSION['redirectme'] = $_SERVER['REQUEST_URI'];
