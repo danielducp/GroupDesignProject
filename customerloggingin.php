@@ -49,18 +49,25 @@ $_SESSION['success'] =  "Successfully Logged In";
 $_SESSION['auth'] = 1 ;
 if($user['departmentid'] == '1'){
   header('Location: gadgetsproductpage.php');
+   echo $_SESSION['StaffID']; 
+
   $_SESSION["role"]=1;
 }
 else if($user['departmentid'] == '2'){
   header('Location: toysproductpage.php');
+  echo $_SESSION['StaffID']; 
+
   $_SESSION["role"]=2;
 }
 else if($user['departmentid'] == '3'){
   header('Location: adminpage.php');
+  echo "Welcome";
+  echo $_SESSION['StaffID']; 
+
   $_SESSION["role"]=3;
 }
 else {
-  header('Location: admin.php');
+  header('Location: homepage.php');
 }
 
 

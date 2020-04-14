@@ -1,3 +1,27 @@
+<?php
+function load_supplier()
+{
+  $result='';
+  require 'config.php';
+  $ProductCode=$_GET['ProductCode'];
+
+  $sqlMake=$pdo->prepare('SELECT * FROM suppliedproducts  WHERE ProductCode = :ProductCode');
+  $sqlMake->execute(['ProductCode' => $ProductCode]);
+
+  $result=$sqlMake-> fetchAll();
+  return $result;
+}
+?>
+
+<form action="SupplierInformation.php" method="post"> 
+<?php session_start(); 
+if (isset($_POST['SupplierName'])) {
+  $_SESSION['SupplierName'] = $_POST['SupplierName'];
+}
+$SupplierName = isset($_SESSION['SupplierName']) ? $_SESSION['SupplierName'] : "";
+
+
+?>
 
 
 
@@ -35,7 +59,7 @@
         </div>
 </div>
         <div class ="col-lg">
-            <button id="basket-button" onclick="window.location.href = 'basketlist.php';" class="btn btn-warning">Basket</button>	
+            <button id="basket-button" class="btn btn-warning">Basket</button>	
             <button id="logout-button"    class="btn btn-danger"><a href="logout.php" style="color:white; height:150px;">Log Out!</a></button>	
       
         </div>
@@ -99,69 +123,70 @@ $sqlQuery->execute(['ProductCode' => $ProductCode]);
       <div class="card-body">
     
       <h5 class="card-title">List of Suppliers to choose from</h5>
- 
-   
-      </div> </div>      <br>
-
+      
+      <p class="card-text"> 
+      
+      </div>
+      </div>
        <?php
 require ("config.php");
 
 $ProductCode=$_GET['ProductCode'];
-$sqlQuery = $pdo->prepare('SELECT * FROM suppliedproducts INNER JOIN product ON suppliedproducts.ProductCode = product.ProductCode WHERE product.ProductCode = :ProductCode ');
+$sqlQuery = $pdo->prepare('SELECT * FROM suppliedproducts WHERE ProductCode = :ProductCode ');
 $sqlQuery->execute(['ProductCode' => $ProductCode]);
+
+
 
 while($row = $sqlQuery->fetch())
 
 {
+ 
+
+
 
     ?>
     <div class="carinfo">  
+
+
+
+<select class="forms" name ="SupplierName" style="width:200px" id="SupplierName" searchable="Search here">
+<option value="" selected="true" disabled="disabled"> Select Supplier </Option>
+ 
+ <?php 
+require ("config.php");
+	 $result=load_supplier();
+            foreach ($result as $SupplierName): ?>
+       <?php echo ' <option value="'. $SupplierName["SupplierName"].'">'. $SupplierName["SupplierName"].'</option>'; ?>
+    <?php endforeach; ?>
+</select>
+<button>Submit</Button>
+
 
       <?php
 
 
 
+echo"<div class=card style=width: 20rem;>";
+echo "<div class=card-body>";
+echo "<align = center>Supplier Name: ".$row['SupplierName']."<br>";
+echo "<align = center>Delivery Time: ".$row['DeliveryTime']."<br>";
+echo "<align = center>Total Cost: ".$row['TotalCost']."<br>";
+
+echo " <div class=btn btn-primary onclick=location.href='basket.php?SuppliedProductsID=".$row['SuppliedProductsID']."'>Buy the product</div>";
+
+echo "</div>";
+echo "</div>";
+echo "</div>";
+echo "</div>";
 
 
-?>
+	echo"";
 
 
-<form method="post" action="basketlist.php?action=add&SuppliedProductsID=<?php echo $row["SuppliedProductsID"]; ?>">
-<div class="card"  style="width: 20rem; background-color:#ffff00 ">
-      
-      <div class="card-body">
-<h4 class="text-info">Supplier Name: <?php echo $row["SupplierName"]; ?></h4>
-						<h4 class="text-info">Delivery Time: <?php echo $row["DeliveryTime"]; ?> days</h4>
-            <input type="number" name="quantity" value="1" min="1" max="<?=$product['quantity']?>" placeholder="Quantity" required>            <input type="hidden" name="ProductName" value="<?=$product['ProductName']?>">
-
-            <input type="hidden" name="ProductCode" value="<?=$product['ProductCode']?>">
-            <input type="hidden" name="SuppliedProductsID" value="<?=$product['SuppliedProductsID']?>">
- 
-
-	
-						<input type="submit" name="add_to_cart" style="margin-top:5px;" class="btn btn-success" value="Add to Cart" />
-
-						<h4 class="text-danger">£ <?php echo $row["TotalCost"]; ?></h4>
-
-
-						<input type="hidden" name="ProductName" value="<?php echo $row["ProductName"]; ?>" />
-						<input type="hidden" name="SupplierName" value="<?php echo $row["SupplierName"]; ?>" />
-						<input type="hidden" name="DeliveryTime" value="<?php echo $row["DeliveryTime"]; ?>" />
-
-						<input type="hidden" name="TotalCost" value="<?php echo $row["TotalCost"]; ?>" />
-            </div>    </div>
-            <br>
-        </form>
-        </div>
-<?php
-
+echo "<TR>";
   }
 
-?>  
-
-
-
-</div>
+?>  </div>
 </div>
 </p>
       <a href="#" class="btn btn-primary">Go somewhere</a>

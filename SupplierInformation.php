@@ -33,7 +33,7 @@
     $stmt->execute([$SupplierName]);
     $totalnumberofrows = $stmt ->rowCount();
     $total_pages = ceil($totalnumberofrows / $numberofrecords);
-    $stmt = $pdo->prepare("SELECT * FROM suppliedproducts INNER JOIN product ON suppliedproducts.ProductCode = product.ProductCode WHERE SuppliedProductsID = :SuppliedProductsID WHERE  SupplierName ='".$SupplierName." ' LIMIT $offset, $numberofrecords "); 
+    $stmt = $pdo->prepare("SELECT * FROM suppliedproducts INNER JOIN product ON suppliedproducts.ProductCode = product.ProductCode WHERE SuppliedProductsID = :SuppliedProductsID WHERE  SupplierName =".$SupplierName."  LIMIT $offset, $numberofrecords "); 
 $stmt->execute();}
 
 ?>
@@ -52,6 +52,7 @@ $stmt->execute();}
 while($row = $stmt->fetch())
 {
 
+  echo $row['ProductName'].",";
 
     echo $row['SupplierName'].",";
     echo $row['ProductCode'].",";

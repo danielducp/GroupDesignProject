@@ -3,10 +3,13 @@
     session_start() ;
 	    if(!isset($_SESSION['auth']))
     {
+      echo"You need to login";
     header("Location:homepage.php") ;
     }
     if($_SESSION["role"]==3){
         header('adminpage.php');
+        echo "Welcome";
+        echo $_SESSION['StaffID']; 
       } else {
         session_destroy();
 

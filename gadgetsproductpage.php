@@ -2,11 +2,14 @@
     session_start() ;
 	    if(!isset($_SESSION['auth']))
     {
+        echo"You need to login";
+
     header("Location:homepage.php") ;
     }
 
     if($_SESSION["role"]==1){
         header('gadgetsproductpage.php');
+        
       } else if($_SESSION["role"]==3){
         header('gadgetsproductpage.php');
       } else  {
