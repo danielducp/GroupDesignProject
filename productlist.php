@@ -1,66 +1,51 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>G4UItems</title>
-<link href="ItemsPage.css" rel="stylesheet">
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" 
+  <title>G4UItems</title>
+  <link href="style.css" 
+        rel="stylesheet" 
+        type="text/css">
+  <link href="ItemsPage.css" 
+        rel="stylesheet"
+        type="text/css">
+  <link rel="stylesheet" 
+        href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" 
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" 
         crossorigin="anonymous">
 </head>
 <body style="background-color:#a6b2c1">
-
-<div class="topnav" ALIGN="center">  
-        <button  class="btn btn-warning">Back</button>
-        <img src="g4uimageprototype.png" alt="G4ULogo"  width="12.5%"></img>
-              
-        <button id="logout-button" class="btn btn-danger">Log Out!</button>
-    </div>
-
-<br><br>    <br><br><br><br>
-
-</div>
-
-
-
-
+  <div class="topnav" ALIGN="center">  
+    <button  class="btn btn-warning">Back</button>
+    <img src="g4uimageprototype.png" alt="G4ULogo" id="g4u-logo"></img>              
+    <button id="logout-button" class="btn btn-danger">Log Out!</button>
+  </div>
+  <br><br><br><br><br><br>
 </body>
 </html>
 
-
-
-
 <div class="outputresults">
-
-
- <div class="col-sm-3">
-        <form action="adminlocked2.php" method="POST">
-            Please enter preferred Product ID:
-            <br>
-            <input type="text" class="form-control" name="ProductID">
- 
-	
-            <input type="submit" name="submit" class="btn btn-danger" value="Search">
-        </form>
-
-
-<form action="adminlocked2.php" method="post">
- <select name="ProductID" id="ProductID" searchable="Search here">
-            <option value="" selected="true" disabled="disabled">Select Car </option>
-            <?php
-            $data=load_ProductID();
-            foreach ($data as $row): 
-            echo '<option value="'.$row["ProductID"].'">'.$row["ProductID"].'</option>';
-            ?>
-            <?php endforeach ?>
-            </select>
-			
+  <div class="col-sm-3">
+    <form action="adminlocked2.php" method="POST">
+        Please enter preferred Product ID:
+        <br>
+        <input type="text" class="form-control" name="ProductID">	
+        <input type="submit" name="submit" class="btn btn-danger" value="Search">
+    </form>
+    <form action="adminlocked2.php" method="post">
+      <select name="ProductID" id="ProductID" searchable="Search here">
+          <option value="" selected="true" disabled="disabled">Select Car </option>
+          <?php
+          $data=load_ProductID();
+          foreach ($data as $row): 
+          echo '<option value="'.$row["ProductID"].'">'.$row["ProductID"].'</option>';
+          ?>
+          <?php endforeach ?>
+        </select>			
 			  </tr>
         <tr>
           <td></td>
           <td><input type="submit" name="submit" style="display:inline" class="btn btn-danger" value="Search">
-
-
-          </tr>
+        </tr>
         <tr>
 
     </div>

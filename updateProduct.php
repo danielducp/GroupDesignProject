@@ -2,6 +2,9 @@
 <html>
 <head>
 <title>G4UItems</title>
+  <link href="style.css" 
+        rel="stylesheet" 
+        type="text/css">
 <link href="ItemsPage.css" rel="stylesheet">
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" 
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" 
@@ -10,8 +13,8 @@
 <body style="background-color:#a6b2c1">
 
 <div class="topnav" ALIGN="center">  
-        <button  class="btn btn-warning">Back</button>
-        <img src="g4uimageprototype.png" alt="G4ULogo"  width="12.5%"></img>
+        <button class="btn btn-warning" id="back-button">Back</button>
+        <img src="g4uimageprototype.png" alt="G4ULogo" id="g4u-logo"></img>
               
         <button id="logout-button" class="btn btn-danger">Log Out!</button>
     </div>
