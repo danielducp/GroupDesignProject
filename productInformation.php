@@ -66,16 +66,7 @@
 
     <?php 
   } ?>
-  <div class="col-sm">
-      <form class="form-inline">
-          <div class="form-group mb-2">
-            <label for="quantityNeeded" class="sr-only">Email</label>
-            <input type="text" readonly class="form-control-plaintext" id="quantityNeeded" value="Quantity X">        
-            <input type="number" value="1" min="1" class="form-control">
-            <button type="submit" class="btn btn-primary mb-2">Add To</button>
-          </div>         
-        </form>
-  </div>
+ 
   <div class="col">
     <div class="card" style="width: 20rem;">    
       <div class="card-body">  
@@ -103,12 +94,28 @@
               <input type="hidden" name="ProductName" value="<?=$product['ProductName']?>">
               <input type="hidden" name="ProductCode" value="<?=$product['ProductCode']?>">
               <input type="hidden" name="SuppliedProductsID" value="<?=$product['SuppliedProductsID']?>">	
-              <input type="submit" name="add_to_cart" style="margin-top:5px;" class="btn btn-success" value="Add to Cart" />
+              
+              <input type="submit" name="add_to_cart" style="margin-top:5px;" class="btn btn-success" value="Add to Cart" onclick=Highlight(this)/>
+              <input type="radio" name="Button" class="ButtonState" checked id="Button1" value="1"/>
+<label class="Button" for="Button1">Button 1</label>
+<input type="radio" name="Button" class="ButtonState" id="Button2" value="2"/>
+<label class="Button" for="Button2">Button 2</label>
+<input type="radio" name="Button" class="ButtonState" id="Button3" value="3"/>
+<label class="Button" for="Button3">Button 3</label>
               <h4 class="text-danger">£ <?php echo $row["TotalCost"]; ?></h4>
               <input type="hidden" name="ProductName" value="<?php echo $row["ProductName"]; ?>" />
               <input type="hidden" name="SupplierName" value="<?php echo $row["SupplierName"]; ?>" />
               <input type="hidden" name="DeliveryTime" value="<?php echo $row["DeliveryTime"]; ?>" />
               <input type="hidden" name="TotalCost" value="<?php echo $row["TotalCost"]; ?>" />
+              <?php 
+     
+        if (isset($_GET["msg"]) && $_GET["msg"] == 'itemadded') {
+          echo "Added Item";
+        }
+        if (isset($_GET["msg"]) && $_GET["msg"] == 'passwordfailed') {
+          echo "Wrong Password";
+        }
+      ?>
             </div>
           </div>
           <br>
@@ -118,8 +125,19 @@
       ?> 
     </div>
   </div>
-  </p>
+
   <a href="#" class="btn btn-primary">Go somewhere</a>
+  <a href="#" class="btn btn-primary">Go somewhere</a>
+
+  </p>
+  </div>
+
+  <div class="col-sm">
+      <form class="form-inline">
+          <div class="form-group mb-2">
+          
+          </div>         
+        </form>
   </div>
   <?php 
   // Sedot Code
@@ -129,6 +147,13 @@
       //Arahkan kehalaman login.php
   ?>
   <br>
+  <script>
+      function Highlight(button) {
+       $(".Highlight").removeClass("Highlight");
+       $(button).addClass("Highlight");
+    }
+
+  </script>
   <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
   <script type="text/javascript">
   $(document).ready(function(){

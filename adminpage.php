@@ -15,60 +15,78 @@
       header("Location:homepage.php") ;
   }
 ?>
+<!DOCTYPE html>
+<html>
 <head>
-  <!DOCTYPE html>
-  <html lang="en">
-  <title>Admin Page</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>G4U</title>
   <link href="style.css" 
         rel="stylesheet" 
         type="text/css">
-  <link rel="stylesheet" 
-        href="website.css"
+  <link href="Admin.css" 
+        rel="stylesheet" 
         type="text/css">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-  <body style="background-color:#a6b2c1">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" 
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" 
+        crossorigin="anonymous">
 </head>
+
 <body style="background-color:#a6b2c1">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg">
-        <img src="g4uimageprototype.png" alt="G4ULogo" id="g4u-logo"></img>
-      </div>
-      <div class="col-lg">    
-        <div class="topnav">  
-          <div class="search-box" style="align:left; width:200px ">
-            <input type="text" id="search-bar" placeholder="Search.." size="30">  
-            <div class="result"></div>
+    <div class="topnav" ALIGN="center">  
+        <img src="g4uimageprototype.png" alt="G4ULogo"  width="12.5%"></img>
+        <input type="text" placeholder="Search.." style="margin-top: 100px;">        
+        <button id="search-button" class="btn btn-success">Search!</button>        
+        <button id="basket-button" class="btn btn-warning">Basket</button>            
+        <button id="logout-button" class="btn btn-danger">Log Out!</button>
+    </div>
+
+    <div class="container" ALIGN="center">
+        <div class="row" style="padding-top:35px;">
+          <div class="col-sm"ALIGN="center">
+            <button  class="btn btn-success adminButton"  onclick="window.location.href = 'addauser.php';">View All Products</button>
+          </div> 
+          <div class="col-sm"ALIGN="center">
+            <button  class="btn btn-success adminButton"  onclick="window.location.href = 'addaproduct.php';">Add Product</button>
+          </div>
+          <div class="col-sm"ALIGN="center">
+            <button  class="btn btn-success adminButton"  onclick="window.location.href = 'editaproduct.php';">Edit Product</button>
+          </div>
+          <div class="col-sm"ALIGN="center">
+            <button  class="btn btn-success adminButton"  onclick="window.location.href = 'removeaproduct.php';">Remove Product</button>
           </div>
         </div>
-      </div>
-      <div class ="col-lg">
-        <button id="basket-button" class="btn btn-warning">Basket</button>	
-        <button id="logout-button"    class="btn btn-danger"><a href="logout.php" style="color:white; height:150px;">Log Out!</a></button>      
-      </div>
+        <div class="row" style="padding-top:35px;">
+            <div class="col" ALIGN="center">
+              <button class="btn btn-success adminButton"  onclick="window.location.href = 'addauser.php';">Add User</button>
+            </div>
+            <div class="col" ALIGN="center">
+              <button  class="btn btn-success adminButton"  onclick="window.location.href = 'editauser.php';">Edit User</button>
+            </div>
+            <div class="col" ALIGN="center">
+              <button  class="btn btn-success adminButton"  onclick="window.location.href = 'removeauser.php';">Remove User</button>
+            </div>
+         
+          </div>
+          <div class="row" style="padding-top:35px;">
+            <div class="col" ALIGN="center">
+              <button  class="btn btn-success adminButton"  onclick="window.location.href = 'addasupplier.php';">Add Supplier</button>
+            </div>
+            <div class="col" ALIGN="center">
+              <button  class="btn btn-success adminButton"  onclick="window.location.href = 'editasupplier.php';">Edit Supplier</button>
+            </div>
+              <div class="col" ALIGN="center">
+                <button  class="btn btn-success adminButton"  onclick="window.location.href = 'deleteasupplier.php';">Delete Supplier!</button>
+              </div> 
+            </div>
+            <br>
+            <div class="col" ALIGN="center">
+                <button  class="btn btn-success adminButton"  onclick="window.location.href = 'deleteasupplier.php';">System Reports</button>
+              </div> 
+          </div>
     </div>
-  </div>
-  <img width="12.5%"src="g4uimageprototype.png" ALIGN="left" alt="G4ULogo"></img>
-  <br><br><br><br><br><br><br>
-  <button style="background-color: red" onclick="window.location.href = 'addauser.php';"> Add a user </button>
-  <button style="background-color: orange" onclick="window.location.href = 'addauser.php';"> Edit a user </button>
-  <button style="background-color: red" onclick="window.location.href = 'addaproduct.php';"> Add a product </button>
-  <button style="background-color: orange" onclick="window.location.href = 'addauser.php';"> Edit a product </button>
-  <button style="background-color: red" onclick="window.location.href = 'addacategory.php';"> Add a category </button>
-  <button style="background-color: orange" onclick="window.location.href = 'addauser.php';"> Edit a category </button>
-  <button style="background-color: red" onclick="window.location.href = 'addasupplier.php';"> Add a supplier </button>
-  <button style="background-color: orange" onclick="window.location.href = 'addauser.php';"> Edit a supplier </button>
-  <br><br>
-  <button style="background-color: orange" onclick="window.location.href = 'productlist.php';"> View products</button>
-  <button style="background-color: red" onclick="window.location.href = 'customerpurchase.php';"> Simulate all products being purcahsed by customers</button>
+
+    
 </body>
+
+
 </html>
-
-
-
-
+ 
