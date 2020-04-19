@@ -23,6 +23,7 @@
 					'item_quantity'		=>	$_POST["quantity"]
 				);
 				$_SESSION["shopping_cart"][$count] = $item_array;
+
 			}
 			else
 			{

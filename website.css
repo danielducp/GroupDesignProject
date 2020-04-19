@@ -81,3 +81,7 @@ html, body {
   background-color:white;
   color:grey;
 }
+
+.ButtonState{display:none}
+.Button{padding:3px; margin:4px; background:#CCC; border:1px solid #333; cursor:pointer;}
+.ButtonState:checked + .Button{background:#fff;}
