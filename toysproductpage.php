@@ -1,126 +1,84 @@
 <?php
     session_start() ;
-	    if(!isset($_SESSION['auth']))
-    {
+    if(!isset($_SESSION['auth'])) {
         echo"You need to login";
-    header("Location:homepage.php") ;
+        header("Location:homepage.php") ;
     }
     if($_SESSION["role"]==2){
         header('toysproductpage.php');
-      } else if($_SESSION["role"]==3){
+    } else if($_SESSION["role"]==3){
         header('toysproductpage.php');
-      } else  {
+    } else  {
         session_destroy();
-
         header("Location:homepage.php") ;
     }
-    ?>
+?>
 
-<head>
-
-  <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Toys Product Page</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link href="style.css" 
-        rel="stylesheet" 
-        type="text/css">
-  <link rel="stylesheet" href="website.css">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-  <body style="background-color:#a6b2c1">
-
+    <title>Toys Product Page</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <link rel="stylesheet" href="website.css" type="text/css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 </head>
-<body>
-<div class="container">
-    <div class="row" style="background-color:Purple">
-        <div class="col-lg">
-<img src="G4ULogoRed.png" alt="G4ULogo"  id="g4ulogo"></img>
-</div>
-
-<div class="col-lg">
-    
-    <div class="topnav" >  
-    <div class="search-box" style="align:left; padding-top:100px ;width:200px; ">
-        <input type="text" autocomplete="on" placeholder="Search product..." />
+<body style="background-color:#a6b2c1">
+    <div class="topnav" align="center">
+        <button id="back-button" class="btn btn-danger">Back</button>
+        <img src="g4uimageprototype.png" id="g4u-logo" alt="G4ULogo"></img>
+        <div class="search-box" id="search-bar">
+            <input type="text" autocomplete="on" placeholder="Search product..." />
         <div class="result"></div>
-</div>
-
-
-       
-     
-           
         </div>
-</div>
-        <div class ="col-lg">
-            <button id="basket-button" class="btn btn-warning">Basket</button>	
-            <button id="logout-button"    class="btn btn-danger"><a href="logout.php" style="color:white;">Log Out!</a></button>	
-      
-        </div>
+        <button id="search-button" class="btn btn-success">Search</button>
+        <button id="basket-button" class="btn btn-warning">Basket</button>
+        <button id="logout-button" class="btn btn-danger">Log Out</button>
     </div>
-  </div>
-
-
-
-
-
-<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
-<script type="text/javascript">
-$(document).ready(function(){
-    $('.search-box input[type="text"]').on("keyup input", function(){
-        /* Get input value on change */
-        var inputVal = $(this).val();
-        var resultDropdown = $(this).siblings(".result");
-        if(inputVal.length){
-            $.get("backend-search.php", {term: inputVal}).done(function(data){
-                // Display the returned data in browser
-                resultDropdown.html(data);
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('.search-box input[type="text"]').on("keyup input", function(){
+                /* Get input value on change */
+                var inputVal = $(this).val();
+                var resultDropdown = $(this).siblings(".result");
+                if(inputVal.length){
+                    $.get("backend-search.php", {term: inputVal}).done(function(data){
+                        // Display the returned data in browser
+                        resultDropdown.html(data);
+                    });
+                } else{
+                    resultDropdown.empty();
+                }
             });
-        } else{
-            resultDropdown.empty();
-        }
-    });
-    
-    // Set search input value on click of result item
-    $(document).on("click", ".result p", function(){
-        $(this).parents(".search_bar").find('input[type="text"]').val($(this).text());
-        $(this).parent(".result").empty();
-    });
-});
-</script>
-</head>
-<body>
 
+            // Set search input value on click of result item
+            $(document).on("click", ".result p", function(){
+                $(this).parents(".search_bar").find('input[type="text"]').val($(this).text());
+                $(this).parent(".result").empty();
+            });
+        });
+    </script>
 </body>
-</div>
+</html> 
 
-</html>    
 <?php
-        require 'config.php';     
-        $sqlQuery = $pdo->query('SELECT * FROM product WHERE CategoryID = 2');      
-        while($row = $sqlQuery->fetch())
-        {
-            ?>
-  <div class="column">
-  <div class="card" >
-  <A href='<?php echo "productInformation.php?ProductCode=".$row['ProductCode'].""; ?>'/>  
-
-
- <?php echo" <img class=center class =ProductImage src='pictures/".$row['ProductImage']."'";  "onclick=location.href='productInformation.php?ProductCode=".$row['ProductCode']."'" ?>
-
-  <div class="card-body">
-      <h4 class="card-title"><?php echo $row['ProductName']; ?></a></h4>
-      </div>
-  
+    require 'config.php';     
+    $sqlQuery = $pdo->query('SELECT * FROM product WHERE CategoryID = 2');      
+    while($row = $sqlQuery->fetch())
+    {
+?>
+<div class="column">
+    <div class="card" >
+        <A href='<?php echo "productInformation.php?ProductCode=".$row['ProductCode'].""; ?>'/>  
+        <?php echo" <img class=center id=ProductImage src='pictures/".$row['ProductImage']."'";  "onclick=location.href='productInformation.php?ProductCode=".$row['ProductCode']."'" ?>
+        <div class="card-body">
+            <h4 class="card-title"><?php echo $row['ProductName']; ?></a></h4>
+        </div>
     </div>
-
-  </div>  </div>
-
-  <?php } ?>
-
-
- 
+</div>
+<?php } ?>
