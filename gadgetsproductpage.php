@@ -36,7 +36,7 @@
         <div class="result"></div>
         </div>
         <button id="search-button" class="btn btn-success">Search</button>
-        <button id="basket-button" class="btn btn-warning">Basket</button>
+        <img src="basket.png" id="basket"></img>
         <button id="logout-button" class="btn btn-danger">Log Out</button>
     </div>
     <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
