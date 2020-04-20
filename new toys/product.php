@@ -68,7 +68,7 @@ $total_products = $pdo->query('SELECT * FROM product')->rowCount();
 // Check to make sure the id parameter is specified in the URL
 if (isset($_GET['ProductCode'])) {
     // Prepare statement and execute, prevents SQL injection
-    $stmt = $pdo->prepare('SELECT * FROM suppliedproducts INNER JOIN product ON suppliedproducts.ProductCode = product.ProductCode WHERE suppliedproducts.SuppliedProductsID = ? group by suppliedproducts.ProductCode');
+    $stmt = $pdo->prepare('SELECT * FROM suppliedproducts INNER JOIN product ON suppliedproducts.ProductCode = product.ProductCode WHERE suppliedproducts.ProductCode = ? ');
     $stmt->execute([$_GET['ProductCode']]);
     // Fetch the product from the database and return the result as an Array
     $product = $stmt->fetch(PDO::FETCH_ASSOC);
@@ -114,9 +114,9 @@ if (isset($_GET['ProductCode'])) {
     <br>
     <?php
       require ("config.php");
-      $SuppliedProductsID=$_GET['SuppliedProductsID'];
-      $sqlQuery = $pdo->prepare('SELECT * FROM suppliedproducts INNER JOIN product ON suppliedproducts.ProductCode = product.ProductCode WHERE SuppliedProductsID = :SuppliedProductsID ');
-      $sqlQuery->execute(['SuppliedProductsID' => $SuppliedProductsID]);
+      $ProductCode=$_GET['ProductCode'];
+      $sqlQuery = $pdo->prepare('SELECT * FROM suppliedproducts INNER JOIN product ON suppliedproducts.ProductCode = product.ProductCode WHERE product.ProductCode = :ProductCode ');
+      $sqlQuery->execute(['ProductCode' => $ProductCode]);
       while($row = $sqlQuery->fetch())
       {
     ?>

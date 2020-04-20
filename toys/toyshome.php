@@ -43,6 +43,8 @@ $recently_added_products = $stmt->fetchAll(PDO::FETCH_ASSOC);
         <?php echo" <img class=center id=ProductImage src='pictures/".$product['ProductImage']."'";  "onclick=location.href='productInformation.php?ProductCode=".$product['ProductCode']."'" ?>
         <div class="card-body">
             <h4 class="card-title"><?php echo $product['ProductName']; ?></a></h4>
+            <p class="card-title"><?php echo $product['SupplierName']; ?></a></p>
+
         </div>
     </div>
 </div>
