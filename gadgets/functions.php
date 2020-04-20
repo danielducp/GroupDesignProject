@@ -1,23 +1,24 @@
 <?php
-    session_start() ;
-    if(!isset($_SESSION['auth'])) {
-        echo"You need to login";
-        header("Location:homepage.php") ;
+function pdo_connect_mysql() {
+    // Update the details below with your MySQL details
+    $DATABASE_HOST = 'localhost';
+    $DATABASE_USER = 'root';
+    $DATABASE_PASS = '';
+    $DATABASE_NAME = 'g4udatabase';
+    try {
+    	return new PDO('mysql:host=' . $DATABASE_HOST . ';dbname=' . $DATABASE_NAME . ';charset=utf8', $DATABASE_USER, $DATABASE_PASS);
+    } catch (PDOException $exception) {
+    	// If there is an error with the connection, stop the script and display the error.
+    	die ('Failed to connect to database!');
     }
-    if($_SESSION["role"]==2){
-        header('toysproductpage.php');
-    } else if($_SESSION["role"]==3){
-        header('toysproductpage.php');
-    } else  {
-        session_destroy();
-        header("Location:homepage.php") ;
-    }
-?>
-
+}
+// Template header, feel free to customize this
+function template_header($title) {
+echo <<<EOT
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Toys Product Page</title>
+    <title>Gadgets Product Page</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="style.css" type="text/css">
@@ -27,10 +28,10 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 </head>
-<body style="background-color:#000000">
+
     <div style="background-color:#a6b2c1" class="topnav" align="center">
         <button id="back-button" class="btn btn-danger">Back</button>
-        <img src="g4uimageprototype.png" id="g4u-logo" alt="G4ULogo"></img>
+        <img src="../g4uimageprototype.png" id="g4u-logo" alt="G4ULogo"></img>
         <div class="search-box" id="search-bar">
             <input type="text" autocomplete="on" placeholder="Search product..." />
         <div class="result"></div>
@@ -65,21 +66,37 @@
     </script>
 </body>
 </html> 
-
-<?php
-    require 'config.php';     
-    $sqlQuery = $pdo->query('SELECT * FROM product WHERE CategoryID = 2');      
-    while($row = $sqlQuery->fetch())
-    {
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>$title</title>
+		<link href="../style.css" rel="stylesheet" type="text/css">
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
+	</head>
+	<body style="background-color:#a6b2c1">
+        <header>
+           
+                <div class="link-icons">
+                    <a href="index.php?page=cart">
+<img src=imgs/sc1.png style=width:50%></a>
+<a href="index.php?page=cart">
+<img src=imgs/sc2.png style=width:50%></a>
+                </div>
+            </div>
+        </header>
+        <main>
+EOT;
+}
+// Template footer
+function template_footer() {
+$year = date('Y');
+echo <<<EOT
+        </main>
+       
+        <script src="script.js"></script>
+    </body>
+</html>
+EOT;
+}
 ?>
-
-<div class="column">
-    <div class="card" >
-        <A href='<?php echo "productInformation.php?ProductCode=".$row['ProductCode'].""; ?>'/>  
-        <?php echo" <img class=center id=ProductImage src='pictures/".$row['ProductImage']."'";  "onclick=location.href='productInformation.php?ProductCode=".$row['ProductCode']."'" ?>
-        <div class="card-body">
-            <h4 class="card-title"><?php echo $row['ProductName']; ?></a></h4>
-        </div>
-    </div>
-</div>
-<?php } ?>
