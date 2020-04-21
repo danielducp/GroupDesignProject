@@ -1,4 +1,23 @@
-<?php
+<html>
+<head>
+    <link href="../style.css" 
+          rel="stylesheet"
+          type="text/css">
+    <link rel="stylesheet" 
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" 
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" 
+          crossorigin="anonymous">
+</head>
+<body style="background-color:#a6b2c1">
+    <div class="topnav" ALIGN="center">  
+        <button id="logout-button" class="btn btn-danger">Back</button> 
+        <img src="../g4uimageprototype.png" alt="G4ULogo"  width="12.5%"></img>
+        <input type="text" placeholder="Search.." style="margin-top: 100px;">  
+             
+        <button id="search-button" class="btn btn-success">Search!</button>        
+        <button id="basket-button" class="btn btn-warning">Basket</button>            
+        <button id="logout-button" class="btn btn-danger">Log Out!</button>
+    </div><?php
 
 // If the user clicked the add to cart button on the product page we can check for the form data 
 if (isset($_POST['SuppliedProductsID'], $_POST['quantity']) && ($_POST['SuppliedProductsID']) && is_numeric($_POST['quantity'])) {
@@ -89,18 +108,24 @@ if ($products_in_cart) {
 
 
 <div class="cart content-wrapper">
-    <h1>Shopping Cart</h1>
+    <h1 style="padding-left:20px">Order Details</h1>
     <form action="index.php?page=cart" method="post">
-        <table>
-            <thead>
+    <div class="table-responsive">
+				<table  align="center" class="table table-bordered" style="background-color:white; width:80%; align:centre">            <thead>
                 <tr>
-                    <td colspan="2">Product</td>
-                    <td>Price</td>
-                    <td>Quantity</td>
-                    <td>Total</td>
+                    <td ALIGN="center" colspan="2">Product</td>
+                    <td ALIGN="center">Supplier</td>
+                    <td ALIGN="center">Price</td>
+                    <td ALIGN="center">Quantity</td>
+                    <td ALIGN="center">Remove</td>
+                    <td ALIGN="center">Total</td>
                 </tr>
+   
+   
             </thead>
+
             <tbody>
+            
                 <?php if (empty($products)): ?>
                 <tr>
                     <td colspan="5" style="text-align:center;">You have no products added in your Shopping Cart</td>
@@ -108,34 +133,51 @@ if ($products_in_cart) {
                 <?php else: ?>
                 <?php foreach ($products as $product): ?>
                 <tr>
-                    <td class="img">
-                        <a href="index.php?page=product&SuppliedProductsID=<?=$product['SuppliedProductsID']?>">
+                    <td class="img" ALIGN="center">
+                        <a  href="index.php?page=product&SuppliedProductsID=<?=$product['SuppliedProductsID']?>">
                             <img src="pictures/<?=$product['ProductImage']?>" width="50" height="50" alt="<?=$product['ProductName']?>">
                         </a>
                     </td>
-                    <td>
+                    <td ALIGN="center" id="TableTheme">
                         <a href="index.php?page=product&SuppliedProductsID=<?=$product['SuppliedProductsID']?>"><?=$product['ProductName']?></a>
                         <br>
-                        <a href="index.php?page=cart&remove=<?=$product['SuppliedProductsID']?>" class="remove">Remove</a>
+                     
                     </td>
-                    <td class="TotalCost">&pound;<?=$product['TotalCost']?></td>
-                    <td class="quantity">
-                        <input type="number" name="quantity-<?=$product['SuppliedProductsID']?>" value="<?=$products_in_cart[$product['SuppliedProductsID']]?>" min="1" max="5" placeholder="Quantity" required>
+                    <td id="TableTheme" class="Supplier" ALIGN="center"><?=$product['SupplierName']?></td>
+                    <td id="TableTheme" class="TotalCost" ALIGN="center">&pound;<?=$product['TotalCost'] ?></td>
+                    <td id="TableTheme" class="quantity" ALIGN="center">
+                        <input type="number" style="margin-top:4px" name="quantity-<?=$product['SuppliedProductsID']?>" value="<?=$products_in_cart[$product['SuppliedProductsID']]?>" min="1" max="5" placeholder="Quantity" required>
                     </td>
-                    <td class="TotalCost">&pound; <?php echo number_format ($product['TotalCost'] * $products_in_cart[$product['SuppliedProductsID']],2)?></td>
+                    <td id="TableTheme" class="remove" ALIGN="center">
+                    <a id="remove-button" class="btn btn-success" style="margin-top:4px" href="index.php?page=cart&remove=<?=$product['SuppliedProductsID']?>" class="remove">Remove</a>
+                    </td>
+                    <td id="TableTheme" class="TotalCost"  ALIGN="center">&pound; <?php echo number_format ($product['TotalCost'] * $products_in_cart[$product['SuppliedProductsID']],2)?></td>
                 </tr>
+
+                
                 <?php endforeach; ?>
+                <tr>
+                <div class="buttons">
+
+        </div><td></td> <td ></td > <td ></td > 					
+<td ></td >	<td ALIGN="center"><input type="submit" value="Update" name="update" id="update-button" class="btn btn-success"></td>
+<td ></td > 
+                        <td ALIGN="center" >                         <div class="subtotal">
+            <span class="text"  >Subtotal</span>
+            <span class="price" >&pound;<?php echo number_format($subtotal,2); ?></span>
+        </div><input style="margin-top:4px"  type="submit" value="Place Order" name="placeorder" id="order-button" class="btn btn-success"/>
+ 
+						
+					</tr>
                 <?php endif; ?>
             </tbody>
+         
         </table>
-        <div class="subtotal">
-            <span class="text">Subtotal</span>
-            <span class="price">&pound;<?php echo number_format($subtotal,2); ?></span>
-        </div>
-        <div class="buttons">
-            <input type="submit" value="Update" name="update">
-            <input type="submit" value="Place Order" name="placeorder">
-        </div>
+        <tr>
+           
+                </tr>
+ 
+     
     </form>
     <script>
     

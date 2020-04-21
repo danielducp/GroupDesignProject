@@ -83,32 +83,7 @@ if(isset($_GET["action"]))
         <button id="logout-button" class="btn btn-danger">Log Out!</button>
     </div>
     <br>
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-4" style="background-color:white;">
-                <p>List of items go here</p>
-            </div>
-            <div class="col-sm-1" style="background-color:white;">
-                <button id="reduce-button" class="btn btn-success">-</button>
-            </div>
-            <div class="col-sm-1" style="background-color:white;">
-                <p>0</p>
-            </div>
-            <div class="col-sm-1" style="background-color:white;">
-                <button id="increase-button" class="btn btn-success">+</button>
-            </div>
-            <div class="col-sm-2" style="background-color:white;">
-                <button id="remove-button" class="btn btn-success">Remove</button>         
-            </div>
-            <div class="col-sm-2" style="background-color:white;">  
-                <p>Price</p>          
-            </div>
-            <div class="col-sm-1">
-                <button id="confirm-button" class="btn btn-success">Confirm Order</button>      
-            </div>
-        </div>
-      </div>
-    </div>
+   
 </body>
 </html>
 			<div style="clear:both"></div>

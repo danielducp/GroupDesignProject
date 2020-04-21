@@ -1,8 +1,21 @@
-
+<?php
+    if(!isset($_SESSION['auth'])) {
+        echo"You need to login";
+        header("Location:../homepage.php") ;
+    }
+    if($_SESSION["role"]==2){
+        header('toyshome.php');
+    } else if($_SESSION["role"]==3){
+        header('toyshome.php');
+    } else  {
+        session_destroy();
+        header("Location:../homepage.php") ;
+    }
+?>
 
 <?php
 // Get the 4 most recently added products
-$stmt = $pdo->prepare('SELECT *  FROM suppliedproducts  JOIN product on suppliedproducts.ProductCode = product.ProductCode WHERE CategoryID = 1  ');
+$stmt = $pdo->prepare('SELECT *  FROM suppliedproducts  JOIN product on suppliedproducts.ProductCode = product.ProductCode WHERE CategoryID = 2  group by product.ProductCode ');
 $stmt->execute();
 $recently_added_products = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
@@ -30,8 +43,8 @@ $recently_added_products = $stmt->fetchAll(PDO::FETCH_ASSOC);
         <div class="result"></div>
         </div>
         <button id="search-button" class="btn btn-success">Search</button>
-        <button id="basket-button" class="btn btn-warning">Basket</button>
-        <button id="logout-button" class="btn btn-danger">Log Out</button>
+        <button id="basket-button" onclick="window.location.href = 'index.php?page=cart'" class="btn btn-warning">Basket</button>
+        <button id="logout-button"  onclick="window.location.href = '../logout.php'" class="btn btn-danger">Log Out</button>
     </div>
 
 
@@ -41,12 +54,10 @@ $recently_added_products = $stmt->fetchAll(PDO::FETCH_ASSOC);
         <?php foreach ($recently_added_products as $product): ?>
             <div class="column">
     <div class="card" >
-    <a href="index.php?page=product&SuppliedProductsID=<?=$product['SuppliedProductsID']?>" class="product">
+    <a href="index.php?page=product&ProductCode=<?=$product['ProductCode']?>" class="product">
         <?php echo" <img class=center id=ProductImage src='pictures/".$product['ProductImage']."'";  "onclick=location.href='productInformation.php?ProductCode=".$product['ProductCode']."'" ?>
         <div class="card-body">
             <h4 class="card-title"><?php echo $product['ProductName']; ?></a></h4>
-            <p class="card-title"><?php echo $product['SupplierName']; ?></a></p>
-
         </div>
     </div>
 </div>
@@ -54,3 +65,27 @@ $recently_added_products = $stmt->fetchAll(PDO::FETCH_ASSOC);
     </div>
 </div>
 
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('.search-box input[type="text"]').on("keyup input", function(){
+                /* Get input value on change */
+                var inputVal = $(this).val();
+                var resultDropdown = $(this).siblings(".result");
+                if(inputVal.length){
+                    $.get("backend-search.php", {term: inputVal}).done(function(data){
+                        // Display the returned data in browser
+                        resultDropdown.html(data);
+                    });
+                } else{
+                    resultDropdown.empty();
+                }
+            });
+
+            // Set search input value on click of result item
+            $(document).on("click", ".result p", function(){
+                $(this).parents(".search_bar").find('input[type="text"]').val($(this).text());
+                $(this).parent(".result").empty();
+            });
+        });
+    </script>
