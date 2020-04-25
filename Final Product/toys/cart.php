@@ -76,8 +76,8 @@ if (isset($_POST['update']) && isset($_SESSION['cart'])) {
 }
 
 // Send the user to the place order page if they click the Place Order button, also the cart should not be empty
-if (isset($_POST['placeorder']) && isset($_SESSION['cart']) && !empty($_SESSION['cart'])) {
-    header('Location: index.php?page=placeorder');
+if (isset($_POST['completeorder']) && isset($_SESSION['cart']) && !empty($_SESSION['cart'])) {
+    header('Location: index.php?page=completeorder');
     exit;
 }
 
@@ -165,7 +165,7 @@ if ($products_in_cart) {
                         <td ALIGN="center" >                         <div class="subtotal">
             <span class="text"  >Subtotal</span>
             <span class="price" >&pound;<?php echo number_format($subtotal,2); ?></span>
-        </div><input style="margin-top:4px"  type="submit" value="Place Order" name="placeorder" id="order-button" class="btn btn-success"/>
+        </div><input style="margin-top:4px"  type="submit" value="Place Order" name="completeorder" id="order-button" class="btn btn-success"/>
  
 						
 					</tr>

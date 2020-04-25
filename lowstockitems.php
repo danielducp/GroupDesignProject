@@ -1,17 +1,13 @@
 <?php
  require 'config.php'; 
 
-$sqlQuery = $pdo->query('SELECT *  FROM `order` INNER JOIN `orderedproducts` on `order`.OrderID = `orderedproducts`.OrderID INNER JOIN `product` ON `orderedproducts`.ProductCode = `product`.ProductCode WHERE CurrentStockLevel < LowStockLevel
+$sqlQuery = $pdo->query('SELECT *
+FROM `PRODUCT` where `product`.CurrentStockLevel < `product`.LowStockLevel
 ');      
 while($row = $sqlQuery->fetch())
 {
 ?>
-<?php
- require 'config.php'; 
 
-$sqlQuery = $pdo->query('SELECT *  FROM `order` INNER JOIN `orderedproducts` on `order`.OrderID = `orderedproducts`.OrderID INNER JOIN `product` ON `orderedproducts`.ProductCode = `product`.ProductCode WHERE CurrentStockLevel < LowStockLevel
-');      
-?>
 
 <div class="column">
 <div class="card" >
@@ -21,4 +17,10 @@ $sqlQuery = $pdo->query('SELECT *  FROM `order` INNER JOIN `orderedproducts` on 
     </div>
 </div>
 </div>
-<?php } ?>
+
+<?php } 
+
+?>
+<?php
+echo "<div class=purchasebutton onclick=location.href='lowstockorder.php'>Complete Purchase</div>";
+?>

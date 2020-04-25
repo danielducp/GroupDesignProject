@@ -22,7 +22,7 @@
             $stmt->execute();
             if($stmt->rowCount() > 0){
                 while($row = $stmt->fetch()){
-                    echo "<a href=' productInformation.php?ProductCode=".$row['ProductCode']."'><p>$row[ProductName]</p></a>";
+                    echo "<a href='index.php?page=product&ProductCode=".$row['ProductCode']."'><p>$row[ProductName]</p></a>";
                 }
             } else{
                 echo "<p>No matches found</p>";

@@ -34,8 +34,8 @@ $recently_added_products = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 </head>
-<body style="background-color:#000000">
-    <div style="background-color:#a6b2c1" class="topnav" align="center">
+<body style="background-color:#AEB9C7">
+    <div style="background-color:#a6b2c1;" class="topnav" align="center">
         <button id="back-button" class="btn btn-danger">Back</button>
         <img src="../g4uimageprototype.png" id="g4u-logo" alt="G4ULogo"></img>
         <div class="search-box" id="search-bar">

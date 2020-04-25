@@ -11,8 +11,8 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 </head>
-<body style="background-color:#a6b2c1">
-  <div class="topnav" align="center">
+<body style="background-color:#AEB9C7">
+  <div class="topnav" style="background-color:#a6b2c1;" align="center" >
     <button id="back-button" class="btn btn-danger">Back</button>
     <img src="../g4uimageprototype.png" id="g4u-logo" alt="G4ULogo"></img>
     <div class="search-box" id="search-bar">
@@ -161,3 +161,27 @@ if (isset($_GET['ProductCode'])) {
     </div>
 </div>
 
+script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('.search-box input[type="text"]').on("keyup input", function(){
+                /* Get input value on change */
+                var inputVal = $(this).val();
+                var resultDropdown = $(this).siblings(".result");
+                if(inputVal.length){
+                    $.get("backend-search.php", {term: inputVal}).done(function(data){
+                        // Display the returned data in browser
+                        resultDropdown.html(data);
+                    });
+                } else{
+                    resultDropdown.empty();
+                }
+            });
+
+            // Set search input value on click of result item
+            $(document).on("click", ".result p", function(){
+                $(this).parents(".search_bar").find('input[type="text"]').val($(this).text());
+                $(this).parent(".result").empty();
+            });
+        });
+    </script>

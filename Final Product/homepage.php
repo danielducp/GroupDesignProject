@@ -10,7 +10,7 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 </head>
 <body style="background-color:#a6b2c1">
-  <h1 align="center" style="font-size: 100px; ">G4U</h1>
+<br><br><br>
   <form action="login.php" method="post">
   <div class="container" align="center">
     <div>
