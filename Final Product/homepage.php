@@ -36,7 +36,7 @@
     <?php 
       session_start() ;
       if (isset($_GET["msg"]) && $_GET["msg"] == 'usernamefailed') {
-        echo "Wrong Username";
+        echo "Wrong Staff ID";
       }
       if (isset($_GET["msg"]) && $_GET["msg"] == 'passwordfailed') {
         echo "Wrong Password";

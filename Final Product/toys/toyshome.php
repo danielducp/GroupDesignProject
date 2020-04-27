@@ -5,6 +5,7 @@
     }
     if($_SESSION["role"]==2){
         header('toyshome.php');
+        echo $_SESSION["StaffID"];
     } else if($_SESSION["role"]==3){
         header('toyshome.php');
     } else  {

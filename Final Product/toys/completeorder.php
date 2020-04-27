@@ -53,32 +53,158 @@ if ($products_in_cart) {
 
     <?php 
        require ("config.php");
-       $date = date('Y-m-d');
-       $stmt->bindParam(':time_added', $date, PDO::PARAM_STR);
-    $sql = "INSERT INTO `order` (OrderDate, DeliveryDate,TransactionID, StaffID, Deliverystatus) VALUES ($date, NULL, 0, 0, NULL)";
+      
+    $sql = "INSERT INTO `order` (TransactionID, StaffID, DeliveryStatus, OrderTotal) VALUES (0, 1, 0, 0)";
     $stmt= $pdo->prepare($sql);
     $stmt->execute();
-
+   
 ?>
-          
+       
+
+
+
                 <?php if (empty($products)): ?>
                 <tr>
                     <td colspan="5" style="text-align:center;">You have no products added in your Shopping Cart</td>
                 </tr>
                 <?php else: ?>
+                
                 <?php foreach ($products as $product): ?>
+
                 <tr>
-                <?=$product['ProductName']?>
-                  
-                    <?=$product['SupplierName']?></td>
-                    &pound;<?=$product['TotalCost'] ?></td>
-                 
-                        <p type="number" style="margin-top:4px" name="quantity-<?=$product['SuppliedProductsID']?>" value="<?=$products_in_cart[$product['SuppliedProductsID']]?>" min="1" max="5" placeholder="Quantity" required>
-            
-               
-              &pound; <?php echo number_format ($product['TotalCost'] * $products_in_cart[$product['SuppliedProductsID']],2)?></td>
-        
+
+                <?=$product['ProductName']?>                 <?=$product['DeliveryTime']?>
+
+
+
+             
+              
+              
+              <?php 
+       require ("config.php");
+
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "g4udatabase";
+
+try {
+    $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+
+       $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+       $sqlQuery = $pdo->query('SELECT OrderID FROM `order` ORDER BY OrderID DESC
+       LIMIT 1');
+       $row2=$sqlQuery->fetch();
+       $OrderID = $row2['OrderID'];
+
+       $sqlQuery = $pdo->query('SELECT OrderDate FROM `order` ORDER BY OrderID DESC
+       LIMIT 1');
+       $row3=$sqlQuery->fetch();
+       $OrderDate = $row3['OrderDate'];
+       
+       $stmt = $conn->prepare( "INSERT INTO `g4udatabase`.`orderedproducts`
+    (`OrderID`,
+    `QuantityOrdered`,
+    `Authorised`,
+    `ProductCode`,
+    `TotalCost`, `DeliveryDate`)
+    VALUES
+    (
+    :OrderID,
+    :QuantityOrdered,
+    0,
+    :ProductCode,
+    :TotalCost, :DeliveryDate);");
+            $stmt-> bindParam(':OrderID', $OrderID);
+
+        $stmt-> bindParam(':ProductCode', $ProductCode);
+        $stmt-> bindParam(':QuantityOrdered', $QuantityOrdered);
+        $stmt-> bindParam(':TotalCost', $TotalCost);
+        $stmt-> bindParam(':DeliveryDate', $DeliveryDate);
+ 
+
+        $ProductCode = $product['ProductCode'];
+        $DeliveryTime = $product['DeliveryTime'];
+
+
+$QuantityOrdered = $products_in_cart[$product['SuppliedProductsID']];
+$TotalCost = ($product['TotalCost'] * $products_in_cart[$product['SuppliedProductsID']]);
+$DeliveryDate = date('Y-m-d', strtotime($OrderDate. " + {$DeliveryTime} days"));
+
+
+
+    $stmt->execute();
+}
+catch(PDOException $e)
+{
+echo "Error: " . $e->getMessage();
+}
+$conn = null;
+
+
+?>
+
+<?php 
+       require ("config.php");
+
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "g4udatabase";
+
+try {
+    $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+
+       $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+       $sqlQuery = $pdo->query('SELECT OrderID FROM `order` ORDER BY OrderID DESC
+       LIMIT 1');
+       $row2=$sqlQuery->fetch();
+       $OrderID = $row2['OrderID'];
+
+       $sqlQuery = $pdo->query('SELECT OrderDate FROM `order` ORDER BY OrderID DESC
+       LIMIT 1');
+       $row3=$sqlQuery->fetch();
+       $OrderDate = $row3['OrderDate'];
+       
+       $stmt = $conn->prepare( "UPDATE `order` SET OrderTotal = :OrderTotal WHERE OrderID = :OrderID ");
+       $stmt-> bindParam(':OrderID', $OrderID);
+
+            $stmt-> bindParam(':OrderTotal', $OrderTotal);
+ 
+
+        $OrderTotal = $subtotal;
+
+       
+
+    $stmt->execute();
+
+    $stmt = $conn->prepare( "UPDATE `order` SET StaffID = :StaffID WHERE OrderID = :OrderID ");
+    $stmt-> bindParam(':OrderID', $OrderID);
+    $stmt-> bindParam(':StaffID', $StaffID);
+    $StaffID = $_SESSION["StaffID"];
+
+
+
+$stmt->execute();
+
+   
+
+}
+catch(PDOException $e)
+{
+echo "Error: " . $e->getMessage();
+}
+$conn = null;
+
+
+header("refresh:5;url=../homepage.php");
+unset($_SESSION['cart']);
+?>
+
+
+
                 <?php endforeach; ?>
+                
                 <tr>
                 <div class="buttons">
 
@@ -87,8 +213,13 @@ if ($products_in_cart) {
                         <td ALIGN="center" >                         <div class="subtotal">
             <span class="text"  >Subtotal</span>
             <span class="price" >&pound;<?php echo number_format($subtotal,2); ?></span>
+         <br>
+         <?PHP
+         echo "ORDER HAS BEEN COMPLETED";
 
- 
+      
+         ?>
+        
 						
 					</tr>
                 <?php endif; ?>
@@ -99,6 +230,9 @@ if ($products_in_cart) {
  
      
     </form>
+<BR>
+    
+
     <script>
     
     </script>

@@ -76,8 +76,8 @@ if (isset($_POST['update']) && isset($_SESSION['cart'])) {
 }
 
 // Send the user to the place order page if they click the Place Order button, also the cart should not be empty
-if (isset($_POST['completeorder']) && isset($_SESSION['cart']) && !empty($_SESSION['cart'])) {
-    header('Location: index.php?page=completeorder');
+if (isset($_POST['placeorder']) && isset($_SESSION['cart']) && !empty($_SESSION['cart'])) {
+    header('Location: index.php?page=placeorder');
     exit;
 }
 
@@ -143,6 +143,7 @@ if ($products_in_cart) {
                         <br>
                      
                     </td>
+
                     <td id="TableTheme" class="Supplier" ALIGN="center"><?=$product['SupplierName']?></td>
                     <td id="TableTheme" class="TotalCost" ALIGN="center">&pound;<?=$product['TotalCost'] ?></td>
                     <td id="TableTheme" class="quantity" ALIGN="center">
@@ -154,14 +155,19 @@ if ($products_in_cart) {
                     <td id="TableTheme" class="TotalCost"  ALIGN="center">&pound; <?php echo number_format ($product['TotalCost'] * $products_in_cart[$product['SuppliedProductsID']],2)?></td>
                 </tr>
 
-                
+
                 <?php endforeach; ?>
+                
+
                 <tr>
                 <div class="buttons">
 
         </div><td></td> <td ></td > <td ></td > 					
 <td ></td >	<td ALIGN="center"><input type="submit" value="Update" name="update" id="update-button" class="btn btn-success"></td>
-<td ></td > 
+<td ></td >     </form>
+
+<form action="index.php?page=completeorder" method="post">
+
                         <td ALIGN="center" >                         <div class="subtotal">
             <span class="text"  >Subtotal</span>
             <span class="price" >&pound;<?php echo number_format($subtotal,2); ?></span>
@@ -177,7 +183,8 @@ if ($products_in_cart) {
            
                 </tr>
  
-     
+                <input type="hidden" name="ProductCode" value="<?php echo $row["ProductCode"]; ?>" />
+
     </form>
     <script>
     
