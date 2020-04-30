@@ -47,18 +47,18 @@ else
                 
 $_SESSION['success'] =  "Successfully Logged In";
 $_SESSION['auth'] = 1 ;
-if($user['departmentid'] == '1'){
+if($user['DepartmentID'] == '1'){
   header('Location: gadgets/index.php');
 
   $_SESSION["role"]=1;
 }
-else if($user['departmentid'] == '2'){
+else if($user['DepartmentID'] == '2'){
   header('Location: toys/index.php');
 
 
   $_SESSION["role"]=2;
 }
-else if($user['departmentid'] == '3'){
+else if($user['DepartmentID'] == '3'){
   header('Location: admin/adminpage.php');
 
 

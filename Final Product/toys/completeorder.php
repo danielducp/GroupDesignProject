@@ -54,7 +54,7 @@ if ($products_in_cart) {
     <?php 
        require ("config.php");
       
-    $sql = "INSERT INTO `order` (TransactionID, StaffID, DeliveryStatus, OrderTotal) VALUES (0, 1, 0, 0)";
+    $sql = "INSERT INTO `order` (TransactionID, StaffID, DeliveryStatus, OrderTotal, OrderConfirmed) VALUES (0, 1, 0, 0, 0)";
     $stmt= $pdo->prepare($sql);
     $stmt->execute();
    
@@ -187,6 +187,7 @@ try {
 
 $stmt->execute();
 
+
    
 
 }
@@ -195,6 +196,20 @@ catch(PDOException $e)
 echo "Error: " . $e->getMessage();
 }
 $conn = null;
+
+
+require ("config.php");
+
+$sql = "INSERT INTO `suppliedorder` (OrderID, SupplierID, ProductCode, Delivered, Checked, Returned) VALUES (:OrderID, :SupplierID, :ProductCode, 0, 0, 0)";
+$stmt= $pdo->prepare($sql);
+$stmt-> bindParam(':ProductCode', $ProductCode);
+
+$stmt-> bindParam(':OrderID', $OrderID);
+$stmt-> bindParam(':SupplierID', $SupplierID);
+ 
+$ProductCode = $product['ProductCode'];
+$SupplierID = $product['SupplierID'];
+$stmt->execute();
 
 
 header("refresh:5;url=../homepage.php");

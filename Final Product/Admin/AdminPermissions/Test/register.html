@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Register</title>
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
+	</head>
+	<body>
+		<div class="register">
+			<h1>Register</h1>
+			<form action="register.php" method="post" autocomplete="off">
+				<label for="StaffID">Staff ID</label>
+            <input type="text" id="StaffID" name="StaffID" class="form-control" maxlength="20"><br>
+            <label for="StaffTitle">Staff Title</label>
+            <input type="StaffTitle" id="StaffTitle" class="form-control" name="StaffTitle"><br>
+            <label for="StaffName">Staff Name</label>
+            <input type="StaffName" id="StaffName" class="form-control" name="StaffName" minlength="2" maxlength="20"><br>
+			<label for="StaffRole">Staff Role</label>
+            <input type="text" id="StaffRole" class="form-control" name="StaffRole"><br>
+			<label for="StoreID">Store ID</label>
+            <input type="number"  min="1" max="5" id="StoreID"  class="form-control" name="StoreID"  maxlength="7"><br>
+            <label for="DepartmentID">Department ID</label>
+            <input type="number" min="1" max="5" id="DepartmentID" name="DepartmentID" class="form-control" maxlength="11"><br>
+            <label for="password">Password</label>
+            <input type="text" id="password" name="password" class="form-control" maxlength="11"><br>
+				<input type="submit" value="Register">
+			</form>
+		</div>
+	</body>
+</html>

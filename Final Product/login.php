@@ -1,4 +1,4 @@
-    <?php
+<?php
     session_start() ;
 	
 		require 'config.php';
@@ -40,19 +40,20 @@ else
       header("location:homepage.php?msg=usernamefailed");
     } else{
   
-        
-       // $validPassword = Password_verify($PasswordAttempt, $user['Password']);
+
+      $validPassword = Password_verify($PasswordAttempt, $user['Password']);
+     
         
         if($PasswordAttempt == $user['Password']){
                 
 $_SESSION['success'] =  "Successfully Logged In";
 $_SESSION['auth'] = 1 ;
-if($user['departmentid'] == '1'){
+if($user['DepartmentID'] == '1'){
   header('Location: gadgets/index.php');
   $_SESSION["StaffID"]=$user['StaffID'];
     $_SESSION["role"]=1;
 }
-else if($user['departmentid'] == '2'){
+else if($user['DepartmentID'] == '2'){
   header('Location: toys/index.php');
   echo $_SESSION['StaffID']; 
 
@@ -60,7 +61,7 @@ else if($user['departmentid'] == '2'){
   $_SESSION["StaffID"]=$user['StaffID'];
 
 }
-else if($user['departmentid'] == '3'){
+else if($user['DepartmentID'] == '3'){
   header('Location: admin/adminpage.php');
   $_SESSION["StaffID"]=$user['StaffID'];
 

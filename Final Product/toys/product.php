@@ -138,6 +138,8 @@ if (isset($_GET['ProductCode'])) {
             <input type="hidden" name="ProductCode" value="<?=$row['ProductCode']?>">
             <h4 class="text-danger">£ <?php echo $row["TotalCost"]; ?></h4>
             <input type="hidden" name="ProductName" value="<?php echo $row["ProductName"]; ?>" />
+            <input type="hidden" name="SupplierID" value="<?php echo $row["SupplierID"]; ?>" />
+
             <input type="hidden" name="SupplierName" value="<?php echo $row["SupplierName"]; ?>" />
             <input type="hidden" name="DeliveryTime" value="<?php echo $row["DeliveryTime"]; ?>" />
             <input type="hidden" name="TotalCost" value="<?php echo $row["TotalCost"]; ?>" />
