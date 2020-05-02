@@ -55,6 +55,9 @@ if ($_SESSION["role"] == 3) {
   <div class="col" ALIGN="center">
     <button class="btn btn-success adminButton" onclick="window.location.href = 'SystemReport.php';">System Reports</button>
   </div>
+  <div class="col" ALIGN="center">
+    <button class="btn btn-success adminButton" onclick="window.location.href = 'AdminPermissions/User/PasswordResetRequests.php';">View all password reset requests</button>
+  </div>
 </div>
   </div>
   </div>

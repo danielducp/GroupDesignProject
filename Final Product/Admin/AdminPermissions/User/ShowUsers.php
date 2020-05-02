@@ -22,7 +22,7 @@
             <?php
             $data=load_StaffID();
             foreach ($data as $row): 
-            echo '<option value="'.$row["StaffID"].'">'.$row["StaffID"].'</option>';
+            echo '<option value="'.$row["staffid"].'">'.$row["staffid"].'</option>';
             ?>
             <?php endforeach ?>
             </select>
@@ -46,7 +46,7 @@
 {
   $data='';
   require 'config.php';
-  $sqlMake=$pdo->prepare('SELECT DISTINCT StaffID FROM staff ORDER BY StaffID ASC');
+  $sqlMake=$pdo->prepare('SELECT DISTINCT staffid FROM newstaff ORDER BY staffid ASC');
   $sqlMake ->execute();
   $data=$sqlMake-> fetchAll();
   return $data;
@@ -69,11 +69,11 @@ require ("config.php");
     $numberofrecords = 4;
     $offset = ($pageno-1) * $numberofrecords;
 
-    $stmt = $pdo->prepare("SELECT * FROM staff ORDER BY StaffID "); 
+    $stmt = $pdo->prepare("SELECT * FROM newstaff ORDER BY staffid "); 
     $stmt->execute([]);
     $totalnumberofrows = $stmt ->rowCount();
     $total_pages = ceil($totalnumberofrows / $numberofrecords);
-    $stmt = $pdo->prepare("SELECT * FROM staff ORDER BY StaffID LIMIT $offset, $numberofrecords "); 
+    $stmt = $pdo->prepare("SELECT * FROM newstaff ORDER BY staffid LIMIT $offset, $numberofrecords "); 
 $stmt->execute();
 
 ?>
@@ -96,9 +96,9 @@ while($row = $stmt->fetch())
 
 		echo "<TR>";
 	
-		echo "<TD align=center>".$row['StaffID']."</TD>";
-		echo "<TD align=center><a href='EditUser.php?StaffID=".$row['StaffID']."'>Edit</a>";
-		echo "<TD align=center><a href='DeleteUser.php?StaffID=".$row['StaffID']."'>Delete User</a>";
+		echo "<TD align=center>".$row['staffid']."</TD>";
+		echo "<TD align=center><a href='EditUser.php?staffid=".$row['staffid']."'>Edit</a>";
+		echo "<TD align=center><a href='DeleteUser.php?staffid=".$row['staffid']."'>Delete User</a>";
 	echo "</TR>";
   }
 echo "</TABLE>";

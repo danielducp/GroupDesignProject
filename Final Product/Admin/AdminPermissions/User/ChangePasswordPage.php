@@ -42,15 +42,10 @@ while($row = $sqlQuery->fetch())
 
 <fieldset>
             <legend> REGISTER </legend>
-            <form name="register" action="UpdateUser.php" method="post">
+            <form name="register" action="ChangeUserPassword.php" method="post">
 
                 <input name="staffid" type="text" readonly value="<?php echo $row['staffid'];?>"><br>
-				<input name="stafftitle" type="text" value="<?php echo $row['stafftitle'];?>"><br>
-				<input name="staffname" type="text"  value="<?php echo $row['staffname'];?>"><br>
-				<input name="staffrole" type="text" value="<?php echo $row['staffrole'];?>"><br>
-				<input name="storeid" type="text"  value="<?php echo $row['storeid'];?>"><br>
-				<input name="departmentid" type="text" value="<?php echo $row['departmentid'];?>"><br>
-
+          
                
 
                 <input name="upassword" type="password" placeholder="please enter a password or passphrase"><br>
