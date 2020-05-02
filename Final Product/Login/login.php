@@ -36,7 +36,8 @@ if(isset($_POST['staffid'], $_POST['departmentid']) ) {
 
 $hash = $results[0]['password']; // first and only row if username exists;
 
-echo password_verify($_POST['upassword'], $hash) ? 'yay' : 'passwword incorrect';
+echo password_verify($_POST['upassword'], $hash) ? 'yay' :       header("location:Homepage.php?msg=passwordfailed");
+;
 $_SESSION['success'] =  "Successfully Logged In";
 $_SESSION['auth'] = 1 ;
 

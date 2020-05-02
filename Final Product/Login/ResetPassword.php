@@ -39,7 +39,7 @@
         </div>
         <input type="checkbox" class="largerCheckbox" name="savecookie" style="width: 40px; height: 40px; margin-left:10px;	margin-top:10px; display: inline-block"> 
           <p style="font-size:30px; display: inline-block">Tick to Login</p><br>
-          <span class="psw"  style="font-size:20px">Forgot <a href="ResetPassword.php">password?</a></span>  
+          <span class="psw"  style="font-size:20px">Forgot <a href="#">password?</a></span>  
         </div>
             </form>
             
