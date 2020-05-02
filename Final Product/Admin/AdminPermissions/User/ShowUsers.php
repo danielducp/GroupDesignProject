@@ -93,7 +93,7 @@
         </form>
 
 
-<form action="adminlocked2.php" method="post">
+<form action="UsersLocked.php" method="post">
  <select name="StaffID" id="StaffID" searchable="Search here">
             <option value="" selected="true" disabled="disabled">Select User </option>
             <?php
@@ -160,7 +160,7 @@ $stmt->execute();
 
  <div class="outputresults">
 
-		          <input type="button" style="display:inline" onclick=window.location.href="carinsert.php" class="btn btn-primary" value="Add a car"> </td>
+		          <input type="button" style="display:inline" onclick=window.location.href="addauser.php" class="btn btn-primary" value="Add a user"> </td>
 
 
 <?php
@@ -174,8 +174,8 @@ while($row = $stmt->fetch())
 		echo "<TR>";
 	
 		echo "<TD align=center>".$row['StaffID']."</TD>";
-		echo "<TD align=center><a href='updateCar.php?StaffID=".$row['StaffID']."'>Edit</a>";
-		echo "<TD align=center><a href='deleteCar.php?StaffID=".$row['StaffID']."'>Delete Car</a>";
+		echo "<TD align=center><a href='EditUser.php?StaffID=".$row['StaffID']."'>Edit</a>";
+		echo "<TD align=center><a href='DeleteUser.php?StaffID=".$row['StaffID']."'>Delete User</a>";
 	echo "</TR>";
   }
 echo "</TABLE>";

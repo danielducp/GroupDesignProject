@@ -44,40 +44,52 @@
             <button  class="btn btn-success adminButton"  onclick="window.location.href = 'AdminPermissions/addauser.php';">View All Products</button>
           </div> 
           <div class="col-sm"ALIGN="center">
-            <button  class="btn btn-success adminButton"  onclick="window.location.href = 'AdminPermissions/addaproduct.php';">Add Product</button>
+            <button  class="btn btn-success adminButton"  onclick="window.location.href = 'AdminPermissions/Product/addaproduct.php';">Add Product</button>
+          </div>
+
+          <div class="col" ALIGN="center">
+              <button  class="btn btn-success adminButton"  onclick="window.location.href = 'AdminPermissions/Product/ShowProducts.php';">Show Products</button>
+            </div>
+          <div class="col-sm"ALIGN="center">
+            <button  class="btn btn-success adminButton"  onclick="window.location.href = 'AdminPermissions/Product/editaproduct.php';">Edit Product</button>
           </div>
           <div class="col-sm"ALIGN="center">
-            <button  class="btn btn-success adminButton"  onclick="window.location.href = 'AdminPermissions/editaproduct.php';">Edit Product</button>
-          </div>
-          <div class="col-sm"ALIGN="center">
-            <button  class="btn btn-success adminButton"  onclick="window.location.href = 'AdminPermissions/removeaproduct.php';">Remove Product</button>
+            <button  class="btn btn-success adminButton"  onclick="window.location.href = 'AdminPermissions/Product/removeaproduct.php';">Remove Product</button>
           </div>
         </div>
         <div class="row" style="padding-top:35px;">
             <div class="col" ALIGN="center">
-              <button class="btn btn-success adminButton"  onclick="window.location.href = 'AdminPermissions/addauser.php';">Add User</button>
+              <button class="btn btn-success adminButton"  onclick="window.location.href = 'AdminPermissions/User/addauser.php';">Add User</button>
             </div>
             <div class="col" ALIGN="center">
-              <button  class="btn btn-success adminButton"  onclick="window.location.href = 'AdminPermissions/ShowUsers.php';">Show User</button>
+              <button  class="btn btn-success adminButton"  onclick="window.location.href = 'AdminPermissions/User/ShowUsers.php';">Show User</button>
             </div>
             <div class="col" ALIGN="center">
-              <button  class="btn btn-success adminButton"  onclick="window.location.href = 'AdminPermissions/removeauser.php';">Remove User</button>
+              <button  class="btn btn-success adminButton"  onclick="window.location.href = 'AdminPermissions/User/removeauser.php';">Remove User</button>
             </div>
          
           </div>
           <div class="row" style="padding-top:35px;">
             <div class="col" ALIGN="center">
-              <button  class="btn btn-success adminButton"  onclick="window.location.href = 'AdminPermissions/addasupplier.php';">Add Supplier</button>
+              <button  class="btn btn-success adminButton"  onclick="window.location.href = 'AdminPermissions/Supplier/addasupplier.php';">Add Supplier</button>
             </div>
             <div class="col" ALIGN="center">
-              <button  class="btn btn-success adminButton"  onclick="window.location.href = 'AdminPermissions/editasupplier.php';">Edit Supplier</button>
+              <button  class="btn btn-success adminButton"  onclick="window.location.href = 'AdminPermissions/Supplier/ShowSuppliers.php';">Show Supplier</button>
+            </div>
+            <div class="col" ALIGN="center">
+              <button  class="btn btn-success adminButton"  onclick="window.location.href = 'AdminPermissions/Supplier/editasupplier.php';">Edit Supplier</button>
             </div>
               <div class="col" ALIGN="center">
-                <button  class="btn btn-success adminButton"  onclick="window.location.href = 'AdminPermissions/deleteasupplier.php';">Delete Supplier!</button>
+                <button  class="btn btn-success adminButton"  onclick="window.location.href = 'AdminPermissions/Supplier/deleteasupplier.php';">Delete Supplier!</button>
               </div> 
             </div>
             <br>
-            
+            <div class="col" ALIGN="center">
+              <button  class="btn btn-success adminButton"  onclick="window.location.href = 'AdminPermissions/Category/ShowCategories.php';">Show Categories</button>
+            </div>     <br>
+            <div class="col" ALIGN="center">
+              <button  class="btn btn-success adminButton"  onclick="window.location.href = 'AdminPermissions/SuppliedProducts/ShowSuppliedProducts.php';">Show Supplied Products</button>
+            </div>     <br>
             <div class="col" ALIGN="center">
                 <button  class="btn btn-success adminButton"  onclick="window.location.href = 'SystemReport.php';">System Reports</button>
               </div> 

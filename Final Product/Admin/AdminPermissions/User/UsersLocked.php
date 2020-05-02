@@ -45,8 +45,8 @@ while($row = $stmt->fetch())
 {
 
 		echo "<TD align=center>".$row['StaffID']."</TD>";
-		echo "<TD align=center><a href='updateCar.php?StaffID=".$row['StaffID']."'>Edit</a>";
-		echo "<TD align=center><a href='deleteCar.php?StaffID=".$row['StaffID']."'>Delete Car</a>";
+		echo "<TD align=center><a href='EditUser.php?StaffID=".$row['StaffID']."'>Edit</a>";
+		echo "<TD align=center><a href='DeleteUser.php?StaffID=".$row['StaffID']."'>Delete Car</a>";
 
   }
 echo "</TABLE>";
@@ -56,16 +56,7 @@ echo "</TABLE>";
 
 <br>
 
-      <ul class="pagination">
-          <li ><a class="page-link" href="?pageno=1">First Page</a></li>
-          <li <?php if($pageno <= 1){ echo 'disabled'; } ?>">
-              <a class="page-link" href="<?php if($pageno <= 1){ echo '#'; } else { echo "?pageno=".($pageno - 1); } ?>">Previous Page</a>
-          </li>
-          <li  <?php if($pageno >= $total_pages){ echo 'disabled'; } ?>">
-              <a class="page-link" href="<?php if($pageno >= $total_pages){ echo '#'; } else { echo "?pageno=".($pageno + 1); } ?>">Next Page</a>
-          </li>
-          <li><a class="page-link"  href="?pageno=<?php echo $total_pages; ?>">Last Page</a></li>
-      </ul>
+    
     </div>
     </div>
     </div>

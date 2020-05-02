@@ -48,7 +48,7 @@ while($row = $sqlQuery->fetch())
 
 echo "<br>"."qo ". $row['QuantityOrdered'];
 
-
+echo "<br>"."qo ". $row['QuantityPerPack'];
 
 $sqlQuery2 = $pdo->prepare('UPDATE product
 INNER JOIN orderedproducts ON product.ProductCode = orderedproducts.ProductCode
@@ -58,7 +58,7 @@ WHERE  orderedproducts.OrderID =  :OrderID AND product.ProductCode =  :ProductCo
   
 
 $sqlQuery2-> bindParam(':CurrentStockLevel', $CurrentStockLevel);
-$CurrentStockLevel = ($row['QuantityOrdered']+$row['CurrentStockLevel']);
+$CurrentStockLevel = (($row['QuantityOrdered']*$row['QuantityPerPack'])+$row['CurrentStockLevel']);
 $sqlQuery2-> bindParam(':OrderID', $OrderID);
 $sqlQuery2-> bindParam(':ProductCode', $ProductCode);
 
