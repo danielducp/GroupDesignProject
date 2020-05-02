@@ -14,10 +14,10 @@
 
 
  <div class="col-sm-3">
-        <form action="ProductsLocked.php" method="POST">
-            Please enter preferred ProductCode:
+        <form action="SuppliersLocked.php" method="POST">
+            Please enter preferred SupplierID:
             <br>
-            <input type="text" class="form-control" name="ProductCode">
+            <input type="text" class="form-control" name="SupplierID">
  
 	
             <input type="submit" name="submit" class="btn btn-primary" value="Search">

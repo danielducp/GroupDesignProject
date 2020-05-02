@@ -13,7 +13,7 @@
     try{
         if(isset($_REQUEST["term"])){
             // create prepared statement
-            $sql = "SELECT * FROM product  WHERE  CategoryID = 1 AND ProductName LIKE :term ";
+            $sql = "SELECT * FROM product  WHERE  CategoryID = 2 AND ProductName LIKE :term ";
             $stmt = $pdo->prepare($sql);
             $term = $_REQUEST["term"] . '%';
             // bind parameters to statement

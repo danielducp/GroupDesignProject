@@ -11,8 +11,8 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 </head>
-<body style="background-color:#a6b2c1">
-  <div class="topnav" align="center">
+<body style="background-color:#AEB9C7">
+  <div class="topnav" style="background-color:#a6b2c1;" align="center" >
     <button id="back-button" class="btn btn-danger">Back</button>
     <img src="../g4uimageprototype.png" id="g4u-logo" alt="G4ULogo"></img>
     <div class="search-box" id="search-bar">
@@ -25,6 +25,7 @@
   </div>
   <br>
 <?php
+
 // The amounts of products to show on each page
 $num_products_on_each_page = 4;
 // The current page, in the URL this will appear as index.php?page=products&p=1, index.php?page=products&p=2, etc...
@@ -129,18 +130,21 @@ if (isset($_GET['ProductCode'])) {
             <h4 class="text-info">Delivery Time: <?php echo $row["DeliveryTime"]; ?> days</h4>
             <h4 class="text-info">Supplied Products ID: <?php echo $row["SuppliedProductsID"]; ?> </h4>
 
-            <input type="hidden" name="ProductCode" value="<?=$row['ProductCode']?>">
             <form action="index.php?page=cart" method="post">
             <input type="number" name="quantity" value="1" min="1" max="<?=$row['quantity']?>" placeholder="Quantity" required>
 
             <input type="hidden" name="SuppliedProductsID" value="<?=$row['SuppliedProductsID']?>">
             <input type="submit"  class="btn btn-success" value="Add To Cart">
-        </form>
+            <input type="hidden" name="ProductCode" value="<?=$row['ProductCode']?>">
             <h4 class="text-danger">£ <?php echo $row["TotalCost"]; ?></h4>
             <input type="hidden" name="ProductName" value="<?php echo $row["ProductName"]; ?>" />
+            <input type="hidden" name="SupplierID" value="<?php echo $row["SupplierID"]; ?>" />
+
             <input type="hidden" name="SupplierName" value="<?php echo $row["SupplierName"]; ?>" />
             <input type="hidden" name="DeliveryTime" value="<?php echo $row["DeliveryTime"]; ?>" />
             <input type="hidden" name="TotalCost" value="<?php echo $row["TotalCost"]; ?>" />
+            <input type="hidden" name="ProductCode" value="<?php echo $row["ProductCode"]; ?>" />
+
             <?php 
               if (isset($_GET["msg"]) && $_GET["msg"] == 'itemadded') {
                 echo "Added Item";
