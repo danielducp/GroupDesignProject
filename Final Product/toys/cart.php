@@ -134,12 +134,12 @@ if ($products_in_cart) {
                 <?php foreach ($products as $product): ?>
                 <tr>
                     <td class="img" ALIGN="center">
-                        <a  href="index.php?page=product&SuppliedProductsID=<?=$product['SuppliedProductsID']?>">
+                        <a  href="index.php?page=product&ProductCode=<?=$product['ProductCode']?>">
                             <img src="pictures/<?=$product['ProductImage']?>" width="50" height="50" alt="<?=$product['ProductName']?>">
                         </a>
                     </td>
                     <td ALIGN="center" id="TableTheme">
-                        <a href="index.php?page=product&SuppliedProductsID=<?=$product['SuppliedProductsID']?>"><?=$product['ProductName']?></a>
+                        <a href="index.php?page=product&ProductCode=<?=$product['ProductCode']?>"><?=$product['ProductName']?></a>
                         <br>
                      
                     </td>

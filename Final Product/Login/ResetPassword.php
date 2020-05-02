@@ -16,37 +16,28 @@
     <div>
       <div class="card" align="center">
         <div class="card-body" >
-    <div class="form">
-        <fieldset>
-         
-            <form name="login" action="login.php" method="post">
-            <select name="staffid" id="staffid" searchable="Search here" style="font-size: 40px; padding-right: 29px; display: inline-block;">
-            <option value="" selected="true" disabled="disabled">Select Supplier ID </option>
-            <?php
-            $data=load_staffid();
-            foreach ($data as $row): 
-            echo '<option value="'.$row["staffid"].'">'.$row["staffid"].'</option>';
-            ?>
-            <?php endforeach ?>
-            </select>
-            <select name="departmentid" id="departmentid" searchable="Search here" style="font-size: 40px; padding-right: 29px; display: inline-block;">
-            <option value="" disabled selected>Select Department ID</option>
-         
-            </select><br><br>
-                <input name="upassword" type="password" placeholder="Password" style="font-size: 40px; padding-right: 29px; display: inline-block;"><br>
-                <div class= "loginpagearea">
+          <label for="StaffID" style=" font-size: 40px; padding-right: 20px; display: inline-block;"><b>StaffID:</b></label>
+          <input type="text" placeholder="Enter Staff ID" name="StaffID" required style="height: 50px; width: 300px; font-size: 35px; margin-right: 10px">
+          <label for="Password" style="font-size: 40px; padding-right: 29px; display: inline-block;"><b>Password:</b></label>
+          <input type="password" placeholder="Enter Password" name="Password" required style="height: 50px; width: 300px; font-size: 35px;"> 
+        </div>
+        <div class= "loginpagearea">
           <button type="submit" style="width: 200px;  height:65px; font-size: 35px; margin-top:10px"  class="btn btn-success">Login</button>
         </div>
-        <input type="checkbox" class="largerCheckbox" name="savecookie" style="width: 40px; height: 40px; margin-left:10px;	margin-top:10px; display: inline-block"> 
+        <div>
+          <input type="checkbox" class="largerCheckbox" name="savecookie" style="width: 40px; height: 40px; margin-left:10px;	margin-top:10px; display: inline-block"> 
           <p style="font-size:30px; display: inline-block">Tick to Login</p><br>
-          <span class="psw"  style="font-size:20px">Forgot <a href="#">password?</a></span>  
         </div>
-            </form>
-            
-        </fieldset>
-        </div>   </div> <?php 
+        <span class="psw"  style="font-size:20px">Forgot <a href="#">password?</a></span>  
+      </div>
+    </div>
+  </form>
+  <div class = "errormessage" style='text-align:center; font-weight: bold; font-size: 20px;' > 
+    <?php 
       session_start() ;
-    
+      if (isset($_GET["msg"]) && $_GET["msg"] == 'usernamefailed') {
+        echo "Wrong Staff ID";
+      }
       if (isset($_GET["msg"]) && $_GET["msg"] == 'passwordfailed') {
         echo "Wrong Password";
       }
@@ -63,45 +54,9 @@
           </div>     
         </div>
       </div>
-      <img src="../g4uimageprototype.png" alt="G4ULogo"  style="width:250px; margin-right: 10px; background-color: transparent; position:relative; right:100px; top:2px;"></img>
+      <img src="g4uimageprototype.png" alt="G4ULogo"  style="width:250px; margin-right: 10px; background-color: transparent; position:relative; right:100px; top:2px;"></img>
     </div>
   </div>
 </body>
 </html>`
 
-
-<?php function load_staffid()
-{
-  $data='';
-  require 'config.php';
-  $sqlMake=$pdo->prepare('SELECT DISTINCT staffid FROM newstaff where staffid != "AUT123" ORDER BY staffid ASC');
-  $sqlMake ->execute();
-  $data=$sqlMake-> fetchAll();
-  return $data;
-}
-
-
-?>
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
- <script type="text/javascript" src="./js/main.js"></script>
-</body>
-</html>
-	<script>
-$(document).ready(function(){
- $('#staffid').change(function(){
-
-   var staff_id = $(this).val();
-   $.ajax({
-    url:"FetchDeptID.php",
-    method:"POST",
-    data:{ staffid:staff_id},
-    success:function(data){
-		
-     $('#departmentid').html(data);
-    }
-   })
-  
- });
-});
-</script>
