@@ -165,7 +165,7 @@ if (isset($_GET['ProductCode'])) {
     </div>
 </div>
 
-script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+</script>
     <script type="text/javascript">
         $(document).ready(function(){
             $('.search-box input[type="text"]').on("keyup input", function(){
