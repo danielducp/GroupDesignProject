@@ -11,7 +11,7 @@
 </head>
 <body style="background-color:#a6b2c1">
 <br><br><br>
-  <form action="login.php" method="post">
+  <form action="reset.php" method="post">
   <div class="container" align="center">
     <div>
       <div class="card" align="center">
