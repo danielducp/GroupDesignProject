@@ -6,8 +6,12 @@
         header("Location:../homepage.php") ;
     }
     if($_SESSION["role"]==1){
+        $staffid = $_SESSION['staffid'];
+
+
         header('gadgetshome.php');
     } else if($_SESSION["role"]==3){
+        $staffid = $_SESSION['staffid'];
         header('gadgetshome.php');
     } else  {
         session_destroy();

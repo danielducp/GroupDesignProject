@@ -5,9 +5,12 @@
     }
     if($_SESSION["role"]==2){
         header('toyshome.php');
-        echo $_SESSION["StaffID"];
+        $staffid = $_SESSION['staffid'];
+        
     } else if($_SESSION["role"]==3){
         header('toyshome.php');
+        $staffid = $_SESSION['staffid'];
+
     } else  {
         session_destroy();
         header("Location:../homepage.php") ;
