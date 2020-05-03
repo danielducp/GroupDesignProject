@@ -13,12 +13,18 @@
           crossorigin="anonymous">
 </head>
 <body style="background-color:#a6b2c1">
-    <div class="topnav" ALIGN="center">  
-        <button  class="btn btn-warning">Back</button>
-        <img src="g4uimageprototype.png" alt="G4ULogo" id="g4u-logo"></img>              
-        <button id="logout-button" class="btn btn-danger">Log Out!</button>
+    <div class="topnav" align="center">
+        <button id="back-button" class="btn btn-danger">Back</button>
+        <img src="g4uimageprototype.png" id="g4u-logo" alt="G4ULogo"></img>
+        <div class="search-box" id="search-bar">
+            <input type="text" autocomplete="on" placeholder="Search product..." />
+        <div class="result"></div>
+        </div>
+        <button id="search-button" class="btn btn-success">Search</button>
+        <button id="basket-button" class="btn btn-warning">Basket</button>
+        <button id="logout-button" class="btn btn-danger">Log Out</button>
     </div>
-    <br><br><br><br><br><br>
+    <br><br>
 </body>
 </html>
 
@@ -99,18 +105,32 @@
         <title>Register</title>
     </head>
     <body>
-        <h1>Add a Supplier</h1>
+        <h1 align="center">Add a Supplier</h1>
 		<div class="outputresults">
-        <form action="addasupplier.php" method="post">
-			<label for="SupplierCode">Supplier Cpde</label>
-            <input type="text" id="SupplierCode" name="SupplierCode" class="form-control" maxlength="20"><br>
-            <label for="SupplierID">Supplier ID</label>
-            <input type="SupplierID" id="SupplierID" class="form-control" name="SupplierID"><br>
-            <label for="SupplierName">Supplier Name</label>
-            <input type="SupplierName" id="SupplierName" class="form-control" name="SupplierName" minlength="2" maxlength="20"><br>
-			<label for="SupplierAddress">Supplier Address</label>
-            <input type="text" id="SupplierAddress" class="form-control" name="SupplierAddress"><br>			
-            <input type="submit" name="register" class="form-control" value="Register"></button>
+        <form action="addasupplier.php" method="post" align="center">
+            <div style="float: none; display: inline-block">   
+                <label for="SupplierCode">Supplier Code</label>
+                <input type="text" id="SupplierCode" name="SupplierCode" class="form-control" maxlength="20" style="width: 200px">
+            </div>
+            <br><br>
+            <div style="float: none; display: inline-block">
+                <label for="SupplierID">Supplier ID</label>
+                <input type="SupplierID" id="SupplierID" class="form-control" name="SupplierID" style="width: 200px">
+            </div>
+            <br><br>
+            <div style="float: none; display: inline-block">
+                <label for="SupplierName">Supplier Name</label>
+                <input type="SupplierName" id="SupplierName" class="form-control" name="SupplierName" minlength="2" maxlength="20" style="width: 200px">
+            </div>
+            <br><br>
+            <div style="float: none; display: inline-block">
+                <label for="SupplierAddress">Supplier Address</label>
+                <input type="text" id="SupplierAddress" class="form-control" name="SupplierAddress" style="width: 200px">
+            </div>
+            <br><br>
+            <div style="float: none; display: inline-block">			
+                <input type="submit" name="register" class="form-control" value="Register"></button>
+            </div>
         </form>
     </body>
 </html>

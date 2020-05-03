@@ -11,12 +11,18 @@
             crossorigin="anonymous">
 </head>
 <body style="background-color:#a6b2c1">
-    <div class="topnav" ALIGN="center">  
-        <button  class="btn btn-warning">Back</button>
-        <img src="g4uimageprototype.png" alt="G4ULogo" id="g4u-logo"></img>              
-        <button id="logout-button" class="btn btn-danger">Log Out!</button>
+    <div class="topnav" align="center">
+        <button id="back-button" class="btn btn-danger">Back</button>
+        <img src="g4uimageprototype.png" id="g4u-logo" alt="G4ULogo"></img>
+        <div class="search-box" id="search-bar">
+            <input type="text" autocomplete="on" placeholder="Search product..." />
+        <div class="result"></div>
+        </div>
+        <button id="search-button" class="btn btn-success">Search</button>
+        <button id="basket-button" class="btn btn-warning">Basket</button>
+        <button id="logout-button" class="btn btn-danger">Log Out</button>
     </div>
-    <br><br><br><br><br><br>
+    <br><br>
 </body>
 </html>
 
@@ -102,24 +108,47 @@
         <title>Register</title>
     </head>
     <body>
-        <h1>Add a staff member</h1>
+        <h1 align="center">Add a staff member</h1>
 		<div class="outputresults">
-        <form action="addauser.php" method="post">
-			<label for="staffid">Staff ID</label>
-            <input type="text" id="staffid" name="staffid" class="form-control" maxlength="20"><br>
-            <label for="stafftitle">Staff Title</label>
-            <input type="stafftitle" id="stafftitle" class="form-control" name="stafftitle"><br>
-            <label for="staffname">Staff Name</label>
-            <input type="staffname" id="staffname" class="form-control" name="staffname" minlength="2" maxlength="20"><br>
-			<label for="staffrole">Staff Role</label>
-            <input type="text" id="staffrole" class="form-control" name="staffrole"><br>
-			<label for="storeid">Store ID</label>
-            <input type="number"  min="1" max="5" id="storeid"  class="form-control" name="storeid"  maxlength="7"><br>
-            <label for="departmentid">Department ID</label>
-            <input type="number" min="1" max="5" id="departmentid" name="departmentid" class="form-control" maxlength="11"><br>
-            <label for="password">Password</label>
-            <input type="text" id="password" name="password" class="form-control" maxlength="11"><br>
-            <input type="submit" name="register" class="form-control" value="Register"></button>
+        <form action="addauser.php" method="post" align="center">            
+            <div style="float: none; display: inline-block">
+                <label for="staffid">Staff ID</label>
+                <input type="text" id="staffid" name="staffid" class="form-control" maxlength="20" style="width: 200px">
+            </div>
+            <br><br>
+            <div style="float: none; display: inline-block">
+                <label for="stafftitle">Staff Title</label>
+                <input type="stafftitle" id="stafftitle" class="form-control" name="stafftitle" style="width: 200px">
+            </div>
+            <br><br>
+            <div style="float: none; display: inline-block">
+                <label for="staffname">Staff Name</label>
+                <input type="staffname" id="staffname" class="form-control" name="staffname" minlength="2" maxlength="20" style="width: 200px">
+            </div>
+            <br><br>
+            <div style="float: none; display: inline-block">
+                <label for="staffrole">Staff Role</label>
+                <input type="text" id="staffrole" class="form-control" name="staffrole" style="width: 200px">
+            </div>
+            <br><br>
+            <div style="float: none; display: inline-block">
+                <label for="storeid">Store ID</label>
+                <input type="number"  min="1" max="5" id="storeid"  class="form-control" name="storeid"  maxlength="7" style="width: 200px">
+            </div>
+            <br><br>
+            <div style="float: none; display: inline-block">
+                <label for="departmentid">Department ID</label>
+                <input type="number" min="1" max="5" id="departmentid" name="departmentid" class="form-control" maxlength="11" style="width: 200px">
+            </div>
+            <br><br>
+            <div style="float: none; display: inline-block">
+                <label for="password">Password</label>
+                <input type="text" id="password" name="password" class="form-control" maxlength="11" style="width: 200px">
+            </div>
+            <br><br>
+            <div style="float: none; display: inline-block">
+                <input type="submit" name="register" class="form-control" value="Register"></button>
+            </div>
         </form>
     </body>
 </html>
