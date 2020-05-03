@@ -181,7 +181,7 @@ try {
     $stmt = $conn->prepare( "UPDATE `order` SET StaffID = :StaffID WHERE OrderID = :OrderID ");
     $stmt-> bindParam(':OrderID', $OrderID);
     $stmt-> bindParam(':StaffID', $StaffID);
-    $StaffID = $_SESSION["StaffID"];
+    $StaffID = $_SESSION["staffid"];
 
 
 

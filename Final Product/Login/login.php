@@ -45,25 +45,27 @@ if (password_verify($_POST['upassword'], $hash)) {
     echo 'Password is valid!';
     
 if ($_POST['departmentid']==1){
+  $_SESSION['staffid'] = $staffid;
 
     header('Location: ../gadgets');
-      $_SESSION["role"]=1;
 
+     $_SESSION["role"]=1;
 
 } else if ($_POST['departmentid']==2)
 {
+  $_SESSION["staffid"]=$staffid;
 
-    header('Location: ../toys/');
-    $_SESSION["staffid"]=$user['staffid'];
-      $_SESSION["role"]=2;
+ header('Location: ../toys/');
+  
+     $_SESSION["role"]=2;
 
 
 }else if ($_POST['departmentid']==3)
 {
+  $_SESSION["staffid"]=$staffid;
 
     header('Location: ../admin/adminpage.php');
-    $_SESSION["staffid"]=$user['staffid'];
-      $_SESSION["role"]=3;
+       $_SESSION["role"]=3;
 
 }
 
