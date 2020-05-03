@@ -54,7 +54,7 @@
   height: auto;
   margin: 6px;
 }
-#back-button {
+#back {
   background-color: #0000FF; /* Blue */
   border: none;
   color: white;
@@ -64,6 +64,10 @@
   display: inline-block;
   font-size: 16px;
   margin: 6px;
+  height: auto; 
+  width: auto; 
+  max-width: 150px; 
+  max-height: 150px;
 }
 
 #TableTheme{
