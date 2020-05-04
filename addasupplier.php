@@ -108,25 +108,17 @@
         <h1 align="center">Add a Supplier</h1>
 		<div class="outputresults">
         <form action="addasupplier.php" method="post" align="center">
-            <div style="float: none; display: inline-block">   
-                <label for="SupplierCode">Supplier Code</label>
-                <input type="text" id="SupplierCode" name="SupplierCode" class="form-control" maxlength="20" style="width: 200px">
-            </div>
+            <label for="SupplierCode" style="width: 150px">Supplier Code</label>
+            <input type="text" id="SupplierCode" name="SupplierCode" class="form-control" maxlength="20" style="width: 200px; display: inline-block">
             <br><br>
-            <div style="float: none; display: inline-block">
-                <label for="SupplierID">Supplier ID</label>
-                <input type="SupplierID" id="SupplierID" class="form-control" name="SupplierID" style="width: 200px">
-            </div>
+            <label for="SupplierID" style="width: 150px">Supplier ID</label>
+            <input type="SupplierID" id="SupplierID" class="form-control" name="SupplierID" style="width: 200px; display: inline-block">
             <br><br>
-            <div style="float: none; display: inline-block">
-                <label for="SupplierName">Supplier Name</label>
-                <input type="SupplierName" id="SupplierName" class="form-control" name="SupplierName" minlength="2" maxlength="20" style="width: 200px">
-            </div>
+            <label for="SupplierName" style="width: 150px">Supplier Name</label>
+            <input type="SupplierName" id="SupplierName" class="form-control" name="SupplierName" minlength="2" maxlength="20" style="width: 200px; display: inline-block">
             <br><br>
-            <div style="float: none; display: inline-block">
-                <label for="SupplierAddress">Supplier Address</label>
-                <input type="text" id="SupplierAddress" class="form-control" name="SupplierAddress" style="width: 200px">
-            </div>
+            <label for="SupplierAddress" style="width: 150px">Supplier Address</label>
+            <input type="text" id="SupplierAddress" class="form-control" name="SupplierAddress" style="width: 200px; display: inline-block">
             <br><br>
             <div style="float: none; display: inline-block">			
                 <input type="submit" name="register" class="form-control" value="Register"></button>
