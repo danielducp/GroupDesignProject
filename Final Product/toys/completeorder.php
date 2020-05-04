@@ -8,15 +8,19 @@
           integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" 
           crossorigin="anonymous">
 </head>
-<body style="background-color:#a6b2c1">
-    <div class="topnav" ALIGN="center">  
-        <button id="logout-button" class="btn btn-danger">Back</button> 
-        <img src="../g4uimageprototype.png" alt="G4ULogo"  width="12.5%"></img>
-        <input type="text" placeholder="Search.." style="margin-top: 100px;">  
-             
-        <button id="search-button" class="btn btn-success">Search!</button>        
-        <button id="basket-button" class="btn btn-warning">Basket</button>            
-        <button id="logout-button" class="btn btn-danger">Log Out!</button>
+<body style="background-color:#AEB9C7">
+    <div style="background-color:#a6b2c1;" class="topnav" align="center">
+        
+        <img src="../Back.png" id="back" alt="back" style=width:50%; height="50%"></img>
+        <img src="../g4uimageprototype.png" id="g4u-logo" alt="G4ULogo"></img>
+        <div class="search-box" id="search-bar">
+            <input type="text" autocomplete="on" placeholder="Search product..." />
+        <div class="result"></div>
+        </div>
+       
+        <img src="../Basket.png" id="basket" alt="basket" onclick="window.location.href = 'index.php?page=cart'"></img>
+        <img src="../LogoutButton.png" id="logout-button" alt="logout-button" onclick="window.location.href = '../logout.php'" ></img>
+        <button id="logout"  onclick="window.location.href = '../logout.php'" class="btn btn-danger">Log Out</button>
     </div><?php
 
 

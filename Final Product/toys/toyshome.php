@@ -49,8 +49,8 @@ $recently_added_products = $stmt->fetchAll(PDO::FETCH_ASSOC);
         </div>
        
         <img src="../Basket.png" id="basket" alt="basket" onclick="window.location.href = 'index.php?page=cart'"></img>
-        <img src="../LogoutButton.png" id="basket" alt="basket" onclick="window.location.href = '../logout.php'" ></img>
-        <button id="logout-button"  onclick="window.location.href = '../logout.php'" class="btn btn-danger">Log Out</button>
+        <img src="../LogoutButton.png" id="logout-button" alt="logout-button" onclick="window.location.href = '../logout.php'" ></img>
+        <button id="logout"  onclick="window.location.href = '../logout.php'" class="btn btn-danger">Log Out</button>
     </div>
 
 
