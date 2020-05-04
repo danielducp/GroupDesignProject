@@ -115,7 +115,7 @@ if ($products_in_cart) {
     <h1 style="padding-left:20px">Order Details</h1>
     <form action="index.php?page=cart" method="post">
     <div class="table-responsive">
-				<table  align="center" class="table table-bordered" style="background-color:white; width:80%; align:centre">            <thead>
+				<table  align="center" class="table table-bordered" style="background-color:white; width:80%;">            <thead>
                 <tr>
                     <td ALIGN="center" colspan="2">Product</td>
                     <td ALIGN="center">Supplier</td>
