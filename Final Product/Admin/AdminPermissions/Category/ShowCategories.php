@@ -14,7 +14,7 @@
 
 <body style="background-color:#a6b2c1">
   <div class="topnav" ALIGN="center">
-    <img src="g4uimageprototype.png" alt="G4ULogo" width="12.5%"></img>
+    <img src="../../../g4uimageprototype.png" alt="G4ULogo" width="12.5%"></img>
     <input type="text" placeholder="Search.." style="margin-top: 100px;">
     <button id="search-button" class="btn btn-success">Search!</button>
     <button id="basket-button" class="btn btn-warning">Basket</button>
