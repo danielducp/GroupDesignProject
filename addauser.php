@@ -110,41 +110,27 @@
     <body>
         <h1 align="center">Add a staff member</h1>
 		<div class="outputresults">
-        <form action="addauser.php" method="post" align="center">            
-            <div style="float: none; display: inline-block">
-                <label for="staffid">Staff ID</label>
-                <input type="text" id="staffid" name="staffid" class="form-control" maxlength="20" style="width: 200px">
-            </div>
+        <form action="addauser.php" method="post" align="center">
+                <label for="staffid" style="width: 150px">Staff ID</label>
+                <input type="text" id="staffid" name="staffid" class="form-control" maxlength="20" style="width: 200px; display: inline-block">
             <br><br>
-            <div style="float: none; display: inline-block">
-                <label for="stafftitle">Staff Title</label>
-                <input type="stafftitle" id="stafftitle" class="form-control" name="stafftitle" style="width: 200px">
-            </div>
+                <label for="stafftitle" style="width: 150px">Staff Title</label>
+                <input type="stafftitle" id="stafftitle" class="form-control" name="stafftitle" style="width: 200px; display: inline-block">
             <br><br>
-            <div style="float: none; display: inline-block">
-                <label for="staffname">Staff Name</label>
-                <input type="staffname" id="staffname" class="form-control" name="staffname" minlength="2" maxlength="20" style="width: 200px">
-            </div>
+                <label for="staffname" style="width: 150px">Staff Name</label>
+                <input type="staffname" id="staffname" class="form-control" name="staffname" minlength="2" maxlength="20" style="width: 200px; display: inline-block">
             <br><br>
-            <div style="float: none; display: inline-block">
-                <label for="staffrole">Staff Role</label>
-                <input type="text" id="staffrole" class="form-control" name="staffrole" style="width: 200px">
-            </div>
+                <label for="staffrole" style="width: 150px">Staff Role</label>
+                <input type="text" id="staffrole" class="form-control" name="staffrole" style="width: 200px; display: inline-block">
             <br><br>
-            <div style="float: none; display: inline-block">
-                <label for="storeid">Store ID</label>
-                <input type="number"  min="1" max="5" id="storeid"  class="form-control" name="storeid"  maxlength="7" style="width: 200px">
-            </div>
+                <label for="storeid" style="width: 150px">Store ID</label>
+                <input type="number"  min="1" max="5" id="storeid"  class="form-control" name="storeid"  maxlength="7" style="width: 200px; display: inline-block">
             <br><br>
-            <div style="float: none; display: inline-block">
-                <label for="departmentid">Department ID</label>
-                <input type="number" min="1" max="5" id="departmentid" name="departmentid" class="form-control" maxlength="11" style="width: 200px">
-            </div>
+                <label for="departmentid" style="width: 150px">Department ID</label>
+                <input type="number" min="1" max="5" id="departmentid" name="departmentid" class="form-control" maxlength="11" style="width: 200px; display: inline-block">
             <br><br>
-            <div style="float: none; display: inline-block">
-                <label for="password">Password</label>
-                <input type="text" id="password" name="password" class="form-control" maxlength="11" style="width: 200px">
-            </div>
+                <label for="password" style="width: 150px">Password</label>
+                <input type="text" id="password" name="password" class="form-control" maxlength="11" style="width: 200px; display: inline-block">
             <br><br>
             <div style="float: none; display: inline-block">
                 <input type="submit" name="register" class="form-control" value="Register"></button>
