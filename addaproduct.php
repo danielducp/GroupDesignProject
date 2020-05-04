@@ -114,48 +114,32 @@
     <h1 align="center">Add a Product</h1>
     <div class="outputresults">
     <form action="addauser.php" method="post" align="center">
-        <div style="float: none; display: inline-block">
-            <label for="ProductID">Product ID</label>
-            <input type="text" id="ProductID" name="ProductID" class="form-control" maxlength="20" style="width: 200px">
-        </div>
+        <label for="ProductID" style="width: 150px">Product ID</label>
+        <input type="text" id="ProductID" name="ProductID" class="form-control" maxlength="20" style="width: 200px; display: inline-block">
+        <br><br>
+        <label for="ProductCode" style="width: 150px">Product Code</label>
+        <input type="ProductCode" id="ProductCode" class="form-control" name="ProductCode" style="width: 200px; display: inline-block">
+        <br><br>
+        <label for="ProductName" style="width: 150px">Product Name</label>
+        <input type="ProductName" id="ProductName" class="form-control" name="ProductName" minlength="2" maxlength="20" style="width: 200px; display: inline-block">
+        <br><br>
+        <label for="ProductImage" style="width: 150px">Product Image</label>
+        <input type="text" id="ProductImage" class="form-control" name="ProductImage" style="width: 200px; display: inline-block">
+        <br><br>
+        <label for="QuantityPerPack" style="width: 150px">Quantity Per Pack</label>
+        <input type="number"  min="1" max="5" id="QuantityPerPack"  class="form-control" name="QuantityPerPack"  maxlength="7" style="width: 200px; display: inline-block">
+        <br><br>
+        <label for="CategoryID" style="width: 150px">Category ID</label>
+        <input type="number" min="1" max="5" id="CategoryID" name="CategoryID" class="form-control" maxlength="11" style="width: 200px; display: inline-block">
+        <br><br>
+        <label for="CurrentStockLevel" style="width: 150px">Current Stock Level</label>
+        <input type="text" id="CurrentStockLevel" name="CurrentStockLevel" class="form-control" maxlength="11" style="width: 200px; display: inline-block">
+        <br><br>
+        <label for="LowStockLevel" style="width: 150px">Low Stock Level</label>
+        <input type="text" id="LowStockLevel" name="LowStockLevel" class="form-control" maxlength="11" style="width: 200px; display: inline-block">
         <br><br>
         <div style="float: none; display: inline-block">
-            <label for="ProductCode">Product Code</label>
-            <input type="ProductCode" id="ProductCode" class="form-control" name="ProductCode" style="width: 200px">
-        </div>
-        <br><br>
-        <div style="float: none; display: inline-block">
-            <label for="ProductName">Product Name</label>
-            <input type="ProductName" id="ProductName" class="form-control" name="ProductName" minlength="2" maxlength="20" style="width: 200px">
-        </div>
-        <br><br>
-        <div style="float: none; display: inline-block">
-            <label for="ProductImage">Product Image</label>
-            <input type="text" id="ProductImage" class="form-control" name="ProductImage" style="width: 200px">
-        </div>
-        <br><br>
-        <div style="float: none; display: inline-block">
-            <label for="QuantityPerPack">Quantity Per Pack</label>
-            <input type="number"  min="1" max="5" id="QuantityPerPack"  class="form-control" name="QuantityPerPack"  maxlength="7" style="width: 200px">
-        </div>
-        <br><br>
-        <div style="float: none; display: inline-block">
-            <label for="CategoryID">Category ID</label>
-            <input type="number" min="1" max="5" id="CategoryID" name="CategoryID" class="form-control" maxlength="11" style="width: 200px">
-        </div>
-        <br><br>
-            <div style="float: none; display: inline-block">
-            <label for="CurrentStockLevel">Current Stock Level</label>
-        <input type="text" id="CurrentStockLevel" name="CurrentStockLevel" class="form-control" maxlength="11" style="width: 200px">
-        </div>
-        <br><br>
-        <div style="float: none; display: inline-block">
-            <label for="LowStockLevel">Low Stock Level</label>
-            <input type="text" id="LowStockLevel" name="LowStockLevel" class="form-control" maxlength="11" style="width: 200px">
-        </div>
-        <br><br>
-        <div style="float: none; display: inline-block">
-            <input type="submit" name="register" class="form-control" value="Register"></button>
+            <input type="submit" name="register" class="form-control" value="Register" style="width: 120px"></button>
         </div>
     </form>
 </body>
