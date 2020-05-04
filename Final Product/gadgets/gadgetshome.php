@@ -43,15 +43,17 @@ $recently_added_products = $stmt->fetchAll(PDO::FETCH_ASSOC);
 </head>
 <body style="background-color:#AEB9C7">
     <div style="background-color:#a6b2c1;" class="topnav" align="center">
-        <button id="back-button" class="btn btn-danger">Back</button>
+        
+        <img src="../Back.png" id="back" alt="back" style=width:50%; height="50%"></img>
         <img src="../g4uimageprototype.png" id="g4u-logo" alt="G4ULogo"></img>
         <div class="search-box" id="search-bar">
             <input type="text" autocomplete="on" placeholder="Search product..." />
         <div class="result"></div>
         </div>
-        <button id="search-button" class="btn btn-success">Search</button>
-        <button id="basket-button" onclick="window.location.href = 'index.php?page=cart'" class="btn btn-warning">Basket</button>
-        <button id="logout-button"  onclick="window.location.href = '../logout.php'" class="btn btn-danger">Log Out</button>
+       
+        <img src="../Basket.png" id="basket" alt="basket" onclick="window.location.href = 'index.php?page=cart'"></img>
+        <img src="../LogoutButton.png" id="logout-button" alt="logout-button" onclick="window.location.href = '../logout.php'" ></img>
+        <button id="logout"  onclick="window.location.href = '../logout.php'" class="btn btn-danger">Log Out</button>
     </div>
 
 
