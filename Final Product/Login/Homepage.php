@@ -46,7 +46,9 @@
         </fieldset>
         </div>   </div> <?php 
       session_start() ;
-    
+      if (isset($_GET["msg"]) && $_GET["msg"] == 'notticked') {
+        echo "You need to tick to login";
+      }
       if (isset($_GET["msg"]) && $_GET["msg"] == 'passwordfailed') {
         echo "Wrong Password";
       }

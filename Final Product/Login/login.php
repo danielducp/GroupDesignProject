@@ -15,16 +15,12 @@ else
     $savecookie =false;?>
 
   <?php
-    echo"You must tick in order to login...";
+    header("location:Homepage.php?msg=notticked");
 }
 		if($savecookie ==true)
 		{
 			setcookie("staffid", $_POST['staffid'], time()+3600);
-/*
- * name:        PDO Login
- * author:      Jay Blanchard
- * date:        April 2015
- */
+
 
 include 'pdo_connect.php';
 
@@ -34,7 +30,7 @@ if(isset($_POST['staffid'], $_POST['departmentid']) ) {
     $results = dataQuery($query, $params);
 }
 
-$hash = $results[0]['password']; // first and only row if username exists;
+$hash = $results[0]['password']; 
 
 echo password_verify($_POST['upassword'], $hash) ? 'yay' :       header("location:Homepage.php?msg=passwordfailed");
 ;
