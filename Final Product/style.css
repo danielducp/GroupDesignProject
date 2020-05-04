@@ -20,7 +20,7 @@
   font-size: 16px;
   margin: 6px;
 }
-#logout-button {
+#logout {
   background-color: #FF0000; /* Red */
   border: none;
   color: white;
@@ -30,6 +30,20 @@
   display: inline-block;
   font-size: 16px;
   margin: 6px;
+}
+#logout-button {
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 6px;
+  height: auto; 
+  width: auto; 
+  max-width: 150px; 
+  max-height: 150px;
 }
 #basket-button {
   background-color: #FFA500; /* Orange */
@@ -43,7 +57,6 @@
   margin: 6px;
 }
 #basket {
-  background-color: #FFA500; /* Orange */
   border: none;
   color: white;
   padding: 15px 32px;
@@ -54,8 +67,7 @@
   height: auto;
   margin: 6px;
 }
-#back-button {
-  background-color: #0000FF; /* Blue */
+#back {
   border: none;
   color: white;
   padding: 15px 32px;
@@ -64,6 +76,25 @@
   display: inline-block;
   font-size: 16px;
   margin: 6px;
+  height: auto; 
+  width: auto; 
+  max-width: 150px; 
+  max-height: 150px;
+}
+#login-button {
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 6px;
+  height: auto; 
+  width: auto; 
+  max-width: 150px; 
+  max-height: 150px;
+  padding-top: 10px;
 }
 
 #TableTheme{
