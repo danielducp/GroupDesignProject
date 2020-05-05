@@ -21,7 +21,7 @@
     inner join orderedproducts ON `order`.OrderID = orderedproducts.OrderID
     INNER JOIN `suppliedorder` ON `order`.OrderID = `suppliedorder`.OrderID
     
-      WHERE OrderConfirmed = '1' AND  DeliveryStatus = '1'  AND  Checked = '0' ;
+      WHERE OrderConfirmed = '1' AND  Checked = '0' ;
     ";
     $stmt= $pdo->prepare($sql);
     $stmt->execute();

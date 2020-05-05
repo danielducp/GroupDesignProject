@@ -58,7 +58,7 @@ if ($products_in_cart) {
     <?php 
        require ("config.php");
       
-    $sql = "INSERT INTO `order` (TransactionID, StaffID, DeliveryStatus, OrderTotal, OrderConfirmed) VALUES (0, 1, 0, 0, 0)";
+    $sql = "INSERT INTO `order` (StaffID, DeliveryStatus, OrderTotal, OrderConfirmed) VALUES (1, 0, 0, 0)";
     $stmt= $pdo->prepare($sql);
     $stmt->execute();
    
