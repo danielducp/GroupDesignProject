@@ -107,7 +107,7 @@ $stmt->execute();
 
  <div class="outputresults">
 
-		          <input type="button" style="display:inline" onclick=window.location.href="addaD.php" class="btn btn-primary" value="Add a user"> </td>
+		          <input type="button" style="display:inline" onclick=window.location.href="addaSupplier.php" class="btn btn-primary" value="Add a user"> </td>
 
 
 <?php

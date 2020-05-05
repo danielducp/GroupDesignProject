@@ -1,7 +1,7 @@
 <?php
     if(!isset($_SESSION['auth'])) {
         echo"You need to login";
-        header("Location:../homepage.php") ;
+        header("Location:../Login/Homepage.php") ;
     }
     if($_SESSION["role"]==2){
         header('toyshome.php');
@@ -13,7 +13,7 @@
 
     } else  {
         session_destroy();
-        header("Location:../homepage.php") ;
+        header("Location:../Login/Homepage.php") ;
     }
 ?>
 

@@ -37,6 +37,8 @@
             </select><br><br>
                 <input name="upassword" type="password" placeholder="Password" style="font-size: 40px; padding-right: 29px; display: inline-block;"><br>
                 <div class= "loginpagearea">
+                <input type="image" name="submit" src="../LoginButton.png" border="0" alt="Submit" style="width: 50px;" />
+
           <button type="submit" style="width: 200px;  height:65px; font-size: 35px; margin-top:10px"  class="btn btn-success">Login</button>
           <img src="../LoginButton.png" id="login-button" onclick="window.location.href = 'login.php'" alt="login-button" ></img>
         </div>
