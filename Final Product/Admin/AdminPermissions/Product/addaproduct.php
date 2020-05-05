@@ -2,23 +2,32 @@
 <html>
 <head>
     <title>G4UItems</title>
-    <link href="style.css" 
+    <link href="../../../style.css" 
           rel="stylesheet" 
           type="text/css">
-    <link href="ItemsPage.css" rel="stylesheet">
+    <link href="../../../ItemsPage.css" 
+          rel="stylesheet"
+          type="text/css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" 
-            integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" 
-            crossorigin="anonymous">
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" 
+          crossorigin="anonymous">
 </head>
 <body style="background-color:#a6b2c1">
-    <div class="topnav" ALIGN="center">  
-        <button  class="btn btn-warning">Back</button>
-        <img src="g4uimageprototype.png" alt="G4ULogo" id="g4u-logo"></img>              
-        <button id="logout-button" class="btn btn-danger">Log Out!</button>
+    <div class="topnav" align="center">
+        <button id="back-button" class="btn btn-danger">Back</button>
+        <img src="../../../g4uimageprototype.png" id="g4u-logo" alt="G4ULogo"></img>
+        <div class="search-box" id="search-bar">
+            <input type="text" autocomplete="on" placeholder="Search product..." />
+        <div class="result"></div>
+        </div>
+        <button id="search-button" class="btn btn-success">Search</button>
+        <button id="basket-button" class="btn btn-warning">Basket</button>
+        <button id="logout-button" class="btn btn-danger">Log Out</button>
     </div>
-    <br><br><br><br><br><br>
+    <br><br>
 </body>
 </html>
+
 
 <?php
     session_start() ;	
@@ -97,29 +106,31 @@
 <!DOCTYPE html>
 <html>
     <head>
-	<link rel="stylesheet" type="text/css" href="../style.css">
+	<link rel="stylesheet" type="text/css" href="../../../../style.css">
         <meta charset="UTF-8">
         <title>Register</title>
     </head>
     <body>
-        <h1>Add a Product</h1>
+        <h1  align="center">Add a Product</h1>
 		<div class="outputresults">
-        <form action="addaproduct.php" method="post">
-			<label for="ProductCode">Product Code</label>
-            <input type="text" id="ProductCode" name="ProductCode" class="form-control" maxlength="6"><br>
-            <label for="ProductName">Product Name</label>
-            <input type="text" id="ProductName" class="form-control" name="ProductName"><br>
-            <label for="ProductImage">Product Image</label>
-            <input type="text" id="ProductImage" class="form-control" name="ProductImage"><br>
-            <label for="QuantityPerPack">Quantity Per Pack</label>
-            <input type="text" id="QuantityPerPack" class="form-control" name="QuantityPerPack"><br>
-            <label for="CategoryID">Category ID</label>
-            <input type="text" id="CategoryID" class="form-control" name="CategoryID"><br>
-            <label for="CurrentStockLevel">Current Stock Level</label>
-            <input type="text" id="CurrentStockLevel" class="form-control" name="CurrentStockLevel"><br>
-            <label for="LowStockLevel">Low Stock Level</label>
-            <input type="text" id="LowStockLevel" class="form-control" name="LowStockLevel"><br>
-            <input type="submit" name="register" class="form-control" value="Register"></button>
+        <form action="addaproduct.php" method="post"  align="center">
+			<label for="ProductCode" style="width: 150px">Product Code</label>
+            <input style="width: 200px; display: inline-block" type="text" id="ProductCode" name="ProductCode" class="form-control" maxlength="6"><br><br>
+            <label for="ProductName" style="width: 150px">Product Name</label>
+            <input style="width: 200px; display: inline-block" type="text" id="ProductName" class="form-control" name="ProductName"><br><br>
+            <label for="ProductImage" style="width: 150px">Product Image</label>
+            <input style="width: 200px; display: inline-block" type="file" id="ProductImage" class="form-control" name="ProductImage"><br><br>
+            <label for="QuantityPerPack" style="width: 150px">Quantity Per Pack</label>
+            <input style="width: 200px; display: inline-block" type="text" id="QuantityPerPack" class="form-control" name="QuantityPerPack"><br><br>
+            <label for="CategoryID" style="width: 150px">Category ID</label>
+            <input style="width: 200px; display: inline-block" type="text" id="CategoryID" class="form-control" name="CategoryID"><br><br>
+            <label for="CurrentStockLevel" style="width: 150px">Current Stock Level</label>
+            <input style="width: 200px; display: inline-block" type="text" id="CurrentStockLevel" class="form-control" name="CurrentStockLevel"><br><br>
+            <label for="LowStockLevel" style="width: 150px">Low Stock Level</label>
+            <input style="width: 200px; display: inline-block" type="text" id="LowStockLevel" class="form-control" name="LowStockLevel"><br><br>
+            <div style="float: none; display: inline-block">
+            <input type="submit" name="register" class="form-control" value="Register" style="width: 120px"></button>
+            </div>
         </form>
     </body>
 </html>

@@ -57,7 +57,7 @@ while($row = $sqlQuery->fetch())
 <form action="UpdateProduct.php" method="POST">
     Product Code: <input type="text" class="form-control" readonly="readonly" name="ProductCode" size="width:150px" value="<?php echo $row['ProductCode'];?>">
 	Product Name: <input type="text" class="form-control"  name="ProductName" value="<?php echo $row['ProductName'];?>">
-	Product Image: <input type="text" class="form-control"  name="ProductImage" value="<?php echo $row['ProductImage'];?>"><br>
+	Product Image: <input type="file" class="form-control"  name="ProductImage" value="<?php echo $row['ProductImage'];?>"><br>
 	Quantity Per Pack: <input type="text" class="form-control" name="QuantityPerPack" value="<?php echo $row['QuantityPerPack'];?>">
 	Category ID: <input type="text" class="form-control" name="CategoryID" value="<?php echo $row['CategoryID'];?>">
 	Current Stock Level: <input type="text" class="form-control" name="CurrentStockLevel" value="<?php echo $row['CurrentStockLevel'];?>"><br>

@@ -1,3 +1,4 @@
+<body style="background-color:#a6b2c1">
 
  
  <?php
@@ -25,7 +26,6 @@ while($row = $sqlQuery->fetch())
 
     ?>
       <?php
-
 echo "<TD align=center>Product Code: ".$row['ProductCode']."<br>";
 
 

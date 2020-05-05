@@ -23,7 +23,7 @@
          
             <form name="login" action="login.php" method="post">
             <select name="staffid" id="staffid" searchable="Search here" style="font-size: 40px; padding-right: 29px; display: inline-block;">
-            <option value="" selected="true" disabled="disabled">Select Supplier ID </option>
+            <option value="" selected="true" disabled="disabled">Select Staff ID </option>
             <?php
             $data=load_staffid();
             foreach ($data as $row): 
@@ -31,10 +31,11 @@
             ?>
             <?php endforeach ?>
             </select>
-            <select name="departmentid" id="departmentid" searchable="Search here" style="font-size: 40px; padding-right: 29px; display: inline-block;">
-            <option value="" disabled selected>Select Department ID</option>
+            <select style="display:none;"  name="departmentid" id="departmentid" searchable="Search here" style="font-size: 40px; padding-right: 29px; display: inline-block;">
+            <option type="hidden" value="" disabled selected>Select Department ID</option>
          
             </select><br><br>
+            
                 <input name="upassword" type="password" placeholder="Password" style="font-size: 40px; padding-right: 29px; display: inline-block;"><br>
                 <div class= "loginpagearea">
                 <input type="image" name="submit" src="../LoginButton.png" border="0" alt="Submit" style="width: 50px;" />
@@ -42,7 +43,7 @@
           <button type="submit" style="width: 200px;  height:65px; font-size: 35px; margin-top:10px"  class="btn btn-success">Login</button>
           <img src="../LoginButton.png" id="login-button" onclick="window.location.href = 'login.php'" alt="login-button" ></img>
         </div>
-        <input type="checkbox" class="largerCheckbox" name="savecookie" style="width: 40px; height: 40px; margin-left:10px;	margin-top:10px; display: inline-block"> 
+        <input type="checkbox" class="largerCheckbox" name="savecookie" style="width: 40px; height: 40px; margin-left:10px;	margin-top:10px; display: inline-block; border-width: thin;"> 
           <p style="font-size:30px; display: inline-block">Tick to Login</p><br>
           <span class="psw"  style="font-size:20px">Forgot <a href="ResetPassword.php">password?</a></span>  
         </div>

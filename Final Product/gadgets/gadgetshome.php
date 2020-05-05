@@ -21,7 +21,6 @@
 
 <?php
 
-// Get the 4 most recently added products
 $stmt = $pdo->prepare('SELECT *  FROM suppliedproducts  JOIN product on suppliedproducts.ProductCode = product.ProductCode WHERE CategoryID = 1  group by product.ProductCode ');
 $stmt->execute();
 $recently_added_products = $stmt->fetchAll(PDO::FETCH_ASSOC);

@@ -1,44 +1,49 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8">
-    <title>Register / Login</title>
-    <style type="text/css">
-        .form {
-            width: 30%;
-        }
-        input[type="text"], input[type="password"] {
-            width: 99%;
-            height: 1.5em;
-            padding-bottom: 5px;
-            margin-bottom: 3px;
-        }
-    </style>
-    
-  <link href="style.css" rel="stylesheet" type="text/css">
-  <link href="Admin.css" rel="stylesheet" type="text/css">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-
+    <title>G4UItems</title>
+    <link href="../../../style.css" 
+          rel="stylesheet" 
+          type="text/css">
+          <link href="../../../../style.css" 
+          rel="stylesheet" 
+          type="text/css">
+    <link href="../../../ItemsPage.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" 
+            integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" 
+            crossorigin="anonymous">
+            
 </head>
 <body style="background-color:#a6b2c1">
-  <div class="topnav" ALIGN="center">
-    <img src="g4uimageprototype.png" alt="G4ULogo" width="12.5%"></img>
-   
-    <button id="search-button" class="btn btn-success">Search!</button>
-    <button id="basket-button" class="btn btn-warning">Basket</button>
-    <button id="logout-button" class="btn btn-danger">Log Out!</button>
-  </div>
+    <div class="topnav" align="center">
+        <button id="back-button" class="btn btn-danger">Back</button>
+        <img src="../../../g4uimageprototype.png" id="g4u-logo" alt="G4ULogo"></img>
+        <div class="search-box" id="search-bar">
+            <input type="text" autocomplete="on" placeholder="Search product..." />
+        <div class="result"></div>
+        </div>
+        <button id="search-button" class="btn btn-success">Search</button>
+        <button id="basket-button" class="btn btn-warning">Basket</button>
+        <button id="logout-button" class="btn btn-danger">Log Out</button>
+    </div>
+    <br><br>
+</body>
+</html>
     <div class="form">
-        <fieldset>
-            <legend> REGISTER </legend>
-            <form name="register" action="register.php" method="post">
+            <h1 align="center"> Add a staff memeber </h1>
+            <div class="outputresults">
+            <form name="register" action="register.php" method="post" align="center">
+            <label for="staffid" style="width: 150px">Staff ID</label>
+                <input class="form-control" style="width: 200px; display: inline-block" name="staffid" type="text" ><br>       <br>
+                <label for="stafftitle" style="width: 150px">Staff Title</label>
+                <input class="form-control" style="width: 200px; display: inline-block" name="stafftitle" type="text"><br>       <br>
+                <label for="staffname" style="width: 150px">Staff Name</label>
 
-                <input name="staffid" type="text" placeholder="Staff ID"><br>
-                <input name="stafftitle" type="text" placeholder="Staff Title"><br>
-                <input name="staffname" type="text" placeholder="Staff Name"><br>
+                <input  class="form-control" style="width: 200px; display: inline-block" name="staffname" type="text" ><br>       <br>
+                <label for="staffrole" style="width: 150px">Staff Role</label>
 
-                <input name="staffrole" type="text" placeholder="Staff Role"><br>
-                <select name="storeid" id="storeid" searchable="Search here" >
+                <input style="width: 200px; display: inline-block" name="staffrole" type="text" #><br>       <br>
+                <select class="form-control" style="width: 200px; display: inline-block" name="storeid" id="storeid" searchable="Search here" >
             <option value="" selected="true" disabled="disabled">Select Store ID</option>
             <?php
             $data=load_storeid();
@@ -47,11 +52,11 @@
             ?>
             <?php endforeach ?>
             </select>
-            <select name="StoreName" id="StoreName" searchable="Search here" >
+            <select class="form-control" style="width: 200px; display: inline-block" name="StoreName" id="StoreName" searchable="Search here" >
             <option value="" disabled selected>Store Name</option>
          </select>
-                
-                <select name="departmentid" id="departmentid" searchable="Search here" >
+                <br> <br>
+                <select class="form-control" style="width: 200px; display: inline-block" name="departmentid" id="departmentid" searchable="Search here" >
             <option value="" selected="true" disabled="disabled">Select Department ID </option>
             <?php
             $data=load_departmentid();
@@ -60,12 +65,15 @@
             ?>
             <?php endforeach ?>
             </select>
-               
+            <br> <br>
+            <label for="password" style="width: 150px">Password</label>
 
-                <input name="upassword" type="password" placeholder="please enter a password or passphrase"><br>
-                <input name="submit" type="submit">
+                <input class="form-control" style="width: 200px; display: inline-block" name="upassword" type="password"><br> <br>
+                <div style="float: none; display: inline-block">
+
+                <input name="submit" name="register" class="form-control" type="submit">
+                </div>
             </form>
-        </fieldset>
     </div>
 
 

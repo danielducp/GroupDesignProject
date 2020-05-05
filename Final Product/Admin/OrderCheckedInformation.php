@@ -1,5 +1,6 @@
 
- 
+  <body style="background-color:#a6b2c1">
+
  <?php
 require ("config.php");
 

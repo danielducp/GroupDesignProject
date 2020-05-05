@@ -1,22 +1,27 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>G4UItems</title>
-    <link href="style.css" 
+<title>G4UItems</title>
+    <link href="../../../style.css" 
           rel="stylesheet" 
           type="text/css">
-    <link href="ItemsPage.css" rel="stylesheet">
+    <link href="../../../ItemsPage.css"
+          rel="stylesheet"
+          type="text/css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" 
-            integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" 
-            crossorigin="anonymous">
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" 
+          crossorigin="anonymous">
 </head>
 <body style="background-color:#a6b2c1">
-    <div class="topnav" ALIGN="center">  
-        <button  class="btn btn-warning">Back</button>
-        <img src="g4uimageprototype.png" alt="G4ULogo" id="g4u-logo"></img>              
-        <button id="logout-button" class="btn btn-danger">Log Out!</button>
+    <div class="topnav" align="center">
+        <button id="back-button" class="btn btn-danger">Back</button>
+        <img src="../../../g4uimageprototype.png" id="g4u-logo" alt="G4ULogo"></img>
+        <div class="search-box" id="search-bar">
+            <input type="text" autocomplete="on" placeholder="Search product..." />
+        <div class="result"></div>
+        </div>
+        <button id="search-button" class="btn btn-success">Search</button>
+        <button id="basket-button" class="btn btn-warning">Basket</button>
+        <button id="logout-button" class="btn btn-danger">Log Out</button>
     </div>
-    <br><br><br><br><br><br>
+    <br><br>
 </body>
 </html>
 
@@ -87,22 +92,25 @@
 <!DOCTYPE html>
 <html>
     <head>
-	<link rel="stylesheet" type="text/css" href="../style.css">
+	<link rel="stylesheet" type="text/css" href="../../../../style.css">
         <meta charset="UTF-8">
         <title>Register</title>
     </head>
     <body>
-        <h1>Add a supplier</h1>
-		<div class="outputresults">
-        <form action="addasupplier.php" method="post">
-			<label for="SupplierID">Supplier ID</label>
-            <input type="text" id="SupplierID" name="SupplierID" class="form-control" maxlength="2"><br>
-            <label for="SupplierName">Supplier Name</label>
-            <input type="text" id="SupplierName" class="form-control" name="SupplierName"><br>
-            <label for="SupplierAddress">Supplier Address</label>
-            <input type="text" id="SupplierAddress" class="form-control" name="SupplierAddress"><br>
-			
+        <h1 align="center">Add a supplier</h1>
+		<div class="outputresults" >
+        <form action="addasupplier.php" method="post" align="center">
+			<label for="SupplierID" style="width: 150px">Supplier ID</label>
+            <input type="text" id="SupplierID" name="SupplierID" style="width: 200px; display: inline-block" class="form-control" maxlength="2"><br>
+            <br> <label for="SupplierName" style="width: 150px">Supplier Name</label>
+            <input type="text" id="SupplierName" class="form-control" style="width: 200px; display: inline-block" name="SupplierName"><br>
+            <br> <label for="SupplierAddress" style="width: 150px">Supplier Address</label>
+            <input type="text" id="SupplierAddress" style="width: 200px; display: inline-block" class="form-control" name="SupplierAddress"><br>
+            <br><br>
+            <div style="float: none; display: inline-block">	
             <input type="submit" name="register" class="form-control" value="Register"></button>
+            </div>
+
         </form>
     </body>
 </html>
