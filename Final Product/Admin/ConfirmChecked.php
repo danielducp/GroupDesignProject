@@ -73,8 +73,8 @@ $sqlQuery2-> bindParam(':ProductCode', $ProductCode);
 $OrderID=$_GET['OrderID'];
 
 $sqlQuery = $pdo->prepare('SELECT * from department
-INNER JOIN staff on department.DepartmentID = staff.DepartmentID
-INNER JOIN `order` ON staff.StaffID = `order`.StaffID
+INNER JOIN newstaff on department.DepartmentID = newstaff.DepartmentID
+INNER JOIN `order` ON newstaff.StaffID = `order`.StaffID
 INNER JOIN orderedproducts ON `order`.OrderID = orderedproducts.OrderID
 INNER JOIN product ON `orderedproducts`.ProductCode = product.ProductCode WHERE `orderedproducts`.OrderID = :OrderID AND product.ProductCode =  :ProductCode');
 $sqlQuery-> bindParam(':OrderID', $OrderID);
@@ -84,24 +84,25 @@ $sqlQuery->execute();
 while($row = $sqlQuery->fetch())
 
 {
+  
   echo "<br>"."TE ". $row['OrderTotal'];
 
   echo "<br>"."TE ". $row['TotalExpenditure'];
 
 
   $sqlQuery2 = $pdo->prepare('UPDATE department
-  INNER JOIN staff on department.DepartmentID = staff.DepartmentID
-  INNER JOIN `order` ON staff.StaffID = `order`.StaffID
+  INNER JOIN newstaff on department.DepartmentID = newstaff.DepartmentID
+  INNER JOIN `order` ON newstaff.StaffID = `order`.StaffID
   INNER JOIN orderedproducts ON `order`.OrderID = orderedproducts.OrderID
   INNER JOIN product ON `orderedproducts`.ProductCode = product.ProductCode
 
-  SET department.TotalExpenditure = :OrderTotal
+  SET department.TotalExpenditure = :TotalCost
   WHERE  orderedproducts.OrderID =  :OrderID ');
   
    
   $sqlQuery2-> bindParam(':OrderID', $OrderID);
-  $sqlQuery2-> bindParam(':OrderTotal', $OrderTotal);
-$OrderTotal=  ($row['TotalExpenditure'] + $row['OrderTotal']);
+  $sqlQuery2-> bindParam(':TotalCost', $TotalCost);
+$TotalCost=  ($row['TotalExpenditure'] + ($row['TotalCost']*$row['QuantityOrdered']));
 
     $sqlQuery2->execute();
 

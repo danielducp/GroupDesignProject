@@ -19,10 +19,10 @@
     require 'config.php';
     session_start(); // should be at the top of your php
 
-    if (isset($_POST['StaffID'])) {
-       $_SESSION['StaffID'] = $_POST['StaffID'];
+    if (isset($_POST['staffid'])) {
+       $_SESSION['staffid'] = $_POST['staffid'];
     }
-     $StaffID = isset($_SESSION['StaffID']) ? $_SESSION['StaffID'] : "";
+     $staffid = isset($_SESSION['staffid']) ? $_SESSION['staffid'] : "";
   
 
 
@@ -34,12 +34,12 @@
     }
     $numberofrecords = 4;
     $offset = ($pageno-1) * $numberofrecords;
-    if($StaffID!=""){
-    $stmt = $pdo->prepare("SELECT * FROM staff WHERE StaffID =?"); 
-    $stmt->execute([$StaffID]);
+    if($staffid!=""){
+    $stmt = $pdo->prepare("SELECT * FROM newstaff WHERE staffid =?"); 
+    $stmt->execute([$staffid]);
     $totalnumberofrows = $stmt ->rowCount();
     $total_pages = ceil($totalnumberofrows / $numberofrecords);
-    $stmt = $pdo->prepare("SELECT * FROM staff WHERE StaffID ='".$StaffID."'LIMIT $offset, $numberofrecords "); 
+    $stmt = $pdo->prepare("SELECT * FROM newstaff WHERE staffid ='".$staffid."'LIMIT $offset, $numberofrecords "); 
 $stmt->execute();}
 ?>
 
@@ -59,9 +59,9 @@ echo "<TABLE BORDER=1 width=600>";
 while($row = $stmt->fetch())
 {
 
-		echo "<TD align=center>".$row['StaffID']."</TD>";
-		echo "<TD align=center><a href='EditUser.php?StaffID=".$row['StaffID']."'>Edit</a>";
-		echo "<TD align=center><a href='DeleteUser.php?StaffID=".$row['StaffID']."'>Delete Car</a>";
+		echo "<TD align=center>".$row['staffid']."</TD>";
+		echo "<TD align=center><a href='EditUser.php?staffid=".$row['staffid']."'>Edit</a>";
+		echo "<TD align=center><a href='DeleteUser.php?staffid=".$row['staffid']."'>Delete User</a>";
 
   }
 echo "</TABLE>";

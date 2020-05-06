@@ -1,5 +1,6 @@
 
   <body style="background-color:#a6b2c1">
+  <h1 style="padding-left:20px">Items waiting to be checked</h1>
 
  <?php
 require ("config.php");
@@ -33,7 +34,7 @@ echo "<TD align=center>Product Code: ".$row['ProductCode']."<br>";
 
 	echo "<align = center>Quantity Ordered:  ".$row['QuantityOrdered']."<br>";
 
-  echo " <div class=button onclick=location.href='ConfirmChecked.php?OrderID=".$row['OrderID']."?&&ProductCode=".$row['ProductCode']."'>Confirm Delivery</div>";
+  echo " <div class=button onclick=location.href='ConfirmChecked.php?OrderID=".$row['OrderID']."?&&ProductCode=".$row['ProductCode']."'>Confirm Checked</div>";
   echo " <div class=button onclick=location.href='ReturnOrder.php?OrderID=".$row['OrderID']."?&&ProductCode=".$row['ProductCode']."'>Return Delivery</div>";
 
 

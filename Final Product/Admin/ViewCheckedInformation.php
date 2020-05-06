@@ -25,8 +25,9 @@ while($row = $sqlQuery->fetch())
 
     ?>
       <?php
+echo "<TD align=center>Order ID: ".$row['OrderID']."<br>";
 
-echo "<TD align=center>Product Code: ".$row['ProductCode']."<br>";
+echo "<align=center>Product Code: ".$row['ProductCode']."<br>";
 
 
 

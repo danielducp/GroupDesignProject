@@ -20,7 +20,7 @@
     $sql = "SELECT distinct orderedproducts.OrderID FROM `suppliedorder` INNER JOIN `order` ON suppliedorder.OrderID = `order`.OrderID 
     INNER JOIN supplier ON suppliedorder.SupplierID = supplier.SupplierID 
    INNER JOIN suppliedproducts ON suppliedorder.ProductCode = suppliedproducts.ProductCode 
-   inner join orderedproducts ON `order`.OrderID = orderedproducts.OrderID WHERE OrderConfirmed = '1' AND Delivered = '0' ;
+   inner join orderedproducts ON `order`.OrderID = orderedproducts.OrderID  WHERE OrderConfirmed = '1' AND   Delivered = '0' ;
     ";
     $stmt= $pdo->prepare($sql);
     $stmt->execute();

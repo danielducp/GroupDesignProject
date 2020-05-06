@@ -5,7 +5,7 @@ $user = 'root';
 $pass = '';
 $charset = 'utf8mb4';
 
-$StaffID = $_GET['StaffID'];
+$staffid = $_GET['staffid'];
 
 $dsn = "mysql:host=$host;dbname=$db;charset=$charset";
 $options = [    
@@ -23,10 +23,10 @@ catch (\PDOException $e)
 }
 
 
-$sqlQuery = $pdo->prepare("DELETE FROM staff  WHERE StaffID =  :StaffID");
-$sqlQuery->execute(['StaffID' => $StaffID]);
+$sqlQuery = $pdo->prepare("DELETE FROM newstaff  WHERE staffid =  :staffid");
+$sqlQuery->execute(['staffid' => $staffid]);
 
-echo"Staff, ".$StaffID." has been deleted";
+echo"Staff, ".$staffid." has been deleted";
 
 
 

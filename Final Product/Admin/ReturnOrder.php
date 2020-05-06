@@ -19,7 +19,7 @@ $sqlQuery->execute();
 
 $sqlQuery2 = $pdo->prepare('UPDATE `suppliedorder` INNER JOIN `order` ON suppliedorder.OrderID = `order`.OrderID 
  INNER JOIN supplier ON suppliedorder.SupplierID = supplier.SupplierID 
-INNER JOIN suppliedproducts ON suppliedorder.ProductCode = suppliedproducts.ProductCode SET Returned = 1 WHERE `order`.OrderID = :OrderID AND suppliedorder.ProductCode =  :ProductCode');
+INNER JOIN suppliedproducts ON suppliedorder.ProductCode = suppliedproducts.ProductCode SET Returned = 1 AND Checked = 1 WHERE `order`.OrderID = :OrderID AND suppliedorder.ProductCode =  :ProductCode');
 
 $sqlQuery2-> bindParam(':OrderID', $OrderID);
 $sqlQuery2-> bindParam(':ProductCode', $ProductCode);

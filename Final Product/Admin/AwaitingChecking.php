@@ -13,7 +13,7 @@
     <button id="basket-button" class="btn btn-warning">Basket</button>
     <button id="logout-button" class="btn btn-danger">Log Out!</button>
   </div>
-
+  <h1 style="padding-left:20px">Awaiting Checking</h1>
 <?php 
        require ("config.php");
       
@@ -21,7 +21,7 @@
     inner join orderedproducts ON `order`.OrderID = orderedproducts.OrderID
     INNER JOIN `suppliedorder` ON `order`.OrderID = `suppliedorder`.OrderID
     
-      WHERE OrderConfirmed = '1' AND  Checked = '0' ;
+      WHERE OrderConfirmed = '1' AND   Delivered = '1' AND  Checked = '0' ;
     ";
     $stmt= $pdo->prepare($sql);
     $stmt->execute();
