@@ -40,8 +40,8 @@
                 <div class= "loginpagearea">
                 <input type="image" name="submit" src="../LoginButton.png" border="0" alt="Submit" style="width: 50px;" />
 
-          <button type="submit" style="width: 200px;  height:65px; font-size: 35px; margin-top:10px"  class="btn btn-success">Login</button>
-          <img src="../LoginButton.png" id="login-button" onclick="window.location.href = 'login.php'" alt="login-button" ></img>
+        
+     
         </div>
         <input type="checkbox" class="largerCheckbox" name="savecookie" style="width: 40px; height: 40px; margin-left:10px;	margin-top:10px; display: inline-block; border-width: thin;"> 
           <p style="font-size:30px; display: inline-block">Tick to Login</p><br>
