@@ -18,7 +18,7 @@
         <div class="result"></div>
         </div>
        
-       <img src="../../../LogoutButton.png" id="logout-button" alt="logout-button" onclick="window.location.href = '../logout.php'" ></img>
+       <img src="../../../LogoutButton.png" id="logout-button" alt="logout-button" onclick="window.location.href = '../../../logout.php'" ></img>
        </div>
 
 <br>
