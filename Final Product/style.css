@@ -1,6 +1,6 @@
 #g4u-logo {
   position: absolute;
-  left: 290px;
+  left: 250px;
   margin: 6px;
   display: inline-block;
   height: auto; 
@@ -70,7 +70,7 @@
 }
 #basket {
   position: absolute;
-  right: 320px;
+  right: 250px;
   border: none;
   color: white;
   padding: 15px 32px;

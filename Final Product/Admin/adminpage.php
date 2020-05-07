@@ -36,8 +36,7 @@ if ($_SESSION["role"] == 3) {
         </div>
        
        <img src="../LogoutButton.png" id="logout-button" alt="logout-button" onclick="window.location.href = '../logout.php'" ></img>
-        <button id="logout"  onclick="window.location.href = '../logout.php'" class="btn btn-danger">Log Out</button>
-    </div>
+       </div>
        
 
   <div class="container" ALIGN="center">
