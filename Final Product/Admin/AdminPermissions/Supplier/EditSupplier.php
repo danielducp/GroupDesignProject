@@ -60,13 +60,16 @@ while($row = $sqlQuery->fetch())
 
 
 	
-
-<form action="UpdateSupplier.php" method="POST">
-Supplier ID: <input type="text" class="form-control" readonly="readonly" name="SupplierID" size="width:150px" value="<?php echo $row['SupplierID'];?>">
-Supplier Name: <input type="text" class="form-control"  name="SupplierName" value="<?php echo $row['SupplierName'];?>">
-Supplier Address: <input type="text" class="form-control"  name="SupplierAddress" value="<?php echo $row['SupplierAddress'];?>"><br>
+<br>
+<form action="UpdateSupplier.php" method="POST" align="center">
+<label for="SupplierID" style="width: 150px">Supplier ID: </label>
+<input type="text" class="form-control" readonly="readonly" name="SupplierID" value="<?php echo $row['SupplierID'];?>" style="width: 300px; display: inline-block"><br><br>
+<label for="SupplierName" style="width: 150px">Supplier Name: </label>
+<input type="text" class="form-control"  name="SupplierName" value="<?php echo $row['SupplierName'];?>" style="width: 300px; display: inline-block"><br><br>
+<label for="SupplierAddress" style="width: 150px">Supplier Address: </label>
+<input type="text" class="form-control"  name="SupplierAddress" value="<?php echo $row['SupplierAddress'];?>" style="width: 300px; display: inline-block"><br><br>
 	
-	<input type="submit" value="Update Supplier">
+<input type="submit" value="Update Supplier">
 </form>
 
 <?php 

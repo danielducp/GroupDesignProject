@@ -38,6 +38,7 @@
             
                 <input name="upassword" type="password" placeholder="Password" style="font-size: 40px; padding-right: 29px; display: inline-block;"><br>
                 <div class= "loginpagearea">
+        <br>
                 <input type="image" name="submit" src="../LoginButton.png" border="0" alt="Submit" style="width: 50px;" />
 
         

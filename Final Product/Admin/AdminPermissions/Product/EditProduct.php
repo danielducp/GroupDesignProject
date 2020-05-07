@@ -9,19 +9,15 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 </head>
 <body style="background-color:#AEB9C7">
-    <div style="background-color:#a6b2c1;" class="topnav" align="center">
-        
+    <div style="background-color:#a6b2c1;" class="topnav" align="center">        
         <img src="../../../Back.png" id="back" alt="back" style=width:50%; height="50%"></img>
         <img src="../../../g4uimageprototype.png" id="g4u-logo" alt="G4ULogo"></img>
         <div class="search-box" id="search-bar">
             <input type="text" autocomplete="on" placeholder="Search product..." />
         <div class="result"></div>
-        </div>
-       
+        </div>       
        <img src="../../../LogoutButton.png" id="logout-button" alt="logout-button" onclick="window.location.href = '../logout.php'" ></img>
        </div>
-
-
 <div class="outputresults">
 
 
@@ -60,16 +56,22 @@ while($row = $sqlQuery->fetch())
 
 
 	
-
-<form action="UpdateProduct.php" method="POST">
-    Product Code: <input type="text" class="form-control" readonly="readonly" name="ProductCode" size="width:150px" value="<?php echo $row['ProductCode'];?>">
-	Product Name: <input type="text" class="form-control"  name="ProductName" value="<?php echo $row['ProductName'];?>">
-	Product Image: <input type="file" class="form-control"  name="ProductImage" value="<?php echo $row['ProductImage'];?>"><br>
-	Quantity Per Pack: <input type="text" class="form-control" name="QuantityPerPack" value="<?php echo $row['QuantityPerPack'];?>">
-	Category ID: <input type="text" class="form-control" name="CategoryID" value="<?php echo $row['CategoryID'];?>">
-	Current Stock Level: <input type="text" class="form-control" name="CurrentStockLevel" value="<?php echo $row['CurrentStockLevel'];?>"><br>
-
-    Low Stock Level: <input type="text" class="form-control" name="LowStockLevel" value="<?php echo $row['LowStockLevel'];?>"><br>
+<br><br>
+<form action="UpdateProduct.php" method="POST" align="center">
+    <label for="ProductCode" style="width: 150px">Product Code: </label>
+    <input type="text" class="form-control" readonly="readonly" name="ProductCode" value="<?php echo $row['ProductCode'];?>" style="width: 300px; display: inline-block"><br><br>
+	<label for="ProductName" style="width: 150px">Product Name:  </label>
+    <input type="text" class="form-control"  name="ProductName" value="<?php echo $row['ProductName'];?>" style="width: 300px; display: inline-block"><br><br>
+	<label for="ProductImage" style="width: 150px">Product Image: </label>
+    <input type="file" class="form-control"  name="ProductImage" value="<?php echo $row['ProductImage'];?>" style="width: 300px; display: inline-block"><br><br>
+	<label for="QuantityPerPack" style="width: 150px">Quantity Per Pack: </label>
+    <input type="text" class="form-control" name="QuantityPerPack" value="<?php echo $row['QuantityPerPack'];?>" style="width: 300px; display: inline-block"><br><br>
+	<label for="CategoryID" style="width: 150px">Category ID: </label>
+    <input type="text" class="form-control" name="CategoryID" value="<?php echo $row['CategoryID'];?>" style="width: 300px; display: inline-block"><br><br>
+	<label for="CurrentStockLevel" style="width: 150px">Current Stock Level: </label>
+    <input type="text" class="form-control" name="CurrentStockLevel" value="<?php echo $row['CurrentStockLevel'];?>" style="width: 300px; display: inline-block"><br><br>
+    <label for="LowStockLevel" style="width: 150px">Low Stock Level:  </label>
+    <input type="text" class="form-control" name="LowStockLevel" value="<?php echo $row['LowStockLevel'];?>" style="width: 300px; display: inline-block"><br><br>
 	<input type="submit" value="Update Product">
 </form>
 

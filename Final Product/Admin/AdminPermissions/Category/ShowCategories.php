@@ -30,15 +30,15 @@
 
 
 
-
-<div class="outputresults">
+<br>
+<div class="outputresults" align="center">
 
 
  <div class="col-sm-3">
         <form action="CategoriesLocked.php" method="POST">
             Please enter preferred CategoryID:
             <br>
-            <input type="text" class="form-control" name="CategoryID">
+            <input type="text" class="form-control" name="CategoryID" style="width: 300px; display: inline-block;">
  
 	
             <input type="submit" name="submit" class="btn btn-primary" value="Search">
@@ -108,11 +108,12 @@ $stmt->execute();
 ?>
 <br>
 
-<div class="container">
+<div class="container" align="center">
 
  <div class="outputresults">
 
-		          <input type="button" style="display:inline" onclick=window.location.href="addacategory.php" class="btn btn-primary" value="Add a user"> </td>
+		          <input type="button" style="display:inline" onclick=window.location.href="addacategory.php" class="btn btn-primary" value="Add a category"> </td>
+              <br>
 
 
 <?php
@@ -127,7 +128,7 @@ while($row = $stmt->fetch())
 	
 		echo "<TD align=center>".$row['CategoryID']."</TD>";
 		echo "<TD align=center><a href='EditCategory.php?CategoryID=".$row['CategoryID']."'>Edit</a>";
-		echo "<TD align=center><a href='DeleteCategory.php?CategoryID=".$row['CategoryID']."'>Delete Supplier</a>";
+		echo "<TD align=center><a href='DeleteCategory.php?CategoryID=".$row['CategoryID']."'>Delete Category</a>";
 	echo "</TR>";
   }
 echo "</TABLE>";

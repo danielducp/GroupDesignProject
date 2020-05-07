@@ -22,7 +22,7 @@
        
        <img src="../../../LogoutButton.png" id="logout-button" alt="logout-button" onclick="window.location.href = '../logout.php'" ></img>
        </div>
-    <br><br><br><br><br><br>
+    <br><br>
 </body>
 </html>
 
@@ -117,11 +117,13 @@
     <title>Add a Category</title>
 </head>
 <body>
-    <h1>Add a Category</h1>
-    <div class="outputresults">
+    <h1 align="center">Add a Category</h1>
+    <br>
+    <div class="outputresults" align="center">
     <form action="addasuppliedproduct.php" method="post">
 
-    <select name="SupplierID" id="SupplierID" searchable="Search here">
+    <label for="SupplierID" style="width: 150px">Supplier ID: </label>
+    <select name="SupplierID" class="form-control" id="SupplierID" searchable="Search here" style="width: 200px; display: inline-block">
             <option value="" selected="true" disabled="disabled">Select Supplier ID </option>
             <?php
             $data=load_SupplierID();
@@ -129,17 +131,24 @@
             echo '<option value="'.$row["SupplierID"].'">'.$row["SupplierID"].'</option>';
             ?>
             <?php endforeach ?>
-            </select><br>
+            </select><br><br>
 	
-            <select name="SupplierName" id="SupplierName" searchable="Search here">
+
+            <label for="SupplierName" style="width: 150px">Supplier Name: </label>
+            <select name="SupplierName" class="form-control" id="SupplierName" searchable="Search here" style="width: 200px; display: inline-block">
             <option value="" disabled selected>Select Supplier Name </option>
          
-            </select><br>
-Delivery Time: <input type="number" class="form-control"  name="DeliveryTime">
-Item Cost: <input type="text" class="form-control"  name="ItemCost">
-VAT Cost: <input type="text" class="form-control"  name="VATCost" >
-Total Cost: <input type="text" class="form-control"  name="TotalCost" >
-<select name="ProductCode" id="ProductCode" searchable="Search here">
+            </select><br><br>
+            <label for="ProductCode" style="width: 150px">Delivery Time: </label>
+            <input type="number" class="form-control"  name="DeliveryTime" style="width: 200px; display: inline-block"><br><br>
+            <label for="ItemCost" style="width: 150px">Item Cost: </label>
+            <input type="text" class="form-control"  name="ItemCost" style="width: 200px; display: inline-block"><br><br>
+            <label for="VATCost" style="width: 150px">VAT Cost: </label>
+            <input type="text" class="form-control"  name="VATCost" style="width: 200px; display: inline-block"><br><br>
+            <label for="TotalCost" style="width: 150px">Total Cost: </label>
+            <input type="text" class="form-control"  name="TotalCost" style="width: 200px; display: inline-block"><br><br>
+            <label for="ProductCode" style="width: 150px">Product Code: </label>
+<select name="ProductCode" class="form-control" id="ProductCode" searchable="Search here" style="width: 200px; display: inline-block">
             <option value="" selected="true" disabled="disabled">Select Product Code </option>
             <?php
             $data=load_ProductCode();
@@ -147,11 +156,11 @@ Total Cost: <input type="text" class="form-control"  name="TotalCost" >
             echo '<option value="'.$row["ProductCode"].'">'.$row["ProductCode"].'</option>';
             ?>
             <?php endforeach ?>
-            </select>
+            </select><br><br>
 
 
         
-        <input type="submit" name="register" class="form-control" value="Register"></button>
+        <input type="submit" name="register" class="form-control" value="Register" style="width: 200px"></button>
     </form>
 </body>
 </html>

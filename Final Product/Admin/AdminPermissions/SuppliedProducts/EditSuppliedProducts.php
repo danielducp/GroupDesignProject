@@ -60,18 +60,26 @@ while($row = $sqlQuery->fetch())
 
 
 	
+<br><br>
+<form action="UpdateSuppliedProducts.php" method="POST" align="center">
+<label for="SuppliedProductID" style="width: 170px">Supplied Products ID: </label>
+<input type="text" class="form-control" readonly="readonly" name="SuppliedProductsID" size="width:150px" value="<?php echo $row['SuppliedProductsID'];?>" style="width: 300px; display: inline-block"><br><br>
+<label for="SupplierID" style="width: 170px">Supplier ID: </label>
+<input type="text" class="form-control"  name="SupplierID" value="<?php echo $row['SupplierID'];?>" style="width: 300px; display: inline-block"><br><br>
+<label for="SupplierName" style="width: 170px">Supplier Name: </label>
+<input type="text" class="form-control"  name="SupplierName" value="<?php echo $row['SupplierName'];?>" style="width: 300px; display: inline-block"><br><br>
+<label for="DeliveryTime" style="width: 170px">Delivery Time: </label>
+<input type="number" class="form-control"  name="DeliveryTime" value="<?php echo $row['DeliveryTime'];?>" style="width: 300px; display: inline-block"><br><br>
+<label for="ItemCost" style="width: 170px">Item Cost: </label>
+<input type="text" class="form-control"  name="ItemCost" value="<?php echo $row['ItemCost'];?>" style="width: 300px; display: inline-block"><br><br>
+<label for="VATCost" style="width: 170px">VAT Cost: </label>
+<input type="text" class="form-control"  name="VATCost" value="<?php echo $row['VATCost'];?>" style="width: 300px; display: inline-block"><br><br>
+<label for="TotalCost" style="width: 170px">Total Cost: </label>
+<input type="text" class="form-control"  name="TotalCost" value="<?php echo $row['TotalCost'];?>" style="width: 300px; display: inline-block"><br><br>
+<label for="ProductCode" style="width: 170px">Product Code: </label>
+<input type="text" class="form-control"  name="ProductCode" value="<?php echo $row['ProductCode'];?>" style="width: 300px; display: inline-block"><br><br>
 
-<form action="UpdateSuppliedProducts.php" method="POST">
-Supplied Products ID: <input type="text" class="form-control" readonly="readonly" name="SuppliedProductsID" size="width:150px" value="<?php echo $row['SuppliedProductsID'];?>">
-Supplier ID: <input type="text" class="form-control"  name="SupplierID" value="<?php echo $row['SupplierID'];?>">
-Supplier Name: <input type="text" class="form-control"  name="SupplierName" value="<?php echo $row['SupplierName'];?>">
-Delivery Time: <input type="number" class="form-control"  name="DeliveryTime" value="<?php echo $row['DeliveryTime'];?>">
-Item Cost: <input type="text" class="form-control"  name="ItemCost" value="<?php echo $row['ItemCost'];?>">
-VAT Cost: <input type="text" class="form-control"  name="VATCost" value="<?php echo $row['VATCost'];?>">
-Total Cost: <input type="text" class="form-control"  name="TotalCost" value="<?php echo $row['TotalCost'];?>">
-Product Code: <input type="text" class="form-control"  name="ProductCode" value="<?php echo $row['ProductCode'];?>">
-
-	<input type="submit" value="Update Supplied Product">
+	<input type="submit" class="form-control" value="Update Supplied Product" style="width:200px">
 </form>
 
 <?php 

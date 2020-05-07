@@ -21,15 +21,15 @@
        <img src="../../../LogoutButton.png" id="logout-button" alt="logout-button" onclick="window.location.href = '../logout.php'" ></img>
        </div>
 
-
-<div class="outputresults">
+<br>
+<div class="outputresults" align="center">
 
 
  <div class="col-sm-3">
         <form action="UsersLocked.php" method="POST">
             Please enter preferred StaffID:
             <br>
-            <input type="text" class="form-control" name="StaffID">
+            <input type="text" class="form-control" name="StaffID" style="width: 300px; display: inline-block;">
  
 	
             <input type="submit" name="submit" class="btn btn-primary" value="Search">
@@ -101,10 +101,10 @@ $stmt->execute();
 
 <div class="container">
 
- <div class="outputresults">
+ <div class="outputresults" align="center">
 
 		          <input type="button" style="display:inline" onclick=window.location.href="addauser.php" class="btn btn-primary" value="Add a user"> </td>
-
+              <br>
 
 <?php
 

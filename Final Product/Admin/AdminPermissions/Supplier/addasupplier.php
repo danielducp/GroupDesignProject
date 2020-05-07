@@ -18,8 +18,7 @@
         <div class="search-box" id="search-bar">
             <input type="text" autocomplete="on" placeholder="Search product..." />
         <div class="result"></div>
-        </div>
-       
+        </div>       
        <img src="../../../LogoutButton.png" id="logout-button" alt="logout-button" onclick="window.location.href = '../logout.php'" ></img>
        </div>
     <br><br>
@@ -98,20 +97,25 @@
         <title>Register</title>
     </head>
     <body>
-        <h1 align="center">Add a supplier</h1>
-		<div class="outputresults" >
+        <h1 align="center">Add a Supplier</h1>
+        <br>
+		<div class="outputresults">
         <form action="addasupplier.php" method="post" align="center">
-			<label for="SupplierID" style="width: 150px">Supplier ID</label>
-            <input type="text" id="SupplierID" name="SupplierID" style="width: 200px; display: inline-block" class="form-control" maxlength="2"><br>
-            <br> <label for="SupplierName" style="width: 150px">Supplier Name</label>
-            <input type="text" id="SupplierName" class="form-control" style="width: 200px; display: inline-block" name="SupplierName"><br>
-            <br> <label for="SupplierAddress" style="width: 150px">Supplier Address</label>
-            <input type="text" id="SupplierAddress" style="width: 200px; display: inline-block" class="form-control" name="SupplierAddress"><br>
+            <label for="SupplierCode" style="width: 150px">Supplier Code</label>
+            <input type="text" id="SupplierCode" name="SupplierCode" class="form-control" maxlength="20" style="width: 200px; display: inline-block">
             <br><br>
-            <div style="float: none; display: inline-block">	
-            <input type="submit" name="register" class="form-control" value="Register"></button>
+            <label for="SupplierID" style="width: 150px">Supplier ID</label>
+            <input type="SupplierID" id="SupplierID" class="form-control" name="SupplierID" style="width: 200px; display: inline-block">
+            <br><br>
+            <label for="SupplierName" style="width: 150px">Supplier Name</label>
+            <input type="SupplierName" id="SupplierName" class="form-control" name="SupplierName" minlength="2" maxlength="20" style="width: 200px; display: inline-block">
+            <br><br>
+            <label for="SupplierAddress" style="width: 150px">Supplier Address</label>
+            <input type="text" id="SupplierAddress" class="form-control" name="SupplierAddress" style="width: 200px; display: inline-block">
+            <br><br>
+            <div style="float: none; display: inline-block">			
+                <input type="submit" name="register" class="form-control" value="Register"></button>
             </div>
-
         </form>
     </body>
 </html>

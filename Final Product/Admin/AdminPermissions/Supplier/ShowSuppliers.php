@@ -32,17 +32,15 @@
 
 
 
-
-<div class="outputresults">
+<br>
+<div class="outputresults" align="center">
 
 
  <div class="col-sm-3">
         <form action="SuppliersLocked.php" method="POST">
             Please enter preferred SupplierID:
             <br>
-            <input type="text" class="form-control" name="SupplierID">
- 
-	
+            <input type="text" class="form-control" name="SupplierID" style="width: 300px; display: inline-block;">
             <input type="submit" name="submit" class="btn btn-primary" value="Search">
         </form>
 
@@ -112,9 +110,10 @@ $stmt->execute();
 
 <div class="container">
 
- <div class="outputresults">
+ <div class="outputresults" align="center">
 
 		          <input type="button" style="display:inline" onclick=window.location.href="addaSupplier.php" class="btn btn-primary" value="Add a user"> </td>
+              <br>
 
 
 <?php

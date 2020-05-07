@@ -30,16 +30,15 @@
        </div>
 
 
-<div class="outputresults">
+<div class="outputresults" align="center">
 
 
  <div class="col-sm-3">
+ <br>
         <form action="ProductsLocked.php" method="POST">
             Please enter preferred ProductCode:
             <br>
-            <input type="text" class="form-control" name="ProductCode">
- 
-	
+            <input type="text" class="form-control" name="ProductCode" style="width: 300px; display: inline-block;">
             <input type="submit" name="submit" class="btn btn-primary" value="Search">
         </form>
 
@@ -109,9 +108,10 @@ $stmt->execute();
 
 <div class="container">
 
- <div class="outputresults">
+ <div class="outputresults" align="center">
 
 		          <input type="button" style="display:inline" onclick=window.location.href="addaproduct.php" class="btn btn-primary" value="Add a product"> </td>
+              <br>
 
 
 <?php

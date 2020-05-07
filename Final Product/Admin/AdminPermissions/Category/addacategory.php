@@ -22,7 +22,7 @@
        
        <img src="../../../LogoutButton.png" id="logout-button" alt="logout-button" onclick="window.location.href = '../logout.php'" ></img>
        </div>
-    <br><br><br><br><br><br>
+    <br><br>
 </body>
 </html>
 
@@ -96,14 +96,15 @@
     <title>Add a Category</title>
 </head>
 <body>
-    <h1>Add a Category</h1>
-    <div class="outputresults">
+    <h1 align="center">Add a Category</h1>
+    <br>
+    <div class="outputresults" align="center">
     <form action="addacategory.php" method="post">
-        <label for="CategoryID">Category ID</label>
-        <input type="text" id="CategoryID" name="CategoryID" class="form-control" maxlength="20"><br>
-        <label for="CategoryName">Category Name</label>
-        <input type="number" id="CategoryName" class="form-control" name="CategoryName"><br>        
-        <input type="submit" name="register" class="form-control" value="Register"></button>
+        <label for="CategoryID" style="width: 150px">Category ID</label>
+        <input type="text" id="CategoryID" name="CategoryID" class="form-control" maxlength="20" style="width: 200px; display: inline-block"><br>
+        <label for="CategoryName" style="width: 150px">Category Name</label>
+        <input type="number" id="CategoryName" class="form-control" name="CategoryName" style="width: 200px; display: inline-block"><br><br>        
+        <input type="submit" name="register" class="form-control" value="Register" style="width: 120px"></button>
     </form>
 </body>
 </html>

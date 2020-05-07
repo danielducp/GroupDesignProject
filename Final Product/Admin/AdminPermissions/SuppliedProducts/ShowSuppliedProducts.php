@@ -30,14 +30,14 @@
 
 
 
-<div class="outputresults">
+<div class="outputresults" align="center">
 
 
  <div class="col-sm-3">
         <form action="SuppliedProductsLocked.php" method="POST">
             Please enter preferred SuppliedProductsID:
             <br>
-            <input type="text" class="form-control" name="SuppliedProductsID">
+            <input type="text" class="form-control" name="SuppliedProductsID" style="width: 300px; display: inline-block;">
  
 	
             <input type="submit" name="submit" class="btn btn-primary" value="Search">
@@ -107,11 +107,12 @@ $stmt->execute();
 ?>
 <br>
 
-<div class="container">
+<div class="container" align="center">
 
  <div class="outputresults">
 
 		          <input type="button" style="display:inline" onclick=window.location.href="addasuppliedproduct.php" class="btn btn-primary" value="Add a Supplied Product ID"> </td>
+              <br>
 
 
 <?php

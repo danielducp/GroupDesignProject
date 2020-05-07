@@ -60,12 +60,14 @@ while($row = $sqlQuery->fetch())
 
 
 	
-
-<form action="UpdateCategory.php" method="POST">
-Category ID: <input type="text" class="form-control" readonly="readonly" name="CategoryID" size="width:150px" value="<?php echo $row['CategoryID'];?>">
-Category Name: <input type="text" class="form-control"  name="CategoryName" value="<?php echo $row['CategoryName'];?>">
+<br>
+<form action="UpdateCategory.php" method="POST" align="center">
+<label for="staffid" style="width: 150px">Category ID: </label>
+<input type="text" class="form-control" readonly="readonly" name="CategoryID" value="<?php echo $row['CategoryID'];?>" style="width: 300px; display: inline-block"><br>
+<label for="staffid" style="width: 150px">Category Name: </label>
+<input type="text" class="form-control"  name="CategoryName" value="<?php echo $row['CategoryName'];?>" style="width: 300px; display: inline-block"><br><br>
 	
-	<input type="submit" value="Update Category">
+	<input type="submit" class="form-control" value="Update Category" style="width: 300px;" align="center">
 </form>
 
 <?php 

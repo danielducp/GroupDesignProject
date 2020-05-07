@@ -109,25 +109,35 @@
         <title>Register</title>
     </head>
     <body>
-        <h1  align="center">Add a Product</h1>
-		<div class="outputresults">
-        <form action="addaproduct.php" method="post"  align="center">
-			<label for="ProductCode" style="width: 150px">Product Code</label>
-            <input style="width: 200px; display: inline-block" type="text" id="ProductCode" name="ProductCode" class="form-control" maxlength="6"><br><br>
+        <h1 align="center">Add a Product</h1>
+        <div class="outputresults">
+        <form action="addauser.php" method="post" align="center">
+            <label for="ProductID" style="width: 150px">Product ID</label>
+            <input type="text" id="ProductID" name="ProductID" class="form-control" maxlength="20" style="width: 200px; display: inline-block">
+            <br><br>
+            <label for="ProductCode" style="width: 150px">Product Code</label>
+            <input type="ProductCode" id="ProductCode" class="form-control" name="ProductCode" style="width: 200px; display: inline-block">
+            <br><br>
             <label for="ProductName" style="width: 150px">Product Name</label>
-            <input style="width: 200px; display: inline-block" type="text" id="ProductName" class="form-control" name="ProductName"><br><br>
+            <input type="ProductName" id="ProductName" class="form-control" name="ProductName" minlength="2" maxlength="20" style="width: 200px; display: inline-block">
+            <br><br>
             <label for="ProductImage" style="width: 150px">Product Image</label>
-            <input style="width: 200px; display: inline-block" type="file" id="ProductImage" class="form-control" name="ProductImage"><br><br>
+            <input type="text" id="ProductImage" class="form-control" name="ProductImage" style="width: 200px; display: inline-block">
+            <br><br>
             <label for="QuantityPerPack" style="width: 150px">Quantity Per Pack</label>
-            <input style="width: 200px; display: inline-block" type="text" id="QuantityPerPack" class="form-control" name="QuantityPerPack"><br><br>
+            <input type="number"  min="1" max="5" id="QuantityPerPack"  class="form-control" name="QuantityPerPack"  maxlength="7" style="width: 200px; display: inline-block">
+            <br><br>
             <label for="CategoryID" style="width: 150px">Category ID</label>
-            <input style="width: 200px; display: inline-block" type="text" id="CategoryID" class="form-control" name="CategoryID"><br><br>
+            <input type="number" min="1" max="5" id="CategoryID" name="CategoryID" class="form-control" maxlength="11" style="width: 200px; display: inline-block">
+            <br><br>
             <label for="CurrentStockLevel" style="width: 150px">Current Stock Level</label>
-            <input style="width: 200px; display: inline-block" type="text" id="CurrentStockLevel" class="form-control" name="CurrentStockLevel"><br><br>
+            <input type="text" id="CurrentStockLevel" name="CurrentStockLevel" class="form-control" maxlength="11" style="width: 200px; display: inline-block">
+            <br><br>
             <label for="LowStockLevel" style="width: 150px">Low Stock Level</label>
-            <input style="width: 200px; display: inline-block" type="text" id="LowStockLevel" class="form-control" name="LowStockLevel"><br><br>
+            <input type="text" id="LowStockLevel" name="LowStockLevel" class="form-control" maxlength="11" style="width: 200px; display: inline-block">
+            <br><br>
             <div style="float: none; display: inline-block">
-            <input type="submit" name="register" class="form-control" value="Register" style="width: 120px"></button>
+                <input type="submit" name="register" class="form-control" value="Register" style="width: 120px"></button>
             </div>
         </form>
     </body>

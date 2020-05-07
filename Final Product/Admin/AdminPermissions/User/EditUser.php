@@ -60,21 +60,24 @@ while($row = $sqlQuery->fetch())
 
 
 	
-
+<br>
 <fieldset>
-            <legend> REGISTER </legend>
-            <form name="register" action="UpdateUser.php" method="post">
-
-                <input name="staffid" type="text" readonly value="<?php echo $row['staffid'];?>"><br>
-				<input name="stafftitle" type="text" value="<?php echo $row['stafftitle'];?>"><br>
-				<input name="staffname" type="text"  value="<?php echo $row['staffname'];?>"><br>
-				<input name="staffrole" type="text" value="<?php echo $row['staffrole'];?>"><br>
-				<input name="storeid" type="text"  value="<?php echo $row['storeid'];?>"><br>
-				<input name="departmentid" type="text" value="<?php echo $row['departmentid'];?>"><br>
-
-               
-
-                <input name="upassword" type="password" placeholder="please enter a password or passphrase"><br>
+            <legend align="center"> REGISTER </legend> <br>
+            <form name="register" action="UpdateUser.php" method="post" align="center">
+                <label for="staffid" style="width: 150px">Staff ID: </label>
+                <input name="staffid" class="form-control" type="text" readonly value="<?php echo $row['staffid'];?>" style="width: 300px; display: inline-block"><br><br>
+                <label for="stafftitle" style="width: 150px">Staff Title: </label>
+				<input name="stafftitle" class="form-control" type="text" value="<?php echo $row['stafftitle'];?>" style="width: 300px; display: inline-block"><br><br>
+                <label for="staffname" style="width: 150px">Staff Name: </label>
+				<input name="staffname" class="form-control" type="text"  value="<?php echo $row['staffname'];?>" style="width: 300px; display: inline-block"><br><br>
+                <label for="staffrole" style="width: 150px">Staff Role: </label>
+				<input name="staffrole" class="form-control" type="text" value="<?php echo $row['staffrole'];?>" style="width: 300px; display: inline-block"><br><br>
+                <label for="storeid" style="width: 150px">Store ID: </label>
+				<input name="storeid" class="form-control" type="text"  value="<?php echo $row['storeid'];?>" style="width: 300px; display: inline-block"><br><br>
+                <label for="departmentid" style="width: 150px">Department ID: </label>
+				<input name="departmentid" class="form-control" type="text" value="<?php echo $row['departmentid'];?>" style="width: 300px; display: inline-block"><br><br>
+                <label for="password" style="width: 150px">Password: </label>
+                <input name="upassword" class="form-control" type="password" placeholder="please enter a password or passphrase" style="width: 300px; display: inline-block"><br><br>
                 <input name="submit" type="submit">
             </form>
         </fieldset>

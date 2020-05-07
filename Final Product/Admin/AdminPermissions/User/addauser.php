@@ -22,11 +22,12 @@
        
        <img src="../../../LogoutButton.png" id="logout-button" alt="logout-button" onclick="window.location.href = '../logout.php'" ></img>
        </div>
-    <br><br>
+    <br>
 </body>
 </html>
     <div class="form">
             <h1 align="center"> Add a staff memeber </h1>
+            <br>
             <div class="outputresults">
             <form name="register" action="register.php" method="post" align="center">
             <label for="staffid" style="width: 150px">Staff ID</label>
@@ -38,7 +39,8 @@
                 <input  class="form-control" style="width: 200px; display: inline-block" name="staffname" type="text" ><br>       <br>
                 <label for="staffrole" style="width: 150px">Staff Role</label>
 
-                <input style="width: 200px; display: inline-block" name="staffrole" type="text" #><br>       <br>
+                <input class="form-control" style="width: 200px; display: inline-block" name="staffrole" type="text" #><br>       <br>
+                <label for="storeid" style="width: 150px">Store ID</label>
                 <select class="form-control" style="width: 200px; display: inline-block" name="storeid" id="storeid" searchable="Search here" >
             <option value="" selected="true" disabled="disabled">Select Store ID</option>
             <?php
@@ -48,10 +50,12 @@
             ?>
             <?php endforeach ?>
             </select>
+            <br><br><label for="StoreName" style="width: 150px">Store Name</label>
             <select class="form-control" style="width: 200px; display: inline-block" name="StoreName" id="StoreName" searchable="Search here" >
             <option value="" disabled selected>Store Name</option>
          </select>
                 <br> <br>
+                <label for="departmentid" style="width: 150px">Department ID:</label>
                 <select class="form-control" style="width: 200px; display: inline-block" name="departmentid" id="departmentid" searchable="Search here" >
             <option value="" selected="true" disabled="disabled">Select Department ID </option>
             <?php
