@@ -151,7 +151,7 @@ if ($products_in_cart) {
                     <td id="TableTheme" class="Supplier" ALIGN="center"><?=$product['SupplierName']?></td>
                     <td id="TableTheme" class="TotalCost" ALIGN="center">&pound;<?=$product['TotalCost'] ?></td>
                     <td id="TableTheme" class="quantity" ALIGN="center">
-                        <input type="number" style="margin-top:4px" name="quantity-<?=$product['SuppliedProductsID']?>" value="<?=$products_in_cart[$product['SuppliedProductsID']]?>" min="1" max="5" placeholder="Quantity" required>
+                        <input type="number" style="margin-top:4px; width:50px" name="quantity-<?=$product['SuppliedProductsID']?>" value="<?=$products_in_cart[$product['SuppliedProductsID']]?>" min="1" max="5" placeholder="Quantity" required>
                     </td>
                     <td id="TableTheme" class="remove" ALIGN="center">
                     <a id="remove-button" class="btn btn-success" style="margin-top:4px" href="index.php?page=cart&remove=<?=$product['SuppliedProductsID']?>" class="remove">Remove</a>
