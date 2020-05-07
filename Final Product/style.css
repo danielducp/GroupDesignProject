@@ -1,8 +1,11 @@
 #g4u-logo {
-  width: 10%;
-  height: auto;
+ 
   margin: 6px;
   display: inline-block;
+  height: auto; 
+  width: auto; 
+  max-width: 150px; 
+  max-height: 150px;
 }
 #search-bar {
   margin: 6px;
