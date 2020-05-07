@@ -77,7 +77,6 @@ if ($products_in_cart) {
 
                 <tr>
 
-                <?=$product['ProductName']?>                 <?=$product['DeliveryTime']?>
 
 
 
@@ -216,7 +215,7 @@ $SupplierID = $product['SupplierID'];
 $stmt->execute();
 
 
-header("refresh:5;url=../Login/homepage.php");
+header("refresh:10;url=../Login/homepage.php");
 unset($_SESSION['cart']);
 ?>
 
@@ -229,12 +228,9 @@ unset($_SESSION['cart']);
 
         </div><td></td> <td ></td > <td ></td > 					
 
-                        <td ALIGN="center" >                         <div class="subtotal">
-            <span class="text"  >Subtotal</span>
-            <span class="price" >&pound;<?php echo number_format($subtotal,2); ?></span>
          <br>
          <?PHP
-         echo "ORDER HAS BEEN COMPLETED";
+         echo "ORDER HAS BEEN COMPLETED, YOU WILL NOW BE LOGGED OUT";
 
       
          ?>
