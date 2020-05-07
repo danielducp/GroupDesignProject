@@ -1,5 +1,6 @@
 #g4u-logo {
- 
+  position: absolute;
+  left: 290px;
   margin: 6px;
   display: inline-block;
   height: auto; 
@@ -8,9 +9,15 @@
   max-height: 150px;
 }
 #search-bar {
+  
   margin: 6px;
-  margin-top: 100px;
+  margin-top: 120px;
+  
   display: inline-block;
+  height: auto; 
+  width: auto; 
+  max-width: 150px; 
+  max-height: 150px;
 }
 #search-button {
   background-color: #4CAF50; /* Green */
@@ -35,6 +42,8 @@
   margin: 6px;
 }
 #logout-button {
+  position: absolute;
+  right: 10px;
   border: none;
   color: white;
   padding: 15px 32px;
@@ -60,6 +69,8 @@
   margin: 6px;
 }
 #basket {
+  position: absolute;
+  right: 320px;
   border: none;
   color: white;
   padding: 15px 32px;
@@ -73,6 +84,8 @@
   margin: 6px;
 }
 #back {
+  position: absolute;
+  left: 10px;
   border: none;
   color: white;
   padding: 15px 32px;
