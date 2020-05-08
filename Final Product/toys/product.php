@@ -1,4 +1,10 @@
-<!DOCTYPE html>
+<?php
+    session_start() ;
+	    if(!isset($_SESSION['auth']))
+    {
+    header("Location:../Login/Homepage.php") ;
+    }
+    ?><!DOCTYPE html>
 <html lang="en">
 <head>
   <title>Toys Product Page</title>
@@ -14,8 +20,8 @@
 <body style="background-color:#AEB9C7">
     <div style="background-color:#a6b2c1;" class="topnav" align="center">
         
-        <img src="../Back.png" id="back" alt="back" style=width:50%; height="50%"></img>
-        <img src="../g4uimageprototype.png" id="g4u-logo" alt="G4ULogo"></img>
+        <img src="../Back.png" onclick="goBack()" id="back" alt="back" style=width:50%; height="50%"></img>
+        <img src="../g4uimageprototype.png" onclick="window.location.href = 'index.php'" id="g4u-logo" alt="G4ULogo"></img>
         <div class="search-box" id="search-bar">
             <input type="text" autocomplete="on" placeholder="Search product..." />
         <div class="result"></div>
@@ -191,3 +197,8 @@ if (isset($_GET['ProductCode'])) {
             });
         });
     </script>
+<script>
+function goBack() {
+  window.history.back();
+}
+</script>

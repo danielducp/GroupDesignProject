@@ -151,4 +151,8 @@ if(isset($_POST['register'])){
             <input type="submit" name="register" class="form-control" value="Register"></button>
         </form>
     </body>
-</html>
+</html> <script>
+function goBack() {
+  window.history.back();
+}
+</script>

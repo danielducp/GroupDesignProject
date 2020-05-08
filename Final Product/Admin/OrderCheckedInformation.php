@@ -1,4 +1,10 @@
-
+<?php
+    session_start() ;
+	    if(!isset($_SESSION['auth']))
+    {
+    header("Location:../Login/Homepage.php") ;
+    }
+    ?>
   <body style="background-color:#a6b2c1">
   <h1 style="padding-left:20px">Items waiting to be checked</h1>
 
@@ -54,4 +60,8 @@ echo "<TR>";
 
 
 </body>
-</html>
+</html> <script>
+function goBack() {
+  window.history.back();
+}
+</script>

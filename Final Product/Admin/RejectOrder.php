@@ -25,4 +25,8 @@ echo "Order Deleted!"
 
 
 </body>
-</html>
+</html> <script>
+function goBack() {
+  window.history.back();
+}
+</script>

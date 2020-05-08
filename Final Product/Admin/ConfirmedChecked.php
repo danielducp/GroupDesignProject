@@ -1,4 +1,10 @@
-<head>
+<?php
+    session_start() ;
+	    if(!isset($_SESSION['auth']))
+    {
+    header("Location:../Login/Homepage.php") ;
+    }
+    ?><head>
   <title>G4U</title>
   <link rel="stylesheet" href="../style.css" type="text/css">
   <link rel="stylesheet" href="../website.css" type="text/css">
@@ -11,8 +17,8 @@
 <body style="background-color:#AEB9C7">
     <div style="background-color:#a6b2c1;" class="topnav" align="center">
         
-        <img src="../Back.png" id="back" alt="back" style=width:50%; height="50%"></img>
-        <img src="../g4uimageprototype.png" id="g4u-logo" alt="G4ULogo"></img>
+        <img src="../Back.png" onclick="goBack()" id="back" alt="back" style=width:50%; height="50%"></img>
+        <img src="../g4uimageprototype.png" onclick="window.location.href = 'adminpage.php'" id="g4u-logo" alt="G4ULogo"></img>
         <div class="search-box" id="search-bar">
             <input type="text" autocomplete="on" placeholder="Search product..." />
         <div class="result"></div>
@@ -66,4 +72,8 @@ echo "<TR>";
 
 
 </body>
-</html>
+</html> <script>
+function goBack() {
+  window.history.back();
+}
+</script>

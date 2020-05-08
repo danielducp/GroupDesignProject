@@ -1,4 +1,10 @@
-
+<?php
+    session_start() ;
+	    if(!isset($_SESSION['auth']))
+    {
+    header("Location:../Login/Homepage.php") ;
+    }
+    ?>
  
  <?php
 require ("config.php");
@@ -48,4 +54,8 @@ echo "<TR>";
 
 
 </body>
-</html>
+</html> <script>
+function goBack() {
+  window.history.back();
+}
+</script>

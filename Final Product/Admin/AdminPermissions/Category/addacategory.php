@@ -1,4 +1,11 @@
-<!DOCTYPE html>
+<?php
+    session_start() ;
+	    if(!isset($_SESSION['auth']))
+    {
+    header("Location:../../../Login/Homepage.php") ;
+    }
+    ?>
+    <!DOCTYPE html>
 <html>
 <head>
   <title>G4U</title>
@@ -13,18 +20,22 @@
 <body style="background-color:#AEB9C7">
     <div style="background-color:#a6b2c1;" class="topnav" align="center">
         
-        <img src="../../../Back.png" id="back" alt="back" style=width:50%; height="50%"></img>
-        <img src="../../../g4uimageprototype.png" id="g4u-logo" alt="G4ULogo"></img>
+        <img src="../../../Back.png" onclick="goBack()" id="back" alt="back" style=width:50%; height="50%"></img>
+        <img onclick="window.location.href = '../../adminpage.php'" src="../../../g4uimageprototype.png" id="g4u-logo" alt="G4ULogo"></img>
         <div class="search-box" id="search-bar">
             <input type="text" autocomplete="on" placeholder="Search product..." />
         <div class="result"></div>
         </div>
        
-       <img src="../../../LogoutButton.png" id="logout-button" alt="logout-button" onclick="window.location.href = '../logout.php'" ></img>
+       <img src="../../../LogoutButton.png" id="logout-button" alt="logout-button" onclick="window.location.href = '../../../logout.php'" ></img>
        </div>
     <br><br>
 </body>
-</html>
+</html> <script>
+function goBack() {
+  window.history.back();
+}
+</script>
 
 <?php
     session_start() ;	
@@ -107,4 +118,8 @@
         <input type="submit" name="register" class="form-control" value="Register" style="width: 120px"></button>
     </form>
 </body>
-</html>
+</html> <script>
+function goBack() {
+  window.history.back();
+}
+</script>

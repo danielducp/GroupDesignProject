@@ -54,7 +54,11 @@
     </div>
   </div>
 </body>
-</html>`
+</html> <script>
+function goBack() {
+  window.history.back();
+}
+</script>`
 
 
 <?php function load_staffid()

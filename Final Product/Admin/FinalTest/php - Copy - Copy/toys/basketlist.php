@@ -256,7 +256,11 @@ if ($products_in_cart) {
       </div>
     </div>
 </body>
-</html>
+</html> <script>
+function goBack() {
+  window.history.back();
+}
+</script>
 			<div style="clear:both"></div>
 			<br />
 			<h3>Order Details</h3>
@@ -314,5 +318,9 @@ if ($products_in_cart) {
 	</body>
 	<td><a href="orderconfirmation.php"><span class="text-danger">                <button id="remove-button" class="btn btn-success">Confirm Order</button>         
 </span></a></td>
-</html>
+</html> <script>
+function goBack() {
+  window.history.back();
+}
+</script>
 

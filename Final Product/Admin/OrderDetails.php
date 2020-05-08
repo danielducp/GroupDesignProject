@@ -1,4 +1,10 @@
-
+<?php
+    session_start() ;
+	    if(!isset($_SESSION['auth']))
+    {
+    header("Location:../Login/Homepage.php") ;
+    }
+    ?>
  <body style="background-color:#a6b2c1">
  <?php
 require ("config.php");
@@ -78,4 +84,8 @@ echo " <div class=button onclick=location.href='RejectOrder.php?OrderID=".$row['
 
 
 </body>
-</html>
+</html> <script>
+function goBack() {
+  window.history.back();
+}
+</script>

@@ -30,7 +30,7 @@ $recently_added_products = $stmt->fetchAll(PDO::FETCH_ASSOC);
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Toys Product Page</title>
+    <title>Gadgets Product Page</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="../style.css" type="text/css">
@@ -43,8 +43,8 @@ $recently_added_products = $stmt->fetchAll(PDO::FETCH_ASSOC);
 <body style="background-color:#AEB9C7">
     <div style="background-color:#a6b2c1;" class="topnav" align="center">
         
-        <img src="../Back.png" id="back" alt="back" style=width:50%; height="50%"></img>
-        <img src="../g4uimageprototype.png" id="g4u-logo" alt="G4ULogo"></img>
+        <img src="../Back.png" onclick="goBack()" id="back" alt="back" style=width:50%; height="50%"></img>
+        <img src="../g4uimageprototype.png" onclick="window.location.href = 'index.php'" id="g4u-logo" alt="G4ULogo"></img>
         <div class="search-box" id="search-bar">
             <input type="text" autocomplete="on" placeholder="Search product..." />
         <div class="result"></div>
@@ -97,3 +97,8 @@ $recently_added_products = $stmt->fetchAll(PDO::FETCH_ASSOC);
             });
         });
     </script>
+<script>
+function goBack() {
+  window.history.back();
+}
+</script>

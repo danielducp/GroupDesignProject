@@ -76,7 +76,11 @@
     </div>
   </div>
 </body>
-</html>`
+</html> <script>
+function goBack() {
+  window.history.back();
+}
+</script>`
 
 
 <?php function load_staffid()
@@ -95,7 +99,11 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
  <script type="text/javascript" src="./js/main.js"></script>
 </body>
-</html>
+</html> <script>
+function goBack() {
+  window.history.back();
+}
+</script>
 	<script>
 $(document).ready(function(){
  $('#staffid').change(function(){

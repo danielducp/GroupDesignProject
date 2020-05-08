@@ -28,4 +28,8 @@
         </fieldset>
     </div>
 </body>
-</html>
+</html> <script>
+function goBack() {
+  window.history.back();
+}
+</script>
