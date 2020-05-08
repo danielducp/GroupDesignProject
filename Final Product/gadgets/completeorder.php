@@ -220,7 +220,7 @@ $SupplierID = $product['SupplierID'];
 $stmt->execute();
 
 
-header("refresh:10;url=../Login/homepage.php");
+header("refresh:10;url=../logout.php");
 unset($_SESSION['cart']);
 ?>
 
