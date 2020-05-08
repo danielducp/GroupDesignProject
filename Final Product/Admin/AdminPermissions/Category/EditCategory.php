@@ -1,11 +1,5 @@
 
-<?php
-    session_start() ;
-	    if(!isset($_SESSION['auth']))
-    {
-    header("Location:../../../Login/Homepage.php") ;
-    }
-    ?>
+
 <head>
   <title>G4U</title>
   <link rel="stylesheet" href="../../../style.css" type="text/css">

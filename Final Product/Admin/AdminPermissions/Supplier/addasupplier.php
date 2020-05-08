@@ -1,10 +1,4 @@
-<?php
-    session_start() ;
-	    if(!isset($_SESSION['auth']))
-    {
-    header("Location:../../../Login/Homepage.php") ;
-    }
-    ?><!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
   <title>G4U</title>

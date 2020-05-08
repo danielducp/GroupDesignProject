@@ -1,10 +1,4 @@
-<?php
-    session_start() ;
-	    if(!isset($_SESSION['auth']))
-    {
-    header("Location:../../../Login/Homepage.php") ;
-    }
-    ?><head>
+<head>
   <title>G4U</title>
   <link rel="stylesheet" href="../../../style.css" type="text/css">
   <link rel="stylesheet" href="../../../website.css" type="text/css">
@@ -27,13 +21,7 @@
         <img src="../../../LogoutButton.png" id="logout-button" alt="logout-button" onclick="window.location.href = '../../../logout.php'" ></img>
        </div>
 
-<?php
-    session_start() ;
-	    if(!isset($_SESSION['auth']))
-    {
-    header("Location:../../../Login/Homepage.php") ;
-    }
-    ?>
+
 <head>
 
 
