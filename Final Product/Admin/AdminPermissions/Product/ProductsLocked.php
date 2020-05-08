@@ -67,7 +67,7 @@ while($row = $stmt->fetch())
 
       echo "<TD align=center>".$row['ProductCode']."</TD>";
       echo "<TD align=center><a href='EditProduct.php?ProductCode=".$row['ProductCode']."'>Edit</a>";
-      echo "<TD align=center><a href='DeletProduct.php?ProductCode=".$row['ProductCode']."'>Delete Car</a>";
+      echo "<TD align=center><a href='DeletProduct.php?ProductCode=".$row['ProductCode']."'>Delete Product</a>";
 
 }
 echo "</TABLE>";
