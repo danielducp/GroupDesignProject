@@ -27,6 +27,7 @@ $sqlQuery = $pdo->prepare("DELETE FROM suppliedproducts  WHERE SuppliedProductsI
 $sqlQuery->execute(['SuppliedProductsID' => $SuppliedProductsID]);
 
 echo"Supplied Product, ".$SuppliedProductsID." has been deleted";
+header('Refresh: 5; URL=../../adminpage.php');
 
 
 

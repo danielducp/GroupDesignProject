@@ -95,8 +95,8 @@
         //If the signup process is successful.
         if($result){
             //What you do here is up to you!
-            echo 'Thank you for registering with our website.';
-            header('location:login.php');
+            echo 'Thank you for adding a product.';
+            header('Refresh: 5; URL=../../adminpage.php');
         }        
     } 
 ?>
@@ -111,7 +111,7 @@
     <body>
         <h1 align="center">Add a Product</h1>
         <div class="outputresults">
-        <form action="addauser.php" method="post" align="center">
+        <form action="addaproduct.php" method="post" align="center">
             <label for="ProductID" style="width: 150px">Product ID</label>
             <input type="text" id="ProductID" name="ProductID" class="form-control" maxlength="20" style="width: 200px; display: inline-block">
             <br><br>
@@ -122,7 +122,7 @@
             <input type="ProductName" id="ProductName" class="form-control" name="ProductName" minlength="2" maxlength="20" style="width: 200px; display: inline-block">
             <br><br>
             <label for="ProductImage" style="width: 150px">Product Image</label>
-            <input type="text" id="ProductImage" class="form-control" name="ProductImage" style="width: 200px; display: inline-block">
+            <input type="file" id="ProductImage" class="form-control" name="ProductImage" style="width: 200px; display: inline-block">
             <br><br>
             <label for="QuantityPerPack" style="width: 150px">Quantity Per Pack</label>
             <input type="number"  min="1" max="5" id="QuantityPerPack"  class="form-control" name="QuantityPerPack"  maxlength="7" style="width: 200px; display: inline-block">

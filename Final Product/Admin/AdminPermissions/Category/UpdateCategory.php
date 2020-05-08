@@ -13,5 +13,5 @@ $sqlQuery->bindParam(':CategoryID', $_POST['CategoryID'], PDO::PARAM_INT);
 $sqlQuery->execute(); 
 
 echo "<h1  align=center>Category updated</h1>";
-   header('Refresh: 5; URL=../adminpage.php');
+header('Refresh: 5; URL=../../adminpage.php');
 ?>

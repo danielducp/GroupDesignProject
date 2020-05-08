@@ -27,6 +27,7 @@ $sqlQuery = $pdo->prepare("DELETE FROM category  WHERE CategoryID =  :CategoryID
 $sqlQuery->execute(['CategoryID' => $CategoryID]);
 
 echo"Category, ".$CategoryID." has been deleted";
+header('Refresh: 5; URL=../../adminpage.php');
 
 
 

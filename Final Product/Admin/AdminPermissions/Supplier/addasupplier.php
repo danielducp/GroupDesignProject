@@ -83,9 +83,9 @@
         //If the signup process is successful.
         if($result){
             //What you do here is up to you!
-            echo 'Thank you for registering with our website.';
-            header('location:login.php');
-        }        
+            echo 'Thank you for adding a supplier.';
+            header('Refresh: 5; URL=../../adminpage.php');
+        }
     } 
 ?>
 

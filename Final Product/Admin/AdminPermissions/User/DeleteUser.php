@@ -28,6 +28,7 @@ $sqlQuery->execute(['staffid' => $staffid]);
 
 echo"Staff, ".$staffid." has been deleted";
 
+header('Refresh: 5; URL=../../adminpage.php');
 
 
 

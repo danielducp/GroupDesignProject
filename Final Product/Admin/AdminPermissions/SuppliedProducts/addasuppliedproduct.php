@@ -69,7 +69,7 @@
         //I'm just going to kill the script completely, as error handling is outside
         //the scope of this tutorial.
         if($row['num'] > 0){
-            die('That category already exists!');
+            die('That suppliedproduct already exists!');
         }    
         //Hash the staffname as we do NOT want to store our staffnames in plain text.
         //$staffnameHash = staffname_hash($pass, staffname_BCRYPT, array("cost" => 12));
@@ -103,9 +103,8 @@
         //If the signup process is successful.
         if($result){
             //What you do here is up to you!
-            echo 'Thank you for registering with our website.';
-            header('location:login.php');
-        }    
+            echo 'Thank you for adding a supplied product.';
+            header('Refresh: 5; URL=../../adminpage.php');        }    
     } 
 ?>
 

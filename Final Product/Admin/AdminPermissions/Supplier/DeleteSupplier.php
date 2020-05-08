@@ -27,6 +27,9 @@ $sqlQuery = $pdo->prepare("DELETE FROM supplier  WHERE SupplierID =  :SupplierID
 $sqlQuery->execute(['SupplierID' => $SupplierID]);
 
 echo"Supplier, ".$SupplierID." has been deleted";
+header('Refresh: 5; URL=../../adminpage.php');
+
+
 
 
 

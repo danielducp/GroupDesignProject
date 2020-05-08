@@ -23,6 +23,6 @@ $sqlQuery->bindParam(':LowStockLevel', $_POST['LowStockLevel'], PDO::PARAM_INT);
 $sqlQuery->bindParam(':ProductCode', $_POST['ProductCode'], PDO::PARAM_INT); 
 $sqlQuery->execute(); 
 
-echo "<h1  align=center>User updated</h1>";
-   header('Refresh: 5; URL=../adminpage.php');
+echo "<h1  align=center>Product updated</h1>";
+   header('Refresh: 5; URL=../../adminpage.php');
 ?>

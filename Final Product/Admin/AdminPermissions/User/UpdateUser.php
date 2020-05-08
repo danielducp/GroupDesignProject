@@ -30,6 +30,7 @@ $sqlQuery->bindParam(':staffid', $_POST['staffid'], PDO::PARAM_STR);
 $sqlQuery->execute(); 
 
 echo "<h1  align=center>User updated</h1>";
+header('Refresh: 5; URL=../../adminpage.php');
 
 ?>
 

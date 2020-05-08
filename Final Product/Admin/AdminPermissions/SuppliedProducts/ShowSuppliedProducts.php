@@ -127,7 +127,7 @@ while($row = $stmt->fetch())
 	
 		echo "<TD align=center>".$row['SuppliedProductsID']."</TD>";
 		echo "<TD align=center><a href='EditSuppliedProducts.php?SuppliedProductsID=".$row['SuppliedProductsID']."'>Edit</a>";
-		echo "<TD align=center><a href='DeleteSuppliedProduct.php?SuppliedProductsID=".$row['SuppliedProductsID']."'>Delete Supplied Product ID</a>";
+		echo "<TD align=center><a href='DeleteSuppliedProducts.php?SuppliedProductsID=".$row['SuppliedProductsID']."'>Delete Supplied Product ID</a>";
 	echo "</TR>";
   }
 echo "</TABLE>";

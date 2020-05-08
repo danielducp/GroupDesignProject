@@ -16,5 +16,5 @@ $sqlQuery->bindParam(':SupplierAddress', $_POST['SupplierAddress'], PDO::PARAM_S
 $sqlQuery->execute(); 
 
 echo "<h1  align=center>Supplier updated</h1>";
-   header('Refresh: 5; URL=../adminpage.php');
+header('Refresh: 5; URL=../../adminpage.php');
 ?>
