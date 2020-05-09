@@ -26,7 +26,8 @@ catch (\PDOException $e)
 $sqlQuery = $pdo->prepare("DELETE FROM product  WHERE ProductCode =  :ProductCode");
 $sqlQuery->execute(['ProductCode' => $ProductCode]);
 
-echo"Supplied Product, ".$ProductCode." has been deleted";
+echo"Product, ".$ProductCode." has been deleted";
+header('Refresh: 5; URL=../../adminpage.php');
 
 
 

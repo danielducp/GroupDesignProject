@@ -105,9 +105,9 @@ function goBack() {
     <div class="outputresults" align="center">
     <form action="addacategory.php" method="post">
         <label for="CategoryID" style="width: 150px">Category ID</label>
-        <input type="text" id="CategoryID" name="CategoryID" class="form-control" maxlength="20" style="width: 200px; display: inline-block"><br>
+        <input type="number" id="CategoryID" name="CategoryID" class="form-control"  style="width: 200px; display: inline-block"><br>
         <label for="CategoryName" style="width: 150px">Category Name</label>
-        <input type="number" id="CategoryName" class="form-control" name="CategoryName" style="width: 200px; display: inline-block"><br><br>        
+        <input type="test" id="CategoryName" class="form-control" name="CategoryName" style="width: 200px; display: inline-block"><br><br>        
         <input type="submit" name="register" class="form-control" value="Register" style="width: 120px"></button>
     </form>
 </body>
