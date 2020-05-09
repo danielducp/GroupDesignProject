@@ -131,7 +131,7 @@ if (isset($_GET['ProductCode'])) {
       <div class="carinfo"> 
     <?php
     ?>
-        <div class="card"  style="background-color:#ffff00 ">      
+        <div class="card"  >      
           <div class="card-body">
             <h4 class="text-info">Supplier Name: <?php echo $row["SupplierName"]; ?></h4>
             <h4 class="text-info">Delivery Time: <?php echo $row["DeliveryTime"]; ?> days</h4>
