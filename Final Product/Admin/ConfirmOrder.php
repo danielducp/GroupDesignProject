@@ -13,8 +13,8 @@ $sqlQuery2->execute(['OrderID' => $OrderID]);
 
 
 
-echo "Order Confirmed!"
-
+echo "Order Confirmed! You will now be redirected!";
+header("refresh:5;url=SystemReport.php");
 ?>
 
 

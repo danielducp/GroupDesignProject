@@ -41,7 +41,10 @@
           </div>
           <div class="row" style="padding-top:35px;">
             <div class="col" ALIGN="center">
-              <button  class="btn btn-success">Close to Low Stock</button>
+              <button  class="btn btn-success" onclick="window.location.href = 'closetolowstock.php';">Close to Low Stock</button>
+            </div>
+            <div class="col" ALIGN="center">
+              <button  class="btn btn-success" onclick="window.location.href = 'departmentexpenditure.php';">Department Expenditure</button>
             </div>
          
             

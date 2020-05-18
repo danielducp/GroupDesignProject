@@ -107,9 +107,9 @@ $TotalCost=  ($row['TotalExpenditure'] + ($row['TotalCost']*$row['QuantityOrdere
     $sqlQuery2->execute();
 
 
-echo "Order Checked!";
+echo "Order Checked! You will now be redirected!";
 
-
+header("refresh:5;url=SystemReport.php");
 
 
   }

@@ -20,8 +20,8 @@ $sqlQuery2-> bindParam(':ProductCode', $ProductCode);
 $sqlQuery2->execute();
 
 
-echo "Order Confirmed!";
-
+echo "Order Delivered! You will now be redirected!";
+header("refresh:5;url=SystemReport.php");
 ?>
 
 
