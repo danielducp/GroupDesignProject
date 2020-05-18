@@ -59,10 +59,10 @@ CREATE TABLE `department` (
 --
 
 INSERT INTO `department` (`DepartmentID`, `DepartmentName`, `TotalExpenditure`) VALUES
-(1, 'Gadgets', '11.94'),
+(1, 'Gadgets', '0.00'),
 (2, 'Toys', '0.00'),
-(3, 'Admin', '87.11'),
-(4, 'Automation', '58.18');
+(3, 'Admin', '0.00'),
+(4, 'Automation', '0.00');
 
 -- --------------------------------------------------------
 
