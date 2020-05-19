@@ -46,8 +46,14 @@
             <div class="col" ALIGN="center">
               <button  class="btn btn-success" onclick="window.location.href = 'departmentexpenditure.php';">Department Expenditure</button>
             </div>
+            <div class="col" ALIGN="center">
+              <button  class="btn btn-success" onclick="window.location.href = 'totalnumberoforders.php';">Total Number of Product Orders</button>
+            </div>
          
-            
+            <div class="col" ALIGN="center">
+              <button  class="btn btn-success" onclick="window.location.href = 'totalnumberofsuppliedorders.php';">Total Number of Supplier Orders</button>
+            </div>
+         
             </div>
             <div class="row" style="padding-top:35px;">
             <div class="col" ALIGN="center">
